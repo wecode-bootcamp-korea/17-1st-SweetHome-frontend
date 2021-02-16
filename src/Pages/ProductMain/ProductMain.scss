@@ -1,17 +1,25 @@
-.productCategory {
-  width: 1400px;
-  margin: 200px;
-  .productList {
-    padding: 0 20px;
-  }
-  .product {
-    font-size: 20px;
-    margin-bottom: 10px;
-    .subProductList {
-      li {
-        font-size: 18px;
-        color: gray;
+.productMain {
+  width: 1600px;
+  display: flex;
+  margin: 0 auto;
+  .productCategory {
+    margin: 100px;
+    .productList {
+      padding: 0 20px;
+    }
+    .product {
+      font-size: 20px;
+      margin-bottom: 10px;
+      .subProductList {
+        li {
+          font-size: 18px;
+          color: gray;
+        }
       }
     }
+  }
+  .slide {
+    width: 674px;
+    margin-top: 50px;
   }
 }

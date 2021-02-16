@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./ProductMain.scss";
+import Slide from "./Slide/Slide";
 
 class ProductMain extends Component {
   state = {
@@ -50,7 +51,7 @@ class ProductMain extends Component {
   render() {
     const { data, isProductListonOff } = this.state;
     return (
-      <div>
+      <div className="productMain">
         <div className="productCategory">
           <ul className="productList">
             {data.map((product) => {
@@ -68,6 +69,9 @@ class ProductMain extends Component {
               );
             })}
           </ul>
+        </div>
+        <div className="slide">
+          <Slide />
         </div>
       </div>
     );
