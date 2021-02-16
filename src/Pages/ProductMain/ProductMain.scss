@@ -1,0 +1,17 @@
+.productCategory {
+  width: 1400px;
+  margin: 200px;
+  .productList {
+    padding: 0 20px;
+  }
+  .product {
+    font-size: 20px;
+    margin-bottom: 10px;
+    .subProductList {
+      li {
+        font-size: 18px;
+        color: gray;
+      }
+    }
+  }
+}
