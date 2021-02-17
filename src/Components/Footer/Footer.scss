@@ -8,13 +8,12 @@
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
-    width: 1300px;
+    width: 1136px;
     height: 95px;
 
     .leftSideOfFooter {
       display: inline-flex;
       flex-direction: column;
-
       height: 100%;
 
       span {
@@ -45,31 +44,8 @@
   }
   .footerOfBody {
     margin: 0 auto;
-    width: 1300px;
+    width: 1136px;
 
-    .navInFooter {
-      margin-top: 15px;
-      font-size: 12px;
-
-      a,
-      a:link {
-        text-decoration: none;
-        color: black;
-        margin-right: 15px;
-      }
-      .개인정보 {
-        font-weight: bold;
-      }
-    }
-    .informationInFooter {
-      margin: 14px 0 5px 0;
-      font-size: 12px;
-
-      span {
-        margin-right: 15px;
-        color: #9b9898;
-      }
-    }
     .nicePayInform {
       margin-bottom: 5px;
       color: #9b9898;

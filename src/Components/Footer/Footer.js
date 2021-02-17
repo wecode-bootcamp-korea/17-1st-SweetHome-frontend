@@ -1,8 +1,45 @@
 import React, { Component } from "react";
+import NavInFooter from "./NavInFooter/NavInFooter";
 import "./Footer.scss";
+import InformationInFooter from "./InformationInFooter/InformationInFooter";
 
 class Footer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      navInFooter: [
+        {
+          id: "navInFooter",
+          content1: "브랜드 스토리",
+          content2: "회사소개",
+          content3: "채용정보",
+          content4: "이용약관",
+          content5: "개인정보처리방침",
+          content6: "공지사항",
+          content7: "고객센터",
+          content8: "고객의 소리",
+          content9: "전문가 등록",
+          content10: "사업자 구매회원",
+          content11: "제휴/광고 문의",
+          content12: "입점신청 문의",
+        },
+      ],
+      informationInFooter: [
+        {
+          id: "informationInFooter",
+          content1: "상호명 :(주)스위트홈",
+          content2: "이메일 :(고객문의)sweethome.com",
+          content3: "대표이사 :곽진석",
+          content4: "사업자등록번호 :141-46-00503",
+          content5: "통신판매업신고번호 :제2017-서울용산-3623호",
+          content6: "서울 용산구",
+        },
+      ],
+      addCommentList: [],
+    };
+  }
   render() {
+    const { informationInFooter, navInFooter } = this.state;
     return (
       <footer className="footer">
         <div className="footerOfTop">
@@ -14,40 +51,18 @@ class Footer extends Component {
             </span>
           </div>
           <div className="icons">
-            <i className="fab fa-apple apple"></i>
-            <i className="fab fa-google-play"></i>
-            <i className="fab fa-facebook-f"></i>
-            <i className="fab fa-instagram"></i>
+            <i className="fab fa-apple apple" />
+            <i className="fab fa-google-play" />
+            <i className="fab fa-facebook-f" />
+            <i className="fab fa-instagram" />
           </div>
         </div>
         <div className="footerOfBody">
-          <div className="navInFooter">
-            <a href="wecode.com">브랜드 스토리</a>
-            <a href="wecode.com">회사소개</a>
-            <a href="wecode.com">채용정보</a>
-            <a href="wecode.com">이용약관</a>
-            <a className="개인정보" href="wecode.com">
-              개인정보처리방침
-            </a>
-            <a href="wecode.com">공지사항</a>
-            <a href="wecode.com">고객센터</a>
-            <a href="wecode.com">고객의 소리</a>
-            <a href="wecode.com">전문가 등록</a>
-            <a href="wecode.com">사업자 구매회원</a>
-            <a href="wecode.com">제휴/광고 문의</a>
-            <a href="wecode.com">입점신청 문의 </a>
-          </div>
-          <div className="informationInFooter">
-            <span>상호명 :(주)스위트홈</span>
-            <span>이메일 :(고객문의)sweethome.com</span>
-            <span>대표이사 :곽진석</span>
-            <span>사업자등록번호 :141-46-00503</span>
-            <span>통신판매업신고번호 :제2017-서울용산-3623호</span>
-            <span>주소 :서울 용산구</span>
-          </div>
+          <NavInFooter navInFooter={navInFooter} />
+          <InformationInFooter informationInFooter={informationInFooter} />
           <div className="nicePayInform">
-            NICEPAY 안전거래 서비스 : 고객님의 안전거래를 위해 현금 결제 시,
-            저희 사이트에서 가입한 구매안전 서비스를 이용할 수 있습니다.
+            NICEPAY 안전거래 서비스: 고객님의 안전거래를 위해 현금 결제 시, 저희
+            사이트에서 가입한 구매안전 서비스를 이용할 수 있습니다.
             <strong>가입확인</strong>
           </div>
           <div className="informationOfResponse">
