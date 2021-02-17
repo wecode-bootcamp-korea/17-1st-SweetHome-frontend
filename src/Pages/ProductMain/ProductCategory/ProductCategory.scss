@@ -1,0 +1,36 @@
+.productCategory {
+  width: 279px;
+  margin-top: 50px;
+  .productList {
+    width: 300px;
+    padding: 0 20px;
+  }
+  .product {
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    .subProductCategory {
+      transition: all 1s ease;
+      li {
+        width: 160px;
+        height: 23px;
+        margin-top: 10px;
+        line-height: 23px;
+        font-size: 13px;
+        color: gray;
+        cursor: pointer;
+        &:first-child {
+          margin-top: 27px;
+        }
+        button {
+          float: right;
+          padding-top: 2px;
+          background-color: transparent;
+          border: 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

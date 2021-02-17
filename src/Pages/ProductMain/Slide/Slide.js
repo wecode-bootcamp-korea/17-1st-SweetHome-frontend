@@ -17,7 +17,7 @@ class Slide extends Component {
     };
 
     return (
-      <div className="slide">
+      <div className="slider">
         <div className="slideName">가구</div>
         <Slider {...settings}>
           <div className="slideWrapper">
