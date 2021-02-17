@@ -1,0 +1,90 @@
+@import "../../../styles/common.scss";
+
+.itemList {
+  width: 847px;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .itemQuantity {
+    margin: 43px 0 10px 15px;
+    font-size: 14px;
+    font-weight: 400;
+    color: $fontBlack;
+  }
+  .item {
+    width: 278px;
+    height: 391px;
+    padding: 0 10px;
+    .itemImg {
+      width: 258px;
+      height: 257px;
+      margin-bottom: 8px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+      }
+    }
+    .itemContent {
+      padding: 0 10px;
+      .itemName {
+        margin-bottom: 8px;
+        font-size: 15px;
+      }
+      .priceInfo {
+        margin-bottom: 6px;
+        .discount {
+          margin-right: 7px;
+          color: $themeColor;
+          font-size: 20px;
+          font-weight: 700;
+        }
+        .price {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+      .itemEvaluation {
+        display: flex;
+        margin-bottom: 6px;
+        font-size: 14px;
+        .avg {
+          margin-right: 3px;
+          span {
+            margin-right: 3px;
+            font-weight: 900;
+            color: $themeColor;
+          }
+        }
+        .review {
+          color: gray;
+        }
+      }
+      .itemBadag {
+        display: flex;
+        .freeDelivery {
+          width: 50px;
+          height: 20px;
+          margin-right: 3px;
+          background-color: #eeeeee;
+          text-align: center;
+          line-height: 20px;
+          font-size: 11px;
+          color: $fontBlack;
+          border-radius: 5px;
+        }
+        .onSale {
+          width: 30px;
+          height: 20px;
+          background-color: #f77;
+          text-align: center;
+          line-height: 20px;
+          font-size: 11px;
+          color: white;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

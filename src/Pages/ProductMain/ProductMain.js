@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./ProductMain.scss";
 import Slide from "./Slide/Slide";
+import ProductList from "./ProductList/ProductList";
 
 class ProductMain extends Component {
   state = {
@@ -70,8 +71,11 @@ class ProductMain extends Component {
             })}
           </ul>
         </div>
-        <div className="slide">
-          <Slide />
+        <div className="mainRight">
+          <div className="slide">
+            <Slide />
+          </div>
+          <ProductList />
         </div>
       </div>
     );
