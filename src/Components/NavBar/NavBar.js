@@ -7,16 +7,7 @@ class NavBar extends Component {
     super();
     this.state = {
       isTrue: "True",
-      categoryData: [
-        {
-          id: "categoryInCommunity",
-          content1: "홈",
-          content2: "사진",
-          content3: "노하우",
-          content4: "셀프가이드",
-          content5: "질문과답변",
-        },
-      ],
+      categoryData: [],
     };
   }
 
