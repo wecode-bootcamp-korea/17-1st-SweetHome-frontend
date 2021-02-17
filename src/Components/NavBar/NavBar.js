@@ -6,6 +6,7 @@ class NavBar extends Component {
   constructor() {
     super();
     this.state = {
+      isTrue: "True",
       categoryData: [
         {
           id: "categoryInCommunity",
@@ -15,6 +16,30 @@ class NavBar extends Component {
           content4: "셀프가이드",
           content5: "질문과답변",
         },
+      ],
+    };
+  }
+
+  handleMenuChange = (event) => {
+    if (this.state.categoryData) {
+      this.setState({
+        categoryData: [
+          {
+            id: "categoryInCommunity",
+            content1: "홈",
+            content2: "사진",
+            content3: "노하우",
+            content4: "셀프가이드",
+            content5: "질문과답변",
+          },
+        ],
+      });
+    }
+  };
+
+  handleMenuChange2 = (event) => {
+    this.setState({
+      categoryData: [
         {
           id: "categoryInStore",
           content1: "스토어홈",
@@ -24,8 +49,9 @@ class NavBar extends Component {
           content5: "리퍼마켓",
         },
       ],
-    };
-  }
+    });
+  };
+
   render() {
     return (
       <nav className="navBar">
@@ -33,8 +59,8 @@ class NavBar extends Component {
           <div className="topOfNav">
             <div className="sweetHomeInNav">스위트홈</div>
             <div className="centerInNav">
-              <span>커뮤니티</span>
-              <span>스토어</span>
+              <span onMouseOver={this.handleMenuChange}>커뮤니티</span>
+              <span onMouseOver={this.handleMenuChange2}>스토어</span>
             </div>
             <div className="rightSideOfNav">
               <div className="searchBox">
@@ -45,10 +71,18 @@ class NavBar extends Component {
                 <i class="fas fa-search"></i>
               </div>
               <div className="icons">
-                <i class="far fa-bookmark"></i>
-                <i class="far fa-bell"></i>
-                <i class="fas fa-cart-plus"></i>
-                <i class="far fa-user-circle"></i>
+                <span>
+                  <i class="far fa-bookmark"></i>
+                </span>
+                <span>
+                  <i class="far fa-bell"></i>
+                </span>
+                <span>
+                  <i class="fas fa-cart-plus"></i>
+                </span>
+                <span>
+                  <i class="far fa-user-circle"></i>
+                </span>
               </div>
               <button className="writeButton">
                 글쓰기<i class="far fa-hand-point-down"></i>

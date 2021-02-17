@@ -1,12 +1,21 @@
+@import "../../../styles/common.scss";
+
 .category {
   display: flex;
   flex-direction: row;
-  margin: 10px auto;
-  border: 1px solid black;
+  margin: 13px auto;
   width: 1160px;
 
   span {
+    margin-top: 15px;
     margin-right: 20px;
     font-size: 24px;
+    cursor: pointer;
+  }
+
+  span:hover {
+    padding-bottom: 8px;
+    color: $themeColor;
+    border-bottom: 3px solid $themeColor;
   }
 }

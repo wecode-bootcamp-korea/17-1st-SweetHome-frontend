@@ -3,7 +3,8 @@
 .navBar {
   position: relative;
   width: 100%;
-  height: 180px; //수정해야함
+  height: 1800px;
+  color: #424242;
 
   .navBarForFixed {
     position: fixed;
@@ -12,6 +13,8 @@
     left: 0;
     width: 100%;
     height: 80px;
+    border-bottom: 1px solid #e3e3e3;
+    background-color: #ffffff;
 
     .topOfNav {
       display: flex;
@@ -44,6 +47,7 @@
 
         span:hover {
           color: $themeColor;
+          cursor: pointer;
         }
       }
 
@@ -63,7 +67,18 @@
           input {
             width: 250px;
             height: 45px;
+            border: 1px solid #e3e3e3;
+            border-radius: 2px;
             font-size: 17px;
+          }
+
+          input:hover {
+            width: 250px;
+            height: 45px;
+            border: 1px solid #e3e3e3;
+            border-radius: 2px;
+            font-size: 17px;
+            background-color: #e3e3e3;
           }
 
           .fa-search {
@@ -78,26 +93,55 @@
           align-items: center;
           margin-right: 15px;
 
-          i {
+          span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-left: 18px;
-            font-size: 25px;
+            width: 40px;
+            height: 40px;
+
+            i {
+              font-size: 30px;
+            }
+          }
+
+          span:hover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 18px;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            background-color: $themeColor;
+            color: white;
           }
         }
         .writeButton {
           width: 120px;
           height: 45px;
           font-size: 20px;
-
+          background-color: $themeColor;
+          border: none;
+          border-radius: 3px;
           .fa-hand-point-down {
             margin-left: 5px;
           }
+        }
+        .writeButton:focus {
+          outline: none;
+        }
+        .writeButton:hover {
+          cursor: pointer;
+          background-color: cornflowerblue;
         }
       }
     }
   }
   .categoryInNav {
     margin-top: 80px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    height: 50px;
+    border-bottom: 1px solid #e3e3e3;
   }
 }
