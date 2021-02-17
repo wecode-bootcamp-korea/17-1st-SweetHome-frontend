@@ -1,0 +1,103 @@
+@import "../../styles/common.scss";
+
+.navBar {
+  position: relative;
+  width: 100%;
+  height: 180px; //수정해야함
+
+  .navBarForFixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+
+    .topOfNav {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      margin: 0 auto;
+      width: 1136px;
+      height: 80px;
+
+      .sweetHomeInNav {
+        height: auto;
+        width: 170px;
+        font-size: 30px;
+      }
+
+      .centerInNav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 14px;
+        margin-left: 40px;
+        width: 250px;
+        height: 60px;
+        font-size: 20px;
+
+        span {
+          margin-right: 50px;
+          width: 100px;
+        }
+
+        span:hover {
+          color: $themeColor;
+        }
+      }
+
+      .rightSideOfNav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-top: 14px;
+        width: 100%;
+        height: auto;
+
+        .searchBox {
+          position: relative;
+          margin-right: 10px;
+          height: auto;
+
+          input {
+            width: 250px;
+            height: 45px;
+            font-size: 17px;
+          }
+
+          .fa-search {
+            position: absolute;
+            left: 10px;
+            top: 13px;
+          }
+        }
+        .icons {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 15px;
+
+          i {
+            margin-left: 18px;
+            font-size: 25px;
+          }
+        }
+        .writeButton {
+          width: 120px;
+          height: 45px;
+          font-size: 20px;
+
+          .fa-hand-point-down {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+  .categoryInNav {
+    margin-top: 80px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+}

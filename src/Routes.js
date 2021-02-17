@@ -8,11 +8,13 @@ import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import ProductMain from "./Pages/ProductMain/ProductMain";
 import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SignUp/SignUp";
+import NavBar from "./Components/NavBar/NavBar";
 
 export default class Routes extends Component {
   render() {
     return (
       <Router>
+        <NavBar />
         <Switch>
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/communitymain" component={CommunityMain} />

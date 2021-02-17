@@ -1,0 +1,12 @@
+.category {
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+  border: 1px solid black;
+  width: 1160px;
+
+  span {
+    margin-right: 20px;
+    font-size: 24px;
+  }
+}
