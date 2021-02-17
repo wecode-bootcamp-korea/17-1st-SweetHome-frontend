@@ -6,22 +6,14 @@ import "./Card.scss";
 
 class Card extends Component {
   render() {
-    const { username } = this.props;
-    const cardUserStyle = {
-      width: "36px",
-      borderRadius: "20px",
-    };
-    const cardImageStyle = {
-      width: "100%",
-      borderRadius: "6px",
-    };
+    const { username, userImg, cardImg } = this.props;
 
     return (
       <div className="cardContainer">
         <div className="userContainer">
           <img
-            style={cardUserStyle}
-            src="https://www.solidbackgrounds.com/images/2048x2048/2048x2048-celeste-solid-color-background.jpg"
+            className="cardItemWriter"
+            src={userImg}
             alt="card-item-writer"
           />
           <div className="userNameZone">
@@ -30,11 +22,7 @@ class Card extends Component {
             <p>아늑한 공간</p>
           </div>
         </div>
-        <img
-          style={cardImageStyle}
-          src="https://i.pinimg.com/564x/7c/4e/73/7c4e73034e828190038fa8352bb815d6.jpg"
-          alt="cardImage"
-        />
+        <img className="cardImage" src={cardImg} alt="cardImage" />
         <ul className="cardIconBox">
           <li>
             <button type="button" className="cardIcons">
@@ -55,6 +43,15 @@ class Card extends Component {
             <span>10</span>
           </li>
         </ul>
+        {/* <p>작성자가 쓴 내용들</p>
+        <div className="cardComment">
+          <button>
+            <img src="" alt="" />
+          </button>
+          <button>
+            <span>댓글 내용</span>
+          </button>
+        </div> */}
       </div>
     );
   }

@@ -1,36 +1,58 @@
 @import "../../styles/common.scss";
 
 .cardContainer {
-  background-color: transparent;
   width: 290px;
   height: 560px;
   padding: 0 10px;
+  box-sizing: border-box;
+  background-color: transparent;
   font-family: "Noto Sans KR", sans-serif;
 
   .userContainer {
     display: flex;
     margin-bottom: 16px;
 
+    .cardItemWriter {
+      width: 36px;
+      border-radius: 30px;
+    }
+
     button {
-      font: 16px;
       background-color: transparent;
       border: none;
+
+      .user,
+      .follow {
+        font-size: 16px;
+      }
     }
+
     .follow {
-      color: $themeColor;
       font-weight: 700;
+      color: $themeColor;
     }
 
     p {
-      font-size: 12px;
-      color: #757575;
       padding: 4px 0 0 6px;
+      color: #757575;
+      font-size: 12px;
     }
+  }
+
+  .cardImage {
+    width: 100%;
+    border-radius: 6px;
   }
 
   .cardIconBox {
     display: flex;
     justify-content: space-around;
+    padding: 12px 0 16px 0;
+
+    span {
+      color: #424242;
+      font-size: 12px;
+    }
 
     .cardIcons {
       width: 36px;
