@@ -25,7 +25,21 @@ class ProductList extends Component {
     const { productList } = this.state;
     return (
       <div className="itemList">
-        <div className="itemQuantity">전체 100,000개</div>
+        <div className="categoryFilter">
+          <div className="filterBar">
+            <button>인기 BEST</button>
+            <button>사용인원</button>
+            <button>사이즈</button>
+            <button>색상</button>
+            <button>형태</button>
+          </div>
+          <div className="itemFilterd">
+            <span>전체 100,000개</span>
+            <button className="orderFilter">
+              인기순 <span>▼</span>
+            </button>
+          </div>
+        </div>
         <ul>
           {productList.map((product) => {
             return (

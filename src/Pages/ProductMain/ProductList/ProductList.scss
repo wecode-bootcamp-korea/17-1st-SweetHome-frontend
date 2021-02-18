@@ -6,12 +6,50 @@
     display: flex;
     flex-wrap: wrap;
   }
-  .itemQuantity {
-    margin: 43px 0 10px 15px;
-    font-size: 14px;
-    font-weight: 400;
-    color: $fontBlack;
+
+  .categoryFilter {
+    margin-top: 30px;
+    .itemFilterd {
+      height: 17px;
+      margin: 10px;
+      font-size: 14px;
+      font-weight: 400;
+      button {
+        float: right;
+        padding-right: 15px;
+        border: transparent;
+        background-color: #ffffff;
+        color: $fontBlack;
+        cursor: pointer;
+        span {
+          font-size: 10px;
+          color: lightgray;
+        }
+      }
+    }
+    .filterBar {
+      padding: 8px 0 12px;
+      button {
+        height: 34px;
+        margin-left: 5px;
+        padding: 8px 10px;
+        background-color: #ffffff;
+        color: $fontBlack;
+        border: 1px solid rgb(218, 220, 224);
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(240, 240, 240);
+        }
+      }
+
+      span {
+        margin-left: 15px;
+        font-size: 20px;
+      }
+    }
   }
+
   .item {
     width: 278px;
     height: 391px;
