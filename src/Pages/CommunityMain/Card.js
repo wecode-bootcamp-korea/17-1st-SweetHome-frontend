@@ -6,7 +6,7 @@ import "./Card.scss";
 
 class Card extends Component {
   render() {
-    const { username, userImg, cardImg } = this.props;
+    const { username, userImg, cardImg, userInfo, contents } = this.props;
 
     return (
       <div className="cardContainer">
@@ -19,7 +19,7 @@ class Card extends Component {
           <div className="userNameZone">
             <button className="user">{username}</button>
             <button className="follow">팔로우</button>
-            <p>아늑한 공간</p>
+            <p>{userInfo}</p>
           </div>
         </div>
         <img className="cardImage" src={cardImg} alt="cardImage" />
@@ -43,15 +43,15 @@ class Card extends Component {
             <span>10</span>
           </li>
         </ul>
-        {/* <p>작성자가 쓴 내용들</p>
-        <div className="cardComment">
+        <span className="usercontents">{contents}</span>
+        {/* <div className="cardComment">
           <button>
             <img src="" alt="" />
           </button>
           <button>
             <span>댓글 내용</span>
-          </button>
-        </div> */}
+          </button> */}
+        {/* </div> */}
       </div>
     );
   }

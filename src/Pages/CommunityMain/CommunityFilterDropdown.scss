@@ -1,0 +1,31 @@
+@import "../../styles/common.scss";
+
+.CommunityFilterDropdown {
+  display: flex;
+  margin: 0 auto;
+  position: fixed;
+
+  .dropdownlist {
+    width: 200px;
+    margin-top: 8px;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: -4px -4px 20px rgb(231, 231, 231);
+
+    li {
+      display: block;
+      height: 50px;
+      padding: 16px;
+      font-size: 14px;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+    li:hover {
+      background-color: #effbff;
+      border-radius: 16px;
+    }
+  }
+}

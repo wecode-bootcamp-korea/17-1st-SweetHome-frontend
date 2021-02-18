@@ -14,6 +14,8 @@ class CommunityMain extends Component {
               username={card.username}
               userImg={card.userImg}
               cardImg={card.cardImg}
+              userInfo={card.userInfo}
+              contents={card.contents}
             />
           );
         })}
