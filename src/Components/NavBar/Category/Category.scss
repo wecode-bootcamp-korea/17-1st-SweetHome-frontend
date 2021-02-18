@@ -1,15 +1,9 @@
 @import "../../../styles/common.scss";
 
 .category {
-  display: flex;
-  flex-direction: row;
-  margin: 13px auto;
-  width: 1160px;
-
   span {
-    margin-top: 15px;
-    margin-right: 20px;
-    font-size: 24px;
+    margin: 15px 20px 0 0;
+    font-size: 20px;
     cursor: pointer;
   }
 
@@ -18,4 +12,8 @@
     color: $themeColor;
     border-bottom: 3px solid $themeColor;
   }
+}
+.category:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
 }

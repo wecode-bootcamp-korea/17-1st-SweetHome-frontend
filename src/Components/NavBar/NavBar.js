@@ -1,46 +1,30 @@
 import React, { Component } from "react";
 import CategoryInNav from "./CategoryInNav/CategoryInNav";
+import CategoryData from "./navCategories";
 import "./NavBar.scss";
 
 class NavBar extends Component {
   constructor() {
     super();
     this.state = {
-      isTrue: "True",
       categoryData: [],
     };
   }
 
-  handleMenuChange = (event) => {
-    if (this.state.categoryData) {
+  componentDidMount() {
+    this.setState({ categoryData: CategoryData.categoryInCommunity });
+  }
+
+  handleSelectedCategory = (e) => {
+    if (e.target.innerText === "스토어") {
       this.setState({
-        categoryData: [
-          {
-            id: "categoryInCommunity",
-            content1: "홈",
-            content2: "사진",
-            content3: "노하우",
-            content4: "셀프가이드",
-            content5: "질문과답변",
-          },
-        ],
+        categoryData: CategoryData.categoryInStore,
+      });
+    } else if (e.target.innerText === "커뮤니티") {
+      this.setState({
+        categoryData: CategoryData.categoryInCommunity,
       });
     }
-  };
-
-  handleMenuChange2 = (event) => {
-    this.setState({
-      categoryData: [
-        {
-          id: "categoryInStore",
-          content1: "스토어홈",
-          content2: "카테고리",
-          content3: "베스트",
-          content4: "오늘의딜",
-          content5: "리퍼마켓",
-        },
-      ],
-    });
   };
 
   render() {
@@ -50,8 +34,12 @@ class NavBar extends Component {
           <div className="topOfNav">
             <div className="sweetHomeInNav">스위트홈</div>
             <div className="centerInNav">
-              <span onMouseOver={this.handleMenuChange}>커뮤니티</span>
-              <span onMouseOver={this.handleMenuChange2}>스토어</span>
+              <span onMouseOver={(e) => this.handleSelectedCategory(e)}>
+                커뮤니티
+              </span>
+              <span onMouseOver={(e) => this.handleSelectedCategory(e)}>
+                스토어
+              </span>
             </div>
             <div className="rightSideOfNav">
               <div className="searchBox">
