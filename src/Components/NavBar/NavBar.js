@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CategoryInNav from "./CategoryInNav/CategoryInNav";
-import CategoryData from "./navCategories";
+import CATEGORYDATA from "./navCategories";
 import "./NavBar.scss";
 
 class NavBar extends Component {
@@ -12,17 +12,18 @@ class NavBar extends Component {
   }
 
   componentDidMount() {
-    this.setState({ categoryData: CategoryData.categoryInCommunity });
+    this.setState({ categoryData: CATEGORYDATA.categoryInCommunity });
   }
 
   handleSelectedCategory = (e) => {
     if (e.target.innerText === "스토어") {
       this.setState({
-        categoryData: CategoryData.categoryInStore,
+        categoryData: CATEGORYDATA.categoryInStore,
       });
-    } else if (e.target.innerText === "커뮤니티") {
+    }
+    if (e.target.innerText === "커뮤니티") {
       this.setState({
-        categoryData: CategoryData.categoryInCommunity,
+        categoryData: CATEGORYDATA.categoryInCommunity,
       });
     }
   };
@@ -47,24 +48,25 @@ class NavBar extends Component {
                   type="text"
                   placeholder="        스위트홈 통합검색"
                 ></input>
-                <i class="fas fa-search"></i>
+                <i class="fas fa-search" />
               </div>
               <div className="icons">
                 <span>
-                  <i class="far fa-bookmark"></i>
+                  <i class="far fa-bookmark" />
                 </span>
                 <span>
-                  <i class="far fa-bell"></i>
+                  <i class="far fa-bell" />
                 </span>
                 <span>
-                  <i class="fas fa-cart-plus"></i>
+                  <i class="fas fa-cart-plus" />
                 </span>
                 <span>
-                  <i class="far fa-user-circle"></i>
+                  <i class="far fa-user-circle" />
                 </span>
               </div>
               <button className="writeButton">
-                글쓰기<i class="far fa-hand-point-down"></i>
+                글쓰기
+                <i class="far fa-hand-point-down" />
               </button>
             </div>
           </div>
