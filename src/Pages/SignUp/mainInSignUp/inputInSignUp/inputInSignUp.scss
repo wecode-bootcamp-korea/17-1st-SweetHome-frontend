@@ -28,6 +28,13 @@
       border-radius: 5px;
     }
 
+    .redColorInput {
+      width: 170px;
+      height: 40px;
+      border: 2px solid #ff9b9b;
+      border-radius: 5px;
+    }
+
     select {
       width: 170px;
       height: 40px;
@@ -36,7 +43,14 @@
     }
   }
 
+  .warningEmail {
+    margin-top: -14px;
+    color: #ff9b9b;
+    font-size: 16px;
+  }
+
   .passwordInput {
+    margin-bottom: 10px;
     width: 100%;
     height: 80px;
 
@@ -56,6 +70,19 @@
       border: 2px solid #e3e3e3;
       border-radius: 5px;
     }
+
+    .warningColor {
+      width: 100%;
+      height: 40px;
+      border: 2px solid #ff9b9b;
+      border-radius: 5px;
+    }
+  }
+
+  .warningPassWord {
+    margin-top: 5px;
+    color: #ff9b9b;
+    font-size: 16px;
   }
 
   .checkPasswordInput {

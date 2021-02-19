@@ -3,11 +3,6 @@ import MainInSignUp from "./mainInSignUp/mainInSignUp";
 import "./SignUp.scss";
 
 class SignUp extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
   render() {
     return (
       <div className="signUp">
