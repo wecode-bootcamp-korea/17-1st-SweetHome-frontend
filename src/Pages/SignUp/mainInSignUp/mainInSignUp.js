@@ -12,13 +12,17 @@ class MainInSignUp extends Component {
           <div className="userSignUp">
             <p>sns계정으로 간편하게 회원가입</p>
             <ol>
-              <i class="fab fa-facebook"></i>
-              <i class="far fa-user-circle"></i>
-              <i class="fab fa-twitter-square"></i>
+              <i className="fab fa-facebook" />
+              <i className="far fa-user-circle" />
+              <i className="fab fa-twitter-square" />
             </ol>
           </div>
           <InputInSignUp />
           <CheckInInput />
+          <button className="signUpButton">회원가입 완료</button>
+          <div className="linkLogin">
+            이미 아이디가 있으신가요? <a href="www.wecode.com">로그인</a>
+          </div>
         </div>
       </div>
     );

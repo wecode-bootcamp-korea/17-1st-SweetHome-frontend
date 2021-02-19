@@ -1,6 +1,10 @@
 @import "../../../../styles/common.scss";
 
 .checkInInput {
+  h1 {
+    margin-bottom: 12px;
+  }
+
   .containerForCheck {
     display: flex;
     flex-direction: column;
@@ -16,10 +20,12 @@
       width: 340px;
       height: 42px;
       border-bottom: 1px solid #e3e3e3;
+      cursor: pointer;
 
       input {
         width: 22px;
         height: 22px;
+        cursor: pointer;
       }
 
       span {
@@ -32,14 +38,21 @@
       align-items: center;
       width: 340px;
       height: 42px;
+      cursor: pointer;
 
       input {
         width: 22px;
         height: 22px;
+        cursor: pointer;
       }
 
       span {
         margin: 3px 0 0 6px;
+      }
+
+      .필수 {
+        color: $themeColor;
+        font-size: 14px;
       }
     }
 
@@ -48,14 +61,23 @@
       align-items: center;
       width: 340px;
       height: 42px;
+      cursor: pointer;
 
       input {
         width: 22px;
         height: 22px;
+        cursor: pointer;
       }
 
       span {
         margin: 3px 0 0 6px;
+        border-bottom: 1px solid black;
+      }
+
+      .필수 {
+        color: $themeColor;
+        font-size: 14px;
+        border: none;
       }
     }
 
@@ -64,14 +86,23 @@
       align-items: center;
       width: 340px;
       height: 42px;
+      cursor: pointer;
 
       input {
         width: 22px;
         height: 22px;
+        cursor: pointer;
       }
 
       span {
         margin: 3px 0 0 6px;
+        border-bottom: 1px solid black;
+      }
+
+      .필수 {
+        color: $themeColor;
+        font-size: 14px;
+        border: none;
       }
     }
 
@@ -80,14 +111,21 @@
       align-items: center;
       width: 340px;
       height: 42px;
+      cursor: pointer;
 
       input {
         width: 22px;
         height: 22px;
+        cursor: pointer;
       }
 
       span {
         margin: 3px 0 0 6px;
+      }
+
+      .선택 {
+        color: #9b9898;
+        font-size: 14px;
       }
     }
   }

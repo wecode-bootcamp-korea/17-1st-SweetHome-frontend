@@ -4,10 +4,11 @@
   margin-top: 60px;
   width: 1136px;
   height: auto;
+  background-color: white;
 
   .divForArray {
     width: 360px;
-    height: 1500px;
+    height: auto;
     margin: 0 auto;
 
     h1 {
@@ -52,6 +53,48 @@
         .fa-twitter-square {
           color: #4c6ef5;
         }
+      }
+    }
+
+    .signUpButton {
+      margin-top: 30px;
+      width: 100%;
+      height: 73px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      background-color: $themeColor;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .signUpButton:hover {
+      margin-top: 30px;
+      width: 100%;
+      height: 73px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      background-color: #0cadda;
+      cursor: pointer;
+    }
+
+    .signUpButton:focus {
+      border: none;
+      outline: none;
+    }
+
+    .linkLogin {
+      margin: 40px 0 60px 0px;
+      text-align: center;
+      font-size: 17px;
+
+      a,
+      a:visited {
+        margin-left: 5px;
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
       }
     }
   }
