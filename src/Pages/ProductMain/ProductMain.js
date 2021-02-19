@@ -25,7 +25,6 @@ class ProductMain extends Component {
   }
 
   render() {
-    console.log(this.state.productCategory);
     return (
       <div className="productMain">
         <ProductCategory category={this.state.productCategory} />

@@ -1,13 +1,36 @@
 import React, { Component } from "react";
+import mockdata from "./mockdata";
+import categoryFilter from "./categoryFilter/categoryFilter";
+
 import "./ProductList.scss";
 
 class ProductList extends Component {
   constructor() {
     super();
     this.state = {
+      showDropMenu: false,
       productList: [],
+      filteredList: [],
+      target: "",
     };
   }
+
+  activeDropMenu = (e) => {
+    this.setState(
+      {
+        target: e.target.innerText,
+      },
+      () => this.dropMenuValueChange()
+    );
+  };
+
+  dropMenuValueChange = () => {
+    const { target, showDropMenu } = this.state;
+    this.setState({
+      filteredList: mockdata[target],
+      showDropMenu: showDropMenu ? false : true,
+    });
+  };
 
   componentDidMount() {
     fetch("data/ProductList.json", {
@@ -28,11 +51,30 @@ class ProductList extends Component {
         <div className="categoryFilter">
           <div className="filterBar">
             <button>인기 BEST</button>
-            <button>사용인원</button>
-            <button>사이즈</button>
-            <button>색상</button>
-            <button>형태</button>
+            <button onClick={(e) => this.activeDropMenu(e)}>사용인원</button>
+            <button onClick={(e) => this.activeDropMenu(e)}>사이즈</button>
+            <button onClick={(e) => this.activeDropMenu(e)}>색상</button>
+            <button onClick={(e) => this.activeDropMenu(e)}>형태</button>
           </div>
+          {this.state.showDropMenu ? (
+            <div className="filterPanel">
+              {this.state.filteredList &&
+                this.state.filteredList.map((list, index) => {
+                  return (
+                    <div key={index} className="filterItem">
+                      <div className="filterSelector">
+                        <button>
+                          <div className="filterSelectorItem">
+                            <input type="checkbox"></input>
+                            <span className="selectorItemName">{list}</span>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          ) : null}
           <div className="itemFilterd">
             <span>전체 100,000개</span>
             <button className="orderFilter">

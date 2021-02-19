@@ -48,6 +48,46 @@
         font-size: 20px;
       }
     }
+    .filterPanel {
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap;
+      width: 460px;
+      height: 180px;
+      padding: 16px 18px 16px 22px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 2px -1px 16px rgb(200, 200, 200);
+      .filterItem {
+        display: flex;
+        width: 200px;
+        .filterSelector {
+          display: flex;
+          margin-right: 10px;
+          button {
+            width: 190px;
+            height: 30px;
+            background-color: transparent;
+            border: transparent;
+            .filterSelectorItem {
+              display: flex;
+              align-items: center;
+              input {
+                width: 22px;
+                height: 22px;
+                margin-right: 10px;
+              }
+              .selectorItemName {
+                display: inline-block;
+                height: 22px;
+                line-height: 25px;
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   .item {
