@@ -2,19 +2,19 @@
 
 .signUp {
   display: flex;
-  height: 1500px; //수정해야함
-  background-color: blanchedalmond;
+  height: auto;
 
   .divForArrayCenter {
     margin: 0 auto;
     padding-top: 40px;
-    width: 1136px;
+    width: auto;
 
     .logo {
       display: inline-block;
       width: auto;
       height: auto;
-      font-size: 20px;
+      font-size: 23px;
+      font-weight: bold;
 
       .fas {
         margin-right: 3px;

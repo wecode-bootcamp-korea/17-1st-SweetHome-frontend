@@ -1,0 +1,99 @@
+@import "../../../../styles/common.scss";
+
+.inputInSignUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 500px;
+
+  .emailInput {
+    width: 100%;
+    height: 80px;
+
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    span {
+      color: #e3e3e3;
+      font-size: 16px;
+      margin: 0 1.95px;
+    }
+
+    input {
+      width: 170px;
+      height: 40px;
+      border: 2px solid #e3e3e3;
+      border-radius: 5px;
+    }
+
+    select {
+      width: 170px;
+      height: 40px;
+      border: 2px solid #e3e3e3;
+      border-radius: 5px;
+    }
+  }
+
+  .passwordInput {
+    width: 100%;
+    height: 80px;
+
+    h1 {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    div {
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      border: 2px solid #e3e3e3;
+      border-radius: 5px;
+    }
+  }
+
+  .checkPasswordInput {
+    width: 100%;
+    height: 80px;
+
+    h1 {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      border: 2px solid #e3e3e3;
+      border-radius: 5px;
+    }
+  }
+
+  .nickNameInput {
+    width: 100%;
+    height: 80px;
+
+    h1 {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    div {
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      border: 2px solid #e3e3e3;
+      border-radius: 5px;
+    }
+  }
+}

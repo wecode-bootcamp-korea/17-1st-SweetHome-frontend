@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import InputInSignUp from "./inputInSignUp/inputInSignUp";
+import CheckInInput from "./checkInInput/checkInInput";
 import "./mainInSignUp.scss";
 
 class MainInSignUp extends Component {
@@ -15,6 +17,8 @@ class MainInSignUp extends Component {
               <i class="fab fa-twitter-square"></i>
             </ol>
           </div>
+          <InputInSignUp />
+          <CheckInInput />
         </div>
       </div>
     );
