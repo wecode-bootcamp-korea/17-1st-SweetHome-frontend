@@ -1,5 +1,24 @@
+@import "../../styles/common.scss";
+
 .CommunityFilterList {
   display: flex;
   width: 1140px;
   margin: 0 auto;
+
+  .filter_bar {
+    button {
+      padding: 6px 8px;
+      margin: 2px;
+      border: none;
+      border-radius: 4px;
+      background-color: &boxColor;
+      color: #757575;
+      font-size: 14px;
+      font-weight: 800px;
+      img {
+        width: 10px;
+        margin: 0px 4px;
+      }
+    }
+  }
 }

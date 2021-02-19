@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { Component } from "react";
 import "./CommunityMain.scss";
 import CardList from "./CardList";
@@ -7,6 +8,7 @@ class CommunityMain extends Component {
   constructor() {
     super();
     this.state = {
+      CommunityFilter: "FilterDropdown",
       cards: [
         {
           id: 1,
@@ -74,26 +76,12 @@ class CommunityMain extends Component {
         },
       ],
 
-      lists: [
-        {
-          id: 1,
-          menu: "정렬",
-          // sub-menu: ""
-        },
-        {
-          id: 2,
-          menu: "주거형태",
-          // sub-menu: ""
-        },
-        {
-          id: 2,
-          menu: "공간",
-          // sub-menu: ""
-        },
-      ],
+      lists: [],
     };
   }
+
   render() {
+    // console.log(this.state.CommunityFilter);
     const { cards, lists } = this.state;
     return (
       <div className="CommunityMain">
