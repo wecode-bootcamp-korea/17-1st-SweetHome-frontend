@@ -8,51 +8,52 @@ class CommunityFilterList extends Component {
   constructor() {
     super();
     this.state = {
-      filterMenu: [],
+      filterMenuData: [],
       isDropdownView: false,
+      buttonIndex: 0,
     };
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/MockData.json", {
+    fetch("/data/CommunityFilterData.json", {
       method: "GET",
     })
       .then(res => res.json())
       .then(data => {
         this.setState({
-          filterMenu: Object.entries(data),
+          filterMenuData: data,
         });
       });
   }
 
-  handleDropdown = () => {
+  handleDropdown = id => {
     this.setState({
       isDropdownView: !this.state.isDropdownView,
+      buttonIndex: id,
     });
   };
 
   render() {
-    console.log(this.state.filterMenu);
+    const { filterMenuData, isDropdownView, buttonIndex } = this.state;
+    const { categories } = filterMenuData;
 
     return (
       <div className="CommunityFilterList">
-        <div className="filter_bar">
-          {this.state.filterMenu.map((list, index) => {
-            return (
-              <button
-                key={index}
-                onClick={
-                  this.handleDropdown
-                  // ? console.log("onclick")
-                  // : console.log("nonclick")
-                }
-              >
-                {list[0]}
+        {categories?.map((category, idx) => {
+          return (
+            <div className="filter_bar">
+              <button onClick={() => this.handleDropdown(idx)}>
+                <span>{category.categoryName}</span>
                 <img src={DropDown} alt="dropdown-icon" />
               </button>
-            );
-          })}
-        </div>
+              {isDropdownView && buttonIndex === idx && (
+                <CommunityFilterDropdown
+                  categorylist={categories[idx].category}
+                />
+              )}
+            </div>
+          );
+        })}
       </div>
     );
   }

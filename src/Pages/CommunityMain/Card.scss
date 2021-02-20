@@ -4,7 +4,6 @@
   width: 290px;
   height: 560px;
   padding: 0 10px;
-  box-sizing: border-box;
   background-color: transparent;
   font-family: "Noto Sans KR", sans-serif;
 
@@ -63,5 +62,26 @@
   .usercontents {
     color: #424242;
     font-size: 15px;
+    padding-left: 0px;
+  }
+  .cardComment {
+    align-items: center;
+    font-size: 16px;
+    button {
+      border: none;
+      background-color: transparent;
+      color: #424242;
+      text-align: left;
+    }
+    img {
+      width: 24px;
+      border-radius: 20px;
+    }
+    span {
+      margin: 0 2px;
+    }
+    .userName {
+      font-weight: 700;
+    }
   }
 }

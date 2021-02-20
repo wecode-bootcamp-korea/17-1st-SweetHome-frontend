@@ -5,17 +5,22 @@ import "./CardList.scss";
 
 class CommunityMain extends Component {
   render() {
+    const { cards } = this.props;
+    console.log({ cards });
     return (
       <div className="CardList">
-        {this.props.cards.map(card => {
+        {cards?.map(card => {
           return (
             <Card
               key={card.id}
-              username={card.username}
-              userImg={card.userImg}
-              cardImg={card.cardImg}
-              userInfo={card.userInfo}
-              contents={card.contents}
+              cardUserName={card.card_user_name}
+              cardUserIntro={card.card_user_introduction}
+              cardUserImage={card.card_user_image}
+              cardImage={card.card_image}
+              cardContent={card.card_content}
+              commentUserImage={card.comment_user_image}
+              commentUserName={card.comment_user_name}
+              commentContent={card.comment_content}
             />
           );
         })}

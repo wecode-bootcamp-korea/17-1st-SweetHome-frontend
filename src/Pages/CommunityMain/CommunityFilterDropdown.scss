@@ -1,19 +1,15 @@
 @import "../../styles/common.scss";
 
 .CommunityFilterDropdown {
-  display: flex;
-  margin: 0 auto;
   position: fixed;
+  width: 200px;
+  margin-top: 16px;
+  border-radius: 16px;
+  box-shadow: -4px -4px 20px rgb(155, 155, 155);
+  background-color: white;
 
   .dropdownlist {
-    width: 200px;
-    margin-top: 8px;
-    border-radius: 16px;
-    background-color: white;
-    box-shadow: -4px -4px 20px rgb(231, 231, 231);
-
     li {
-      display: block;
       height: 50px;
       padding: 16px;
       font-size: 14px;

@@ -6,23 +6,32 @@ import "./Card.scss";
 
 class Card extends Component {
   render() {
-    const { username, userImg, cardImg, userInfo, contents } = this.props;
+    const {
+      cardUserName,
+      cardUserImage,
+      cardImage,
+      cardUserIntro,
+      cardContent,
+      commentUserImage,
+      commentUserName,
+      commentContent,
+    } = this.props;
 
     return (
       <div className="cardContainer">
         <div className="userContainer">
           <img
             className="cardItemWriter"
-            src={userImg}
+            src={cardUserImage}
             alt="card-item-writer"
           />
           <div className="userNameZone">
-            <button className="user">{username}</button>
+            <button className="user">{cardUserName}</button>
             <button className="follow">팔로우</button>
-            <p>{userInfo}</p>
+            <p>{cardUserIntro}</p>
           </div>
         </div>
-        <img className="cardImage" src={cardImg} alt="cardImage" />
+        <img className="cardImage" src={cardImage} alt="cardImage" />
         <ul className="cardIconBox">
           <li>
             <button type="button" className="cardIcons">
@@ -43,15 +52,14 @@ class Card extends Component {
             <span>10</span>
           </li>
         </ul>
-        <span className="usercontents">{contents}</span>
-        {/* <div className="cardComment">
-          <button>
-            <img src="" alt="" />
+        <span className="usercontents">{cardContent}</span>
+        <div className="cardComment">
+          <button className="cardComment">
+            <img src={commentUserImage} alt="" />
+            <span className="userName">{commentUserName}</span>
+            <span>{commentContent}</span>
           </button>
-          <button>
-            <span>댓글 내용</span>
-          </button> */}
-        {/* </div> */}
+        </div>
       </div>
     );
   }
