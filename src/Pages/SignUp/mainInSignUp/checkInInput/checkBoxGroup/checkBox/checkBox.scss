@@ -1,0 +1,63 @@
+@import "../../../../../../styles/common.scss";
+
+.checkBox {
+  display: flex;
+  align-items: center;
+  width: 340px;
+  height: 42px;
+  cursor: pointer;
+
+  input {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+  }
+
+  span {
+    margin: 3px 0 0 6px;
+  }
+
+  .필수 {
+    color: $themeColor;
+    font-size: 14px;
+    border: none;
+  }
+
+  .선택 {
+    color: #9b9898;
+    font-size: 14px;
+  }
+
+  .연령제한 {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin: 3px 0 0 6px;
+    }
+  }
+
+  .이용약관 {
+    display: flex;
+    align-items: center;
+
+    span {
+      border-bottom: 1px solid black;
+    }
+  }
+
+  .개인정보처리방침 {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin: 3px 0 0 6px;
+      border-bottom: 1px solid black;
+    }
+  }
+
+  .기타 {
+    display: flex;
+    align-items: center;
+  }
+}

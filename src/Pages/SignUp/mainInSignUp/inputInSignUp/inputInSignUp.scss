@@ -7,6 +7,10 @@
   width: 100%;
   height: 500px;
 
+  .colorOfAllWarning {
+    color: #ff9b9b;
+  }
+
   .emailInput {
     width: 100%;
     height: 80px;
@@ -80,7 +84,7 @@
   }
 
   .warningPassWord {
-    margin-top: 5px;
+    margin-top: -4px;
     color: #ff9b9b;
     font-size: 16px;
   }
@@ -100,6 +104,19 @@
       border: 2px solid #e3e3e3;
       border-radius: 5px;
     }
+
+    .colorChange {
+      width: 100%;
+      height: 40px;
+      border: 2px solid #ff9b9b;
+      border-radius: 5px;
+    }
+  }
+
+  .warningCheckPassWord {
+    margin-top: -12px;
+    color: #ff9b9b;
+    font-size: 16px;
   }
 
   .nickNameInput {
@@ -122,5 +139,18 @@
       border: 2px solid #e3e3e3;
       border-radius: 5px;
     }
+
+    .nameColor {
+      width: 100%;
+      height: 40px;
+      border: 2px solid #ff9b9b;
+      border-radius: 5px;
+    }
+  }
+
+  .warningName {
+    margin-top: 6px;
+    color: #ff9b9b;
+    font-size: 16px;
   }
 }

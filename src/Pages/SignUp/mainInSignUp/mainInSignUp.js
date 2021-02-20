@@ -7,25 +7,88 @@ class MainInSignUp extends Component {
   constructor() {
     super();
     this.state = {
+      targetValue: "",
+      emailValue: "",
+      checkPasswordValue: "",
+      nameValue: "",
       isTrue: true,
       isPwTrue: true,
+      isPwCheckTrue: true,
+      isNameTrue: true,
+      isChecked: true,
     };
   }
 
+  handleChangeValue = (e) => {
+    if (e.target.className.includes("email")) {
+      this.setState({ emailValue: e.target.value });
+    }
+    if (e.target.className.includes("password")) {
+      this.setState({ targetValue: e.target.value });
+    }
+    if (e.target.className.includes("checkPw")) {
+      this.setState({ checkPasswordValue: e.target.value });
+    }
+    if (e.target.className.includes("nickName")) {
+      this.setState({ nameValue: e.target.value });
+    }
+  };
+
+  handleClickCheckBox = (e) => {
+    this.state.isChecked
+      ? this.setState({
+          isChecked: false,
+        })
+      : this.setState({
+          isChecked: true,
+        });
+  };
+
   handleWarningCondition = (e) => {
-    if (e.target.type === "text") {
+    if (e.target.className.includes("email")) {
       return e.target.value.length < 1
         ? this.setState({ isTrue: false })
         : this.setState({ isTrue: true });
     }
-    if (e.target.type === "password") {
-      e.target.value.length < 8
+    if (e.target.className.includes("password")) {
+      return e.target.value.length < 8
         ? this.setState({ isPwTrue: false })
         : this.setState({ isPwTrue: true });
     }
+    if (e.target.className.includes("checkPw")) {
+      return e.target.value !== this.state.targetValue
+        ? this.setState({ isPwCheckTrue: false })
+        : this.setState({ isPwCheckTrue: true });
+    }
+    if (e.target.className.includes("nickName")) {
+      return e.target.value.length > 2 && e.target.value.length < 15
+        ? this.setState({ isNameTrue: true })
+        : this.setState({ isNameTrue: false });
+    }
+  };
+
+  handleSignUp = () => {
+    alert("login");
+    const {
+      targetValue,
+      emailValue,
+      checkPasswordValue,
+      nameValue,
+    } = this.state;
   };
 
   render() {
+    const {
+      targetValue,
+      emailValue,
+      checkPasswordValue,
+      nameValue,
+      isTrue,
+      isPwTrue,
+      isPwCheckTrue,
+      isNameTrue,
+      isChecked,
+    } = this.state;
     return (
       <div className="mainInSignUp">
         <div className="divForArray">
@@ -40,11 +103,38 @@ class MainInSignUp extends Component {
           </div>
           <InputInSignUp
             handleWarning={this.handleWarningCondition}
-            isTrue={this.state.isTrue}
-            isPwTrue={this.state.isPwTrue}
+            handleChangeValue={this.handleChangeValue}
+            isTrue={isTrue}
+            isPwTrue={isPwTrue}
+            isPwCheckTrue={isPwCheckTrue}
+            isNameTrue={isNameTrue}
+            targetValue={targetValue}
           />
-          <CheckInInput />
-          <button className="signUpButton">회원가입 완료</button>
+          <CheckInInput
+            handleClickCheckBox={this.handleClickCheckBox}
+            isChecked={isChecked}
+          />
+          <button
+            className={
+              emailValue &&
+              targetValue.length > 7 &&
+              checkPasswordValue === targetValue &&
+              2 < nameValue.length < 15
+                ? "signUpButton"
+                : "cantLogin"
+            }
+            disabled={
+              emailValue &&
+              targetValue.length > 7 &&
+              checkPasswordValue === targetValue &&
+              2 < nameValue.length < 15
+                ? false
+                : true
+            }
+            onClick={this.handleSignUp}
+          >
+            회원가입 완료
+          </button>
           <div className="linkLogin">
             이미 아이디가 있으신가요? <a href="www.wecode.com">로그인</a>
           </div>
