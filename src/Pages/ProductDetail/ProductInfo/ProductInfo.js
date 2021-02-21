@@ -6,6 +6,7 @@ class ProductDetail extends Component {
     super();
     this.state = {
       itemImgList: [],
+      imgNo: 0,
       selectdItem: [
         {
           item: "DK53 3인용 풀커버 그레이 발수 패브릭 소파",
@@ -29,6 +30,12 @@ class ProductDetail extends Component {
     };
   }
 
+  handleImgChange = (id) => {
+    this.setState({
+      imgNo: id,
+    });
+  };
+
   componentDidMount() {
     fetch("data/MockData.json", {
       method: "GET",
@@ -42,24 +49,27 @@ class ProductDetail extends Component {
   }
 
   render() {
-    const { itemImgList, selectdItem } = this.state;
+    const { itemImgList, selectdItem, imgNo } = this.state;
     return (
       <div className="productDetail">
         <div className="itmeImgOverview">
           <ul className="itemImgList">
-            {itemImgList.map((item) => {
+            {itemImgList.map((item, index) => {
               return (
-                <div className="itemImg">
+                <div
+                  key={index}
+                  className="itemImg"
+                  onMouseOver={() => this.handleImgChange(index)}
+                >
                   <img alt="상품이미지" src={item.img} />
                 </div>
               );
             })}
           </ul>
           <div className="itemCoverImg">
-            <img
-              alt="상품"
-              src="https://media.vlpt.us/images/playck/post/9407ef95-8698-41ea-a9bb-930885530c7c/%E1%84%80%E1%85%A1%E1%84%8C%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A9%E1%84%91%E1%85%A1.jpg"
-            />
+            {itemImgList.length > 0 && (
+              <img alt="상품" src={itemImgList[imgNo].img} />
+            )}
           </div>
         </div>
         <div className="itemContent">
