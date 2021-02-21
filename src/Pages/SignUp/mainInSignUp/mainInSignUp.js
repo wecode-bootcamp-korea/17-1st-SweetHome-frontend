@@ -75,6 +75,31 @@ class MainInSignUp extends Component {
       checkPasswordValue,
       nameValue,
     } = this.state;
+
+    fetch("http://192.168.43.45:8000/user/signin", {
+      method: "POST",
+      body: JSON.stringify({
+        email: emailValue,
+        password: targetValue,
+        rePassword: checkPasswordValue,
+        nickName: nameValue,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        // 회원가입;
+        result.message === "SUCCESS"
+          ? alert("오이오이 히사시부리")
+          : alert("만 19세 미만입니다");
+        // // 회원가입 후 로그인
+        // if (result.TOKEN) {
+        //   localStorage.setItem("token", result.TOKEN);
+        //   alert("축하합니다");
+        //   this.props.history.push("/mainKwak");
+        // } else {
+        //   alert("아이디나 비밀번호를 확인해주세요.");
+        // }
+      });
   };
 
   render() {
