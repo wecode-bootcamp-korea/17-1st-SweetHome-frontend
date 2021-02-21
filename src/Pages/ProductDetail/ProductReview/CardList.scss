@@ -1,0 +1,75 @@
+.CardList {
+  .reviewUser {
+    display: flex;
+    color: #424242;
+    font-size: 13px;
+    align-items: center;
+
+    .imgBox {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  .reviewUserScore > ul {
+    display: flex;
+    font-size: 12px;
+    margin: 12px 0px;
+  }
+  .reviewProductName {
+    margin: 20px 0px;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #757575;
+  }
+  .imgBox {
+    width: 112px;
+    height: 112px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    .reviewImage {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .reviewuserInfo {
+      display: flex;
+      .userScoreBig {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  .reviewContent {
+    margin: 20px 0px;
+    font-size: 15px;
+  }
+  .reviewHelped {
+    button {
+      width: 114px;
+      height: 32px;
+      margin-right: 10px;
+      border: 1px solid #35c5f0;
+      border-radius: 4px;
+      background-color: white;
+      font-size: 15px;
+      font-weight: 700;
+      color: #35c5f0;
+    }
+    span {
+      font-size: 13px;
+    }
+    .helpfulNumber {
+      font-weight: 700;
+    }
+  }
+}

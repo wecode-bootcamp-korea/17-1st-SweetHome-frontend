@@ -6,6 +6,24 @@
     header {
       display: flex;
       justify-content: space-between;
+      margin: 20px 0px;
+      font-weight: 700;
+
+      h1 {
+        font-size: 18px;
+
+        span {
+          color: #35c5f0;
+          padding-left: 8px;
+        }
+      }
+      button {
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        color: #35c5f0;
+        font-weight: 700;
+      }
     }
 
     .reviewAverage {
@@ -18,15 +36,28 @@
 
       .starScore {
         display: flex;
-        justify-content: space-between;
+        margin: 0 auto;
       }
       .scoreGraph {
+        margin: 0 auto;
       }
     }
     .reviewFilter {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       height: 60px;
+      margin: 20px 0px;
+      padding: 12px 0px;
+      border-top: 1px solid #f5f5f5;
+      border-bottom: 2px solid #f5f5f5;
+
+      .filterByDate > button {
+        border: none;
+        font-size: 13px;
+        background-color: transparent;
+        color: #757575;
+      }
     }
   }
 }

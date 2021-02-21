@@ -38,7 +38,7 @@ class ProductReview extends Component {
           </header>
           <div className="reviewAverage">
             <div className="starScore">
-              <span>별그래프</span>
+              <span>★★★★★</span>
               <h1>4.5</h1>
             </div>
             <div className="scoreGraph">
