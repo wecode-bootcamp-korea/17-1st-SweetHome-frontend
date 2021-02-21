@@ -17,12 +17,16 @@ class MainInSignIn extends Component {
           <InputInMain handleChangeValue={this.props.handleChangeValue} />
           <button
             className={
-              emailValue && passwordValue.length > 7
+              emailValue.indexOf("@", ".") !== -1 && passwordValue.length > 7
                 ? "loginButton"
                 : "cantLogin"
             }
             onClick={this.props.handleLogin}
-            disabled={emailValue && passwordValue.length > 7 ? false : true}
+            disabled={
+              emailValue.indexOf("@", ".") !== -1 && passwordValue.length > 7
+                ? false
+                : true
+            }
           >
             로그인
           </button>

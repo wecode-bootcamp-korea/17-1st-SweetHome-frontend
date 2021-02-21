@@ -15,7 +15,7 @@ class SignIn extends Component {
       : this.setState({ passwordValue: e.target.value });
   };
 
-  handleLogin = (e) => {
+  handleLogin = () => {
     const { emailValue, passwordValue } = this.state;
 
     fetch("http://192.168.43.45:8000/user/signin", {
