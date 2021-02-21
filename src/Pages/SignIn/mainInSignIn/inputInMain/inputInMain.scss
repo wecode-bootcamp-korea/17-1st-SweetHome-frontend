@@ -1,0 +1,48 @@
+@import "../../../../styles/common.scss";
+
+.inputInMain {
+  margin: 36px 0 24px 0;
+
+  input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #e3e3e3;
+    border-collapse: collapse;
+    box-shadow: $themeColor;
+    font-size: 18px;
+  }
+
+  input:hover {
+    background-color: #fafafa;
+    border: 1px solid #9b9898;
+  }
+
+  .email {
+    border-bottom: 1px solid #e3e3e3;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  .email::placeholder {
+    color: $fontBlack;
+  }
+
+  .email:focus {
+    outline-color: rgba(53, 197, 240, 0.5);
+  }
+
+  .password {
+    border-top: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  .password::placeholder {
+    color: $fontBlack;
+  }
+
+  .password:focus {
+    border-top: 1px solid black;
+    outline-color: rgba(53, 197, 240, 0.5);
+  }
+}
