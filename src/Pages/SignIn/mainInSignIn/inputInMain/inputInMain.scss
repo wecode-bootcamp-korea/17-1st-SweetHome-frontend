@@ -24,6 +24,7 @@
   }
 
   .email::placeholder {
+    padding-left: 10px;
     color: $fontBlack;
   }
 
@@ -38,6 +39,7 @@
   }
 
   .password::placeholder {
+    padding-left: 10px;
     color: $fontBlack;
   }
 

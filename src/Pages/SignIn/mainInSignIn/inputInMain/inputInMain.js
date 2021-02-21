@@ -5,8 +5,15 @@ class InputInMain extends Component {
   render() {
     return (
       <div className="inputInMain">
-        <input type="text" className="email" placeholder="이메일"></input>
         <input
+          onChange={(e) => this.props.handleChangeValue(e)}
+          type="text"
+          className="email"
+          placeholder="이메일"
+          autoFocus
+        ></input>
+        <input
+          onChange={(e) => this.props.handleChangeValue(e)}
           type="password"
           className="password"
           placeholder="비밀번호"

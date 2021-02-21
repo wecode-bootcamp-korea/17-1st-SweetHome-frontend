@@ -6,13 +6,28 @@ import "./SignIn.scss";
 class SignIn extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = { emailValue: "", passwordValue: "" };
   }
+
+  handleChangeValue = (e) => {
+    e.target.className.includes("email")
+      ? this.setState({ emailValue: e.target.value })
+      : this.setState({ passwordValue: e.target.value });
+  };
+
+  handleLogin = (e) => {
+    console.log(e.target.disabled);
+  };
 
   render() {
     return (
       <div className="SignIn">
-        <MainInSignIn />
+        <MainInSignIn
+          handleChangeValue={this.handleChangeValue}
+          handleLogin={this.handleLogin}
+          emailValue={this.state.emailValue}
+          passwordValue={this.state.passwordValue}
+        />
       </div>
     );
   }
