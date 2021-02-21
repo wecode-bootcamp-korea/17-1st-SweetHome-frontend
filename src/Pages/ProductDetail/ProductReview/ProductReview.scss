@@ -1,0 +1,32 @@
+.ProductReview {
+  section {
+    width: 692px;
+    margin: 0 auto;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .reviewAverage {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 148px;
+      border-radius: 8px;
+      background-color: #f5f5f5;
+
+      .starScore {
+        display: flex;
+        justify-content: space-between;
+      }
+      .scoreGraph {
+      }
+    }
+    .reviewFilter {
+      display: flex;
+      justify-content: space-between;
+      height: 60px;
+    }
+  }
+}

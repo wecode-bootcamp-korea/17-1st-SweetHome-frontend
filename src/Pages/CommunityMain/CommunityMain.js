@@ -13,8 +13,20 @@ class CommunityMain extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch("/data/CommunityCardData.json", {
+  // componentDidMount() {
+  //   fetch("/data/CommunityCardData.json", {
+  //     method: "GET",
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState({
+  //         cardsData: data,
+  //       });
+  //     });
+  // }
+
+  testingCard = () => {
+    fetch("http://172.16.100.250:8000/posting", {
       method: "GET",
     })
       .then(res => res.json())
@@ -23,6 +35,11 @@ class CommunityMain extends Component {
           cardsData: data,
         });
       });
+    // .then(data => console.log(data));
+  };
+
+  componentDidMount() {
+    this.testingCard();
   }
 
   render() {
@@ -30,7 +47,7 @@ class CommunityMain extends Component {
     return (
       <div className="CommunityMain">
         <CommunityFilterList />
-        <CardList cards={cardsData.cards} />
+        <CardList cards={cardsData.message} />
       </div>
     );
   }
