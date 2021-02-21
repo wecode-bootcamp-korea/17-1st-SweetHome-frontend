@@ -5,7 +5,25 @@
     "subtitle": [
       {
         "id": 1,
-        "subtitlename": "소파/거실 가구"
+        "subtitlename": "소파/거실 가구",
+        "subMinititle": [
+          {
+            "id": 1,
+            "subMinititleName": "소파"
+          },
+          {
+            "id": 2,
+            "subMinititleName": "리클라이너 소파"
+          },
+          {
+            "id": 3,
+            "subMinititleName": "거실수납장/TV장"
+          },
+          {
+            "id": 4,
+            "subMinititleName": "거실/소파테이블"
+          }
+        ]
       },
       {
         "id": 2,

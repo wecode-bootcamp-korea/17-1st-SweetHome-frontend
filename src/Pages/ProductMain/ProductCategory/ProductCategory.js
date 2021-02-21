@@ -6,6 +6,7 @@ class ProductCategory extends Component {
     super();
     this.state = {
       isListOnOff: false,
+      product: [],
     };
   }
 
@@ -14,6 +15,8 @@ class ProductCategory extends Component {
       isListOnOff: !this.state.isListOnOff,
     });
   };
+
+  componentDidMount() {}
 
   render() {
     const { category } = this.props;
@@ -29,7 +32,7 @@ class ProductCategory extends Component {
                 onClick={() => this.onhandleListOnOff()}
               >
                 {product.title}
-                {isListOnOff && (
+                {true && (
                   <ul className="subProductCategory">
                     {product.subtitle.map((subProduct) => {
                       return (
