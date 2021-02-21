@@ -16,7 +16,25 @@ class SignIn extends Component {
   };
 
   handleLogin = (e) => {
-    console.log(e.target.disabled);
+    const { emailValue, passwordValue } = this.state;
+
+    fetch("http://192.168.43.45:8000/user/signin", {
+      method: "POST",
+      body: JSON.stringify({
+        email: emailValue,
+        password: passwordValue,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.TOKEN) {
+          localStorage.setItem("token", result.TOKEN);
+          alert("축하합니다");
+          this.props.history.push("/communitymain");
+        } else {
+          alert("아이디나 비밀번호를 확인해주세요.");
+        }
+      });
   };
 
   render() {

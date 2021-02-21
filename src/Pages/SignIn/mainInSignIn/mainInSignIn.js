@@ -16,9 +16,13 @@ class MainInSignIn extends Component {
           </div>
           <InputInMain handleChangeValue={this.props.handleChangeValue} />
           <button
-            className="loginButton"
-            onClick={(e) => this.props.handleLogin(e)}
-            disabled={emailValue && passwordValue > 7 ? false : true}
+            className={
+              emailValue && passwordValue.length > 7
+                ? "loginButton"
+                : "cantLogin"
+            }
+            onClick={this.props.handleLogin}
+            disabled={emailValue && passwordValue.length > 7 ? false : true}
           >
             로그인
           </button>
