@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+import ProductReview from "./ProductReview/ProductReview";
 import "./ProductDetail";
 
 class ProductDetail extends Component {
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <ProductReview />
+      </div>
+    );
   }
 }
 
