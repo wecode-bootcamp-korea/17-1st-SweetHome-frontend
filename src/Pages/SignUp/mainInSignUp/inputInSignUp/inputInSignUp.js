@@ -11,6 +11,7 @@ class InputInSignUp extends Component {
       isPwCheckTrue,
       isNameTrue,
     } = this.props;
+
     return (
       <div className="inputInSignUp">
         <p className="emailInput">
@@ -23,7 +24,11 @@ class InputInSignUp extends Component {
             placeholder="이메일"
           ></input>
           <span>@</span>
-          <select name="email" className={!isTrue && "redColorInput"}>
+          <select
+            onChange={(e) => handleChangeValue(e)}
+            name="email"
+            className={!isTrue && "redColorInput"}
+          >
             <option value="선택해주세요" selected="selected">
               선택해주세요
             </option>

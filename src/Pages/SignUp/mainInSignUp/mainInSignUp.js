@@ -7,6 +7,7 @@ class MainInSignUp extends Component {
   constructor() {
     super();
     this.state = {
+      addedValue: "",
       targetValue: "",
       emailValue: "",
       checkPasswordValue: "",
@@ -21,7 +22,14 @@ class MainInSignUp extends Component {
 
   handleChangeValue = (e) => {
     if (e.target.className.includes("email")) {
-      this.setState({ emailValue: e.target.value });
+      this.setState({ emailValue: e.target.value + "@" });
+    }
+    if (
+      e.target.value === "naver.com" ||
+      e.target.value === "gmail.co.kr" ||
+      e.target.value === "daum.net"
+    ) {
+      this.setState({ addedValue: this.state.emailValue + e.target.value });
     }
     if (e.target.className.includes("password")) {
       this.setState({ targetValue: e.target.value });
@@ -87,25 +95,16 @@ class MainInSignUp extends Component {
     })
       .then((response) => response.json())
       .then((result) => {
-        // 회원가입;
         result.message === "SUCCESS"
           ? alert("오이오이 히사시부리")
           : alert("만 19세 미만입니다");
-        // // 회원가입 후 로그인
-        // if (result.TOKEN) {
-        //   localStorage.setItem("token", result.TOKEN);
-        //   alert("축하합니다");
-        //   this.props.history.push("/mainKwak");
-        // } else {
-        //   alert("아이디나 비밀번호를 확인해주세요.");
-        // }
       });
   };
 
   render() {
     const {
+      addedValue,
       targetValue,
-      emailValue,
       checkPasswordValue,
       nameValue,
       isTrue,
@@ -114,6 +113,7 @@ class MainInSignUp extends Component {
       isNameTrue,
       isChecked,
     } = this.state;
+
     return (
       <div className="mainInSignUp">
         <div className="divForArray">
@@ -134,6 +134,7 @@ class MainInSignUp extends Component {
             isPwCheckTrue={isPwCheckTrue}
             isNameTrue={isNameTrue}
             targetValue={targetValue}
+            addedValue={addedValue}
           />
           <CheckInInput
             handleClickCheckBox={this.handleClickCheckBox}
@@ -141,18 +142,20 @@ class MainInSignUp extends Component {
           />
           <button
             className={
-              emailValue &&
+              addedValue.indexOf(".") !== -1 &&
               targetValue.length > 7 &&
-              checkPasswordValue === targetValue &&
-              2 < nameValue.length < 15
+              1 < nameValue.length &&
+              nameValue.length < 15 &&
+              checkPasswordValue === targetValue
                 ? "signUpButton"
                 : "cantLogin"
             }
             disabled={
-              emailValue &&
+              addedValue.indexOf(".") !== -1 &&
               targetValue.length > 7 &&
-              checkPasswordValue === targetValue &&
-              2 < nameValue.length < 15
+              1 < nameValue.length &&
+              nameValue.length < 15 &&
+              checkPasswordValue === targetValue
                 ? false
                 : true
             }
