@@ -8,6 +8,7 @@ import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import ProductMain from "./Pages/ProductMain/ProductMain";
 import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SignUp/SignUp";
+import Footer from "./Components/Footer/Footer";
 
 export default class Routes extends Component {
   render() {
@@ -23,6 +24,7 @@ export default class Routes extends Component {
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
         </Switch>
+        <Footer />
       </Router>
     );
   }
