@@ -2,14 +2,15 @@ import React, { Component } from "react";
 import ProductReview from "./ProductReview/ProductReview";
 import ReviewModal from "./ProductReview/ReviewModal";
 
-import "./ProductDetail";
+import "./ProductDetail.scss";
+import CardList from "./ProductReview/CardList";
 
 class ProductDetail extends Component {
   render() {
     return (
-      <div>
+      <div className="ProductDetail">
         <ProductReview />
-        <ReviewModal />
+        <CardList />
       </div>
     );
   }

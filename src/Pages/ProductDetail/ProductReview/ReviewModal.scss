@@ -1,8 +1,14 @@
 .ReviewModal {
+  display: block;
+  position: fixed;
+  top: 70%;
+  left: 50%;
   width: 760px;
-  margin: 0 auto;
   border-radius: 4px;
   box-shadow: 5px 5px 15px gray;
+  background-color: white;
+  z-index: 100;
+  transform: translate(-50%, -50%);
 
   .closeModal {
     width: 100%;
@@ -10,7 +16,6 @@
 
     .xImage {
       width: 24px;
-      padding: 0;
       border: none;
       background-color: transparent;
       img {
@@ -23,22 +28,22 @@
     padding: 26px 40px 0 40px;
 
     .ReviewModalTitle {
+      text-align: center;
       font-size: 20px;
       font-weight: 700;
-      text-align: center;
       color: #292929;
     }
 
     .ReviewModalPoint {
-      height: 45px;
       display: flex;
       align-items: center;
-      font-size: 15px;
-      font-weight: 700;
+      height: 45px;
       margin-top: 30px;
       padding: 0 16px;
+      font-weight: 700;
       background-color: #525b61;
       color: white;
+      font-size: 15px;
       .blue {
         color: #6cd5f4;
       }
@@ -66,8 +71,8 @@
         .productNameSection {
           margin-left: 12px;
           p {
-            font-size: 11px;
             margin-bottom: 6px;
+            font-size: 11px;
             color: #757575;
           }
           span {
@@ -78,11 +83,11 @@
 
       .starScoreSection {
         p {
+          margin: 50px 0 8px;
+          padding: 8px 8px 8px 0px;
           font-size: 15px;
           color: #292929;
           font-weight: 700;
-          margin: 50px 0 8px;
-          padding: 8px 8px 8px 0px;
         }
         .photoReview {
           height: 28px;
@@ -90,8 +95,8 @@
           padding-left: 8px;
           border-radius: 14px;
           background-color: #757575;
-          font-size: 12px;
           color: white;
+          font-size: 12px;
           span {
             color: #35c5f0;
           }
@@ -108,20 +113,20 @@
           height: 45px;
           border: 1px solid #35c5f0;
           border-radius: 4px;
-          font-size: 15px;
-          color: #35c5f0;
-          font-weight: 700;
           background-color: transparent;
+          color: #35c5f0;
+          font-size: 15px;
+          font-weight: 700;
         }
         .complete {
           width: 100%;
           height: 45px;
-          border-radius: 4px;
           border: none;
+          border-radius: 4px;
+          background-color: #35c5f0;
+          color: white;
           font-size: 15px;
           font-weight: 700;
-          color: white;
-          background-color: #35c5f0;
         }
         textarea {
           padding: 9px 15px 25px;
@@ -143,8 +148,8 @@
   padding: 20px 40px;
   background-color: #f7f8fa;
   ul {
-    font-size: 13px;
     color: #424242;
+    font-size: 13px;
     li {
       margin: 4px 0px;
     }

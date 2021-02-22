@@ -7,7 +7,7 @@ class ReviewModal extends Component {
     return (
       <div className="ReviewModal">
         <div className="closeModal">
-          <button className="xImage">
+          <button className="xImage" onClick={this.props.handleModal}>
             <img src={cancel} alt="close" />
           </button>
         </div>

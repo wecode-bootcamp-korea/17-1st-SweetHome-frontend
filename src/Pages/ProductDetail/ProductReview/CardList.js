@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./CardList.scss";
+import ReviewModal from "./ReviewModal";
 
 class CardList extends Component {
   render() {
