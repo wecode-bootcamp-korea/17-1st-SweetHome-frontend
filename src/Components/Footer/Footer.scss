@@ -1,0 +1,69 @@
+.footer {
+  display: block;
+  padding: 30px 30px 40px;
+  height: 301px;
+  background-color: #fafafa;
+  font-family: "Noto Sans KR", sans-serif;
+
+  .footerOfTop {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 1136px;
+    height: 95px;
+
+    .leftSideOfFooter {
+      display: inline-flex;
+      flex-direction: column;
+      height: 100%;
+
+      span {
+        margin-bottom: 4px;
+      }
+
+      .고객센터 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .전화번호 {
+        font-size: 28px;
+      }
+
+      .영업시간 {
+        font-size: 12px;
+      }
+    }
+    .icons {
+      display: inline-block;
+
+      i {
+        margin: 0px 5px 0px 20px;
+        font-size: 40px;
+        cursor: pointer;
+      }
+    }
+  }
+  .footerOfBody {
+    margin: 0 auto;
+    width: 1136px;
+
+    .nicePayInform {
+      margin-bottom: 5px;
+      color: #9b9898;
+      font-size: 12px;
+
+      .가입확인 {
+        margin-left: 5px;
+      }
+    }
+    .informationOfResponse {
+      margin-bottom: 25px;
+      color: #9b9898;
+      font-size: 12px;
+    }
+    .copyright {
+      font-size: 12px;
+    }
+  }
+}
