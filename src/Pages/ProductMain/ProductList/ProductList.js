@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import mockdata from "./mockdata";
 import categoryFilter from "./categoryFilter/categoryFilter";
-
 import "./ProductList.scss";
 
 class ProductList extends Component {
@@ -9,23 +8,10 @@ class ProductList extends Component {
     super();
     this.state = {
       showDropMenu: false,
-      productList: [],
       filteredList: [],
       target: "",
     };
   }
-
-  backEndConnnet = () => {
-    fetch("http://10.95.2.55:8000/products", {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({
-          productList: data,
-        });
-      });
-  };
 
   activeDropMenu = (e) => {
     this.setState(
@@ -44,29 +30,14 @@ class ProductList extends Component {
     });
   };
 
-  componentDidMount() {
-    // fetch("data/ProductList.json", {
-    //   method: "GET",
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     this.setState({
-    //       productList: data,
-    //     });
-    //   });
-    this.backEndConnnet();
-  }
-
   render() {
-    console.log(this.state.productList);
-    // const { productList } = this.props;
-    const { filteredList, productList } = this.state;
+    const { productList } = this.props;
+    const { filteredList } = this.state;
     return (
       <div className="itemList">
         <div className="categoryFilter">
           <div className="filterBar">
-            <button onClick={this.backEndConnnet}>인기</button>
-            <button onClick-={() => this.dd()}>인기 BEST</button>
+            <button onClick={this.onDataRequest}>인기 BEST</button>
             <button onClick={(e) => this.activeDropMenu(e)}>사용인원</button>
             <button onClick={(e) => this.activeDropMenu(e)}>사이즈</button>
             <button onClick={(e) => this.activeDropMenu(e)}>색상</button>
@@ -99,7 +70,7 @@ class ProductList extends Component {
           </div>
         </div>
         <ul>
-          {productList.length > 0 &&
+          {productList.message &&
             productList.message.map((product) => {
               return (
                 <div className="item" key={product.id}>
@@ -118,11 +89,11 @@ class ProductList extends Component {
                     <div className="itemEvaluation">
                       <span className="avg">
                         <span>★</span>
-                        {product.avg}
+                        {product.rate_average}
                       </span>
                       <div className="review">
                         <span>리뷰</span>
-                        {product.review}
+                        {product.review_count}
                       </div>
                     </div>
                     <div className="itemBadag">

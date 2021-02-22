@@ -9,8 +9,21 @@ class ProductMain extends Component {
     super();
     this.state = {
       productCategory: [],
+      productList: [],
     };
   }
+
+  onDataRequest = () => {
+    fetch("http://10.58.2.60:8000/products", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          productList: data,
+        });
+      });
+  };
 
   componentDidMount() {
     fetch("data/ProductMenu.json", {
@@ -22,15 +35,20 @@ class ProductMain extends Component {
           productCategory: data,
         });
       });
+    this.onDataRequest();
   }
 
   render() {
+    const { productCategory, productList } = this.state;
     return (
       <div className="productMain">
-        <ProductCategory category={this.state.productCategory} />
+        <ProductCategory
+          category={productCategory}
+          onDataRequest={this.onDataRequest}
+        />
         <div className="mainRight">
           <div className="slide">{/* <Slide /> */}</div>
-          <ProductList />
+          <ProductList productList={productList} />
         </div>
       </div>
     );

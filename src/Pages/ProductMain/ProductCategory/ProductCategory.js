@@ -16,6 +16,10 @@ class ProductCategory extends Component {
     });
   };
 
+  onSelectCategory = () => {
+    this.props.onDataRequest();
+  };
+
   componentDidMount() {}
 
   render() {
@@ -32,11 +36,11 @@ class ProductCategory extends Component {
                 onClick={() => this.onhandleListOnOff()}
               >
                 {product.title}
-                {true && (
+                {isListOnOff && (
                   <ul className="subProductCategory">
                     {product.subtitle.map((subProduct) => {
                       return (
-                        <li>
+                        <li onClick={() => this.onSelectCategory()}>
                           {subProduct.subtitlename}
                           <button>∨</button>
                         </li>
