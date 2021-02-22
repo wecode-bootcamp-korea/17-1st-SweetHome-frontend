@@ -1,9 +1,21 @@
 .productCategory {
   width: 279px;
   margin-top: 50px;
-  .productList {
+
+  .mainCategory {
+    width: 160px;
+    border-bottom: 1px solid lightgrey;
+    list-style: none;
+  }
+  .otherCategoryList {
     width: 300px;
-    padding: 0 20px;
+    margin-top: 40px;
+    .otherCategory {
+      padding-bottom: 20px;
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+    }
   }
   .product {
     padding-bottom: 20px;
@@ -12,26 +24,6 @@
     cursor: pointer;
     .subProductCategory {
       transition: all 1s ease;
-      li {
-        width: 160px;
-        height: 23px;
-        margin-top: 10px;
-        line-height: 23px;
-        font-size: 13px;
-        color: gray;
-        z-index: 1000;
-        cursor: pointer;
-        &:first-child {
-          margin-top: 27px;
-        }
-        button {
-          float: right;
-          padding-top: 2px;
-          background-color: transparent;
-          border: 0;
-          cursor: pointer;
-        }
-      }
     }
   }
 }

@@ -1,18 +1,29 @@
 import React, { Component } from "react";
+import MainCategory from "./MainCategory/MainCategory";
 import "./ProductCategory.scss";
 
 class ProductCategory extends Component {
   constructor() {
     super();
     this.state = {
-      isListOnOff: false,
+      isListOnOff: true,
       product: [],
+      selectedCategory: [],
     };
   }
 
-  onhandleListOnOff = () => {
+  categoryListOnOff = () => {
     this.setState({
       isListOnOff: !this.state.isListOnOff,
+    });
+  };
+
+  onhandleListOnOff = (id) => {
+    const selectCategory = this.props.category.filter((product) => {
+      return product.id === id;
+    });
+    this.setState({
+      selectedCategory: selectCategory,
     });
   };
 
@@ -20,37 +31,38 @@ class ProductCategory extends Component {
     this.props.onDataRequest();
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.onhandleListOnOff();
+  }
 
   render() {
     const { category } = this.props;
-    const { isListOnOff } = this.state;
+    const { isListOnOff, selectedCategory } = this.state;
     return (
       <div className="productCategory">
-        <ul className="productList">
-          {category.map((product) => {
-            return (
-              <li
-                className="product"
-                key={product.id}
-                onClick={() => this.onhandleListOnOff()}
-              >
-                {product.title}
-                {isListOnOff && (
-                  <ul className="subProductCategory">
-                    {product.subtitle.map((subProduct) => {
-                      return (
-                        <li onClick={() => this.onSelectCategory()}>
-                          {subProduct.subtitlename}
-                          <button>∨</button>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                )}
-              </li>
-            );
-          })}
+        <div className="mainCategory">
+          <MainCategory
+            selectedCategory={selectedCategory}
+            onSelectCategory={this.onSelectCategory}
+            onhandleListOnOff={this.onhandleListOnOff}
+            isListOnOff={isListOnOff}
+            categoryListOnOff={this.categoryListOnOff}
+          />
+        </div>
+        <ul className="otherCategoryList">
+          <h1>
+            {category.map((product, index) => {
+              return (
+                <div
+                  className="otherCategory"
+                  key={index}
+                  onClick={() => this.onhandleListOnOff(index + 1)}
+                >
+                  {product.title}
+                </div>
+              );
+            })}
+          </h1>
         </ul>
       </div>
     );

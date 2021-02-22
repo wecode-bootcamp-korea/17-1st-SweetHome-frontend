@@ -39,6 +39,7 @@ class ProductMain extends Component {
   }
 
   render() {
+    console.log(this.state.productCategory);
     const { productCategory, productList } = this.state;
     return (
       <div className="productMain">
