@@ -76,28 +76,21 @@ class MainInSignUp extends Component {
   };
 
   handleSignUp = () => {
-    alert("login");
-    const {
-      targetValue,
-      emailValue,
-      checkPasswordValue,
-      nameValue,
-    } = this.state;
+    const { targetValue, emailValue, nameValue } = this.state;
 
-    fetch("http://192.168.43.45:8000/user/signin", {
+    fetch("http://10.58.2.32:8000/user/signup", {
       method: "POST",
       body: JSON.stringify({
         email: emailValue,
         password: targetValue,
-        rePassword: checkPasswordValue,
-        nickName: nameValue,
+        name: nameValue,
       }),
     })
       .then((response) => response.json())
       .then((result) => {
         result.message === "SUCCESS"
-          ? alert("오이오이 히사시부리")
-          : alert("만 19세 미만입니다");
+          ? alert("회원가입 완료")
+          : alert("입력을 확인해주세요.");
       });
   };
 
