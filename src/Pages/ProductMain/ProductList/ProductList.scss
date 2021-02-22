@@ -8,14 +8,15 @@
   }
 
   .categoryFilter {
-    margin-top: 30px;
+    margin-top: 10px;
     .itemFilterd {
+      display: flex;
+      justify-content: space-between;
       height: 17px;
       margin: 10px;
       font-size: 14px;
       font-weight: 400;
       button {
-        float: right;
         padding-right: 15px;
         border: transparent;
         background-color: #ffffff;

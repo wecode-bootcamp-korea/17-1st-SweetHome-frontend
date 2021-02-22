@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import Slide from "./Slide/Slide";
 import ProductCategory from "./ProductCategory/ProductCategory";
 import ProductList from "./ProductList/ProductList";
+import ProductEventList from "./ProductEventList/ProductEventList";
 
 class ProductMain extends Component {
   constructor() {
@@ -44,7 +45,6 @@ class ProductMain extends Component {
   }
 
   render() {
-    console.log(this.state.productCategory);
     const { productCategory, productList } = this.state;
     return (
       <div className="productMain">
@@ -54,6 +54,7 @@ class ProductMain extends Component {
         />
         <div className="mainRight">
           <div className="slide">{/* <Slide /> */}</div>
+          <ProductEventList />
           <ProductList productList={productList} gotoDetail={this.gotoDetail} />
         </div>
       </div>
