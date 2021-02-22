@@ -20,18 +20,22 @@ class Card extends Component {
     return (
       <div className="cardContainer">
         <div className="userContainer">
-          <img
-            className="cardItemWriter"
-            src={cardUserImage}
-            alt="card-item-writer"
-          />
+          <div className="imageBox">
+            <img
+              className="cardItemWriter"
+              src={cardUserImage}
+              alt="card-item-writer"
+            />
+          </div>
           <div className="userNameZone">
             <button className="user">{cardUserName}</button>
             <button className="follow">팔로우</button>
             <p>{cardUserIntro}</p>
           </div>
         </div>
-        <img className="cardImage" src={cardImage} alt="cardImage" />
+        <div className="imgBox">
+          <img className="cardImage" src={cardImage} alt="cardImage" />
+        </div>
         <ul className="cardIconBox">
           <li>
             <button type="button" className="cardIcons">
@@ -54,11 +58,13 @@ class Card extends Component {
         </ul>
         <span className="usercontents">{cardContent}</span>
         <div className="cardComment">
-          <button className="cardComment">
+          <button className="commentImage">
             <img src={commentUserImage} alt="" />
-            <span className="userName">{commentUserName}</span>
-            <span>{commentContent}</span>
           </button>
+          <div className="commentWrite">
+            <span className="userName">{commentUserName}</span>
+            <span className="userWrite">{commentContent}</span>
+          </div>
         </div>
       </div>
     );

@@ -26,7 +26,7 @@ class CommunityMain extends Component {
   // }
 
   testingCard = () => {
-    fetch("http://172.16.100.250:8000/posting", {
+    fetch("http://10.58.2.55:8000/posting", {
       method: "GET",
     })
       .then(res => res.json())

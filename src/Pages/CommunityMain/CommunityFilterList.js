@@ -36,19 +36,30 @@ class CommunityFilterList extends Component {
   render() {
     const { filterMenuData, isDropdownView, buttonIndex } = this.state;
     const { categories } = filterMenuData;
+    //filterMenuData: data로 셋팅 => filterMenuData.categories로 맵을 돌릴 array에 접근.
 
     return (
       <div className="CommunityFilterList">
         {categories?.map((category, idx) => {
+          // ? : 옵셔널 체이닝. 데이터가 받아지기전에 map을 실행해버리는데, '데이터가 들어오면 실행'하도록 바꿔줌.
           return (
             <div className="filter_bar">
-              <button onClick={() => this.handleDropdown(idx)}>
+              <button
+                onClick={
+                  () => this.handleDropdown(idx)
+                  //click 일어난 버튼의 idx를 handleDropdown에 전달
+                }
+              >
                 <span>{category.categoryName}</span>
                 <img src={DropDown} alt="dropdown-icon" />
               </button>
               {isDropdownView && buttonIndex === idx && (
+                //buttonIndex의 id값이 idx값과 같을때
                 <CommunityFilterDropdown
-                  categorylist={categories[idx].category}
+                  categorylist={
+                    categories[idx].category
+                    //idx값에 해당하는 자식컴포넌트 호출.
+                  }
                 />
               )}
             </div>
