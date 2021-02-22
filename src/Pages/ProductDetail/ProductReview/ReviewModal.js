@@ -1,55 +1,67 @@
 import React, { Component } from "react";
+import cancel from "../../../Images/minjoo/letterX.svg";
 import "./ReviewModal.scss";
 
 class ReviewModal extends Component {
   render() {
     return (
       <div className="ReviewModal">
-        <h1 className="ReviewModalTitle">리뷰쓰기</h1>
-        <div className="ReviewModalPoint">
-          포토리뷰<span className="blue">250p</span>, 일반리뷰
-          <span className="gray">0P</span>
+        <div className="closeModal">
+          <button className="xImage">
+            <img src={cancel} alt="close" />
+          </button>
         </div>
-        <div className="ReviewModalForm">
-          <div className="imageSection">
-            <div className="imgBox">
-              <img
-                src="https://t2.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/2D9/image/MN3lKYkIUKB-Frgm-mv7aOSOuN4"
-                alt="user_p
-            rofile"
-              />
-            </div>
-            <p>GAKYU</p>
-            <span>모던 라운드 리빙박스 시리즈</span>
+        <div className="ReviewContainer">
+          <h1 className="ReviewModalTitle">리뷰쓰기</h1>
+          <div className="ReviewModalPoint">
+            포토리뷰<span className="blue">250p</span>, 일반리뷰
+            <span className="gray">0P</span>
           </div>
-          <div className="starScoreSection">
-            <p>별점 평가</p>
-            <div className="starScoreSectionSatisFaction">
-              <span>만족도</span>
-              <span>별 별 별 별 별</span>
+          <div className="ReviewModalForm">
+            <div className="imageSection">
+              <div className="imgBox">
+                <img
+                  src="https://t2.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/2D9/image/MN3lKYkIUKB-Frgm-mv7aOSOuN4"
+                  alt="user_p
+            rofile"
+                />
+              </div>
+              <div className="productNameSection">
+                <p>GAKYU</p>
+                <span>모던 라운드 리빙박스 시리즈</span>
+              </div>
             </div>
-            <p>사진 첨부 (선택)</p>
-            <span>
-              포토리뷰 <span>250p</span>
-            </span>
-            <div className="photoSectionExplain">
-              사진을 첨부해주세요.(최대 1장)
+            <div className="starScoreSection">
+              <p>별점 평가</p>
+              <div className="starScoreSectionSatisFaction">
+                <span>만족도</span>
+                <span>별 별 별 별 별</span>
+              </div>
+              <div className="photo">
+                <p>사진 첨부 (선택)</p>
+                <p className="photoReview">
+                  포토리뷰 <span>250p</span>
+                </p>
+              </div>
+              <div className="photoSectionExplain">
+                사진을 첨부해주세요.(최대 1장)
+              </div>
+              <button className="postPhoto">사진 첨부하기</button>
+              <p>리뷰 작성</p>
+              <textarea
+                className="reviewInput"
+                placeholder="자세하고 솔직한 리뷰는 다른 고객에게 큰 도움이 됩니다. (최소 20자 이상)"
+              />
+              <p>상품을 직접 사용하고 작성한 리뷰인가요?</p>
+              <div className="reviewCheck">
+                <input type="checkbox"></input>
+                <span>
+                  네. 상품을 직접 사용 후 작성한 리뷰이며, 오늘의집 리뷰 정책에
+                  동의합니다.
+                </span>
+              </div>
+              <button className="complete">완료</button>
             </div>
-            <button className="postPhoto">사진 첨부하기</button>
-            <p>리뷰 작성</p>
-            <textarea
-              className="reviewInput"
-              placeholder="자세하고 솔직한 리뷰는 다른 고객에게 큰 도움이 됩니다. (최소 20자 이상)"
-            />
-            <p>상품을 직접 사용하고 작성한 리뷰인가요?</p>
-            <div className="reviewCheck">
-              <input type="checkbox"></input>
-              <span>
-                네. 상품을 직접 사용 후 작성한 리뷰이며, 오늘의집 리뷰 정책에
-                동의합니다.
-              </span>
-            </div>
-            <button className="complete">완료</button>
           </div>
         </div>
         <div className="reviewPolicy">
