@@ -31,7 +31,7 @@ class ProductList extends Component {
   };
 
   render() {
-    const { productList } = this.props;
+    const { productList, gotoDetail } = this.props;
     const { filteredList } = this.state;
     return (
       <div className="itemList">
@@ -75,7 +75,11 @@ class ProductList extends Component {
               return (
                 <div className="item" key={product.id}>
                   <div className="itemImg">
-                    <img alt="상품" src={product.image} />
+                    <img
+                      alt="상품"
+                      src={product.image}
+                      onClick={() => gotoDetail(product.id)}
+                    />
                   </div>
                   <div className="itemContent">
                     <h1 className="itemName">{product.name}</h1>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./ProductMain.scss";
+import { withRouter } from "react-router-dom";
 import Slide from "./Slide/Slide";
 import ProductCategory from "./ProductCategory/ProductCategory";
 import ProductList from "./ProductList/ProductList";
@@ -23,6 +24,10 @@ class ProductMain extends Component {
           productList: data,
         });
       });
+  };
+
+  gotoDetail = (id) => {
+    this.props.history.push(`/productDetail/${id}`);
   };
 
   componentDidMount() {
@@ -49,11 +54,11 @@ class ProductMain extends Component {
         />
         <div className="mainRight">
           <div className="slide">{/* <Slide /> */}</div>
-          <ProductList productList={productList} />
+          <ProductList productList={productList} gotoDetail={this.gotoDetail} />
         </div>
       </div>
     );
   }
 }
 
-export default ProductMain;
+export default withRouter(ProductMain);
