@@ -36,25 +36,30 @@ class ProductDetail extends Component {
     });
   };
 
-  componentDidMount() {
-    fetch("data/MockData.json", {
+  onRequestProductDetail = () => {
+    fetch(`http://10.58.2.60:8000/products/1`, {
       method: "GET",
     })
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((data) => {
         this.setState({
-          itemImgList: data,
+          selectdItem: data,
         });
       });
+  };
+
+  componentDidMount() {
+    this.onRequestProductDetail();
   }
 
   render() {
-    const { itemImgList, selectdItem, imgNo } = this.state;
+    console.log(this.state.selectdItem.product);
+    const { selectdItem, imgNo } = this.state;
     return (
       <div className="productDetail">
         <div className="itmeImgOverview">
           <ul className="itemImgList">
-            {itemImgList.map((item, index) => {
+            {selectdItem.product.map((item, index) => {
               return (
                 <div
                   key={index}
@@ -67,35 +72,39 @@ class ProductDetail extends Component {
             })}
           </ul>
           <div className="itemCoverImg">
-            {itemImgList.length > 0 && (
-              <img alt="상품" src={itemImgList[imgNo].img} />
+            {selectdItem.product.length > 0 && (
+              <img alt="상품" src={selectdItem.product[imgNo].img} />
             )}
           </div>
         </div>
         <div className="itemContent">
           <div className="itemContentOverview">
-            {selectdItem.map((item) => {
+            {selectdItem.product.map((item) => {
               return (
                 <div>
                   <div className="itemContentCompany">{item.company}</div>
-                  <h1 className="itemContentName">{item.item}</h1>
+                  <h1 className="itemContentName">{item.name}</h1>
                   <div className="itemContentReview">
-                    <div className="reviewStar">{"★".repeat(item.avg)}</div>
+                    <div className="reviewStar">
+                      {"★".repeat(item.rate_average)}
+                    </div>
                     <span> {item.review}개 리뷰</span>
                   </div>
                   <div className="itemPriceInfo">
                     <span className="itemContentDiscount">
-                      {item.discount}
+                      {item.discount_percentage}
                       <span>%</span>
                     </span>
-                    <span className="itemContentPrice">{item.price} 원</span>
+                    <span className="itemContentPrice">
+                      {item.discount_price} 원
+                    </span>
                     <div className="itemContentReduced">
-                      {item.isReduced && <div> 특가 </div>}
+                      {item.is_on_sale && <div> 특가 </div>}
                     </div>
                   </div>
                   <div className="itemDeliveryInfo">
                     <div className="itemContentDelivery">
-                      {item.isFreeDelivery && <div> 무료배송 </div>}
+                      {item.is_free_delivery && <div> 무료배송 </div>}
                     </div>
                     <p>
                       • 조건에 따라 추가비용 발생 가능 (상품 상세 정보 참고)
