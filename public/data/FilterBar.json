@@ -12,19 +12,23 @@
     },
     {
       "id": 4,
-      "categoryName": "스타일"
+      "categoryName": "소재"
     },
     {
       "id": 5,
-      "categoryName": "스타일"
+      "categoryName": "형태"
     },
     {
       "id": 6,
-      "categoryName": "스타일"
+      "categoryName": "쿠션감"
     },
     {
       "id": 7,
-      "categoryName": "스타일"
+      "categoryName": "커버 분리"
+    },
+    {
+      "id": 8,
+      "categoryName": "가격"
     }
   ]
 }
