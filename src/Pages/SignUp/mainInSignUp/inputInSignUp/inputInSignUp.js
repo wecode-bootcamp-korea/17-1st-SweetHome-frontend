@@ -22,11 +22,11 @@ class InputInSignUp extends Component {
             onBlur={handleWarning}
             type="text"
             placeholder="이메일"
+            name="idValue"
           ></input>
           <span>@</span>
           <select
             onChange={(e) => handleChangeValue(e)}
-            name="email"
             className={!isTrue && "redColorInput"}
           >
             <option value="선택해주세요" selected="selected">
@@ -49,6 +49,7 @@ class InputInSignUp extends Component {
             onChange={handleChangeValue}
             onBlur={handleWarning}
             type="password"
+            name="targetValue"
             placeholder="비밀번호"
           ></input>
         </p>
@@ -68,6 +69,7 @@ class InputInSignUp extends Component {
             disabled={!this.props.targetValue && true}
             type="password"
             placeholder="비밀번호 확인"
+            name="checkPasswordValue"
           ></input>
         </p>
 
@@ -85,6 +87,7 @@ class InputInSignUp extends Component {
             onBlur={handleWarning}
             onChange={handleChangeValue}
             type="text"
+            name="nameValue"
             placeholder="별명 (2~15자)"
           ></input>
         </p>

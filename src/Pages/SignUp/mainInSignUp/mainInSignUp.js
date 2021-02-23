@@ -7,9 +7,9 @@ class MainInSignUp extends Component {
   constructor() {
     super();
     this.state = {
-      addedValue: "",
-      targetValue: "",
       emailValue: "",
+      targetValue: "",
+      idValue: "",
       checkPasswordValue: "",
       nameValue: "",
       isTrue: true,
@@ -21,67 +21,55 @@ class MainInSignUp extends Component {
   }
 
   handleChangeValue = (e) => {
-    if (e.target.className.includes("email")) {
-      this.setState({ emailValue: e.target.value + "@" });
-    }
+    const { value, name } = e.target;
     if (
-      e.target.value === "naver.com" ||
-      e.target.value === "gmail.co.kr" ||
-      e.target.value === "daum.net"
+      value === "naver.com" ||
+      value === "gmail.co.kr" ||
+      value === "daum.net"
     ) {
-      this.setState({ addedValue: this.state.emailValue + e.target.value });
-    }
-    if (e.target.className.includes("password")) {
-      this.setState({ targetValue: e.target.value });
-    }
-    if (e.target.className.includes("checkPw")) {
-      this.setState({ checkPasswordValue: e.target.value });
-    }
-    if (e.target.className.includes("nickName")) {
-      this.setState({ nameValue: e.target.value });
+      this.setState({ emailValue: value });
+    } else {
+      this.setState({
+        [name]: value,
+      });
     }
   };
 
-  handleClickCheckBox = (e) => {
-    this.state.isChecked
-      ? this.setState({
-          isChecked: false,
-        })
-      : this.setState({
-          isChecked: true,
-        });
+  handleClickCheckBox = () => {
+    this.setState({ isChecked: !this.state.isChecked });
   };
 
   handleWarningCondition = (e) => {
-    if (e.target.className.includes("email")) {
-      return e.target.value.length < 1
+    const { name, value } = e.target;
+
+    if (name === "idValue")
+      !value
         ? this.setState({ isTrue: false })
         : this.setState({ isTrue: true });
-    }
-    if (e.target.className.includes("password")) {
-      return e.target.value.length < 8
+    if (name === "targetValue") {
+      value.length < 7
         ? this.setState({ isPwTrue: false })
         : this.setState({ isPwTrue: true });
     }
-    if (e.target.className.includes("checkPw")) {
-      return e.target.value !== this.state.targetValue
+    if (name === "checkPasswordValue") {
+      value !== this.state.targetValue
         ? this.setState({ isPwCheckTrue: false })
         : this.setState({ isPwCheckTrue: true });
     }
-    if (e.target.className.includes("nickName")) {
-      return e.target.value.length > 2 && e.target.value.length < 15
+    if (name === "nameValue") {
+      value.length > 1 && value.length < 16
         ? this.setState({ isNameTrue: true })
         : this.setState({ isNameTrue: false });
     }
   };
 
   handleSignUp = () => {
-    const { targetValue, emailValue, nameValue } = this.state;
+    const { targetValue, emailValue, nameValue, idValue } = this.state;
 
     fetch("http://10.58.2.32:8000/user/signup", {
       method: "POST",
       body: JSON.stringify({
-        email: emailValue,
+        email: idValue + "@" + emailValue,
         password: targetValue,
         name: nameValue,
       }),
@@ -96,7 +84,8 @@ class MainInSignUp extends Component {
 
   render() {
     const {
-      addedValue,
+      emailValue,
+      idValue,
       targetValue,
       checkPasswordValue,
       nameValue,
@@ -127,7 +116,6 @@ class MainInSignUp extends Component {
             isPwCheckTrue={isPwCheckTrue}
             isNameTrue={isNameTrue}
             targetValue={targetValue}
-            addedValue={addedValue}
           />
           <CheckInInput
             handleClickCheckBox={this.handleClickCheckBox}
@@ -135,7 +123,7 @@ class MainInSignUp extends Component {
           />
           <button
             className={
-              addedValue.indexOf(".") !== -1 &&
+              (idValue + emailValue).includes(".") &&
               targetValue.length > 7 &&
               1 < nameValue.length &&
               nameValue.length < 15 &&
@@ -144,7 +132,7 @@ class MainInSignUp extends Component {
                 : "cantLogin"
             }
             disabled={
-              addedValue.indexOf(".") !== -1 &&
+              (idValue + emailValue).includes(".") &&
               targetValue.length > 7 &&
               1 < nameValue.length &&
               nameValue.length < 15 &&

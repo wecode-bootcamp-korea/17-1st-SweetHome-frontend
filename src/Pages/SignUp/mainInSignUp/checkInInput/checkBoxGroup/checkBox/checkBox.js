@@ -8,13 +8,13 @@ class CheckBox extends Component {
   }
 
   render() {
-    const { id, type, content, isNeed, isChecked } = this.props;
+    const { id, type, content, isNeed, isChecked, need } = this.props;
     return (
       <div className="checkBox">
         <div className={id}>
           <input checked={!isChecked && true} type={type}></input>
           <span>{content}</span>
-          <span className={isNeed}>(필수)</span>
+          <span className={need}>{isNeed}</span>
         </div>
       </div>
     );

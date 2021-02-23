@@ -15,6 +15,7 @@ class CheckBouxGruop extends Component {
               type={data.type}
               content={data.content}
               isNeed={data.isNeed}
+              need={data.need}
               isChecked={isChecked}
             />
           );
