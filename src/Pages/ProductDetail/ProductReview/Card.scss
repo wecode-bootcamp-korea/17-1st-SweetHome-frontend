@@ -1,8 +1,11 @@
 .CardList {
   width: 692px;
-  margin: 0 auto;
+  margin: 0px auto;
+  padding: 40px 0px;
+  border-bottom: 1px solid rgb(232, 232, 232);
   .reviewUser {
     display: flex;
+    align-items: center;
     color: #424242;
     font-size: 13px;
     align-items: center;
@@ -19,12 +22,29 @@
         text-align: center;
       }
     }
+    .reviewUserInfo {
+      padding-top: 4px;
+      .userScoreBig {
+        display: flex;
+        span {
+          margin-right: 8px;
+        }
+      }
+    }
   }
 
   .reviewUserScore > ul {
     display: flex;
     font-size: 12px;
     margin: 12px 0px;
+    li {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      span {
+        margin-left: 4px;
+      }
+    }
   }
   .reviewProductName {
     margin: 20px 0px;
@@ -41,13 +61,6 @@
     .reviewImage {
       max-width: 100%;
       text-align: center;
-    }
-
-    .reviewuserInfo {
-      display: flex;
-      .userScoreBig {
-        margin-right: 6px;
-      }
     }
   }
 

@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from "react";
 // import CardList from "./CardList";
+import StarReadOnly from "./StarReadOnly";
 import ReviewModal from "./ReviewModal";
 import "./ProductReview.scss";
 
@@ -48,7 +49,9 @@ class ProductReview extends Component {
           </header>
           <div className="reviewAverage">
             <div className="starScore">
-              <span>★★★★★</span>
+              <span>
+                <StarReadOnly size={24} rate={4.5} />
+              </span>
               <h1>4.5</h1>
             </div>
             <div className="scoreGraph">

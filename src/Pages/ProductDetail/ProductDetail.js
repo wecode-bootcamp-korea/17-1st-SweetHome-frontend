@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ProductReview from "./ProductReview/ProductReview";
-import ReviewModal from "./ProductReview/ReviewModal";
+
+// import StarRating from "react-svg-star-rating";
 
 import "./ProductDetail.scss";
 import CardList from "./ProductReview/CardList";
