@@ -51,17 +51,18 @@ class ProductCategory extends Component {
         </div>
         <ul className="otherCategoryList">
           <h1>
-            {category.map((product, index) => {
-              return (
-                <div
-                  className="otherCategory"
-                  key={index}
-                  onClick={() => this.onhandleListOnOff(index + 1)}
-                >
-                  {product.title}
-                </div>
-              );
-            })}
+            {category.length > 0 &&
+              category.map((product, index) => {
+                return (
+                  <div
+                    className="otherCategory"
+                    key={index}
+                    onClick={() => this.onhandleListOnOff(index + 1)}
+                  >
+                    {product.title}
+                  </div>
+                );
+              })}
           </h1>
         </ul>
       </div>

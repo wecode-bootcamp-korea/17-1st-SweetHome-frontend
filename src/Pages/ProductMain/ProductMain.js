@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./ProductMain.scss";
 import { withRouter } from "react-router-dom";
-import Slide from "./Slide/Slide";
 import ProductCategory from "./ProductCategory/ProductCategory";
 import ProductList from "./ProductList/ProductList";
+import BannderSlide from "./Slide/BannerSlide";
 import ProductEventList from "./ProductEventList/ProductEventList";
 
 class ProductMain extends Component {
@@ -17,6 +17,30 @@ class ProductMain extends Component {
 
   onDataRequest = () => {
     fetch("http://10.58.2.60:8000/products", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          productList: data,
+        });
+      });
+  };
+
+  // onCategoryDataRequest = () => {
+  //   fetch("http://10.58.2.60:8000/products/category", {
+  //     method: "GET",
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       this.setState({
+  //         productCategory: data,
+  //       });
+  //     });
+  // };
+
+  onDateOrderdRequest = (order) => {
+    fetch(`http://10.58.2.60:8000/products?order=${order}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -41,6 +65,7 @@ class ProductMain extends Component {
           productCategory: data,
         });
       });
+    // this.onCategoryDataRequest();
     this.onDataRequest();
   }
 
@@ -53,9 +78,13 @@ class ProductMain extends Component {
           onDataRequest={this.onDataRequest}
         />
         <div className="mainRight">
-          <div className="slide">{/* <Slide /> */}</div>
+          {/* <BannderSlide /> */}
           <ProductEventList />
-          <ProductList productList={productList} gotoDetail={this.gotoDetail} />
+          <ProductList
+            productList={productList}
+            gotoDetail={this.gotoDetail}
+            onDateOrderdRequest={this.onDateOrderdRequest}
+          />
         </div>
       </div>
     );

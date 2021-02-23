@@ -1,0 +1,30 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "사이즈",
+      "category": ["대형", "중형", "소형"]
+    },
+    {
+      "id": 2,
+      "categoryName": "색상",
+      "category": ["빨강", "노랑", "초록"]
+    },
+    {
+      "id": 4,
+      "categoryName": "스타일"
+    },
+    {
+      "id": 5,
+      "categoryName": "스타일"
+    },
+    {
+      "id": 6,
+      "categoryName": "스타일"
+    },
+    {
+      "id": 7,
+      "categoryName": "스타일"
+    }
+  ]
+}
