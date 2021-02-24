@@ -27,17 +27,18 @@ class ProductMain extends Component {
       });
   };
 
-  // onCategoryDataRequest = () => {
-  //   fetch("http://10.58.2.60:8000/products/category", {
-  //     method: "GET",
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       this.setState({
-  //         productCategory: data,
-  //       });
-  //     });
-  // };
+  onCategoryDataRequest = () => {
+    fetch("http://10.58.2.60:8000/products/category", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          productCategory: data,
+        });
+      });
+    console.log("dd");
+  };
 
   onDateOrderdRequest = (order) => {
     fetch(`http://10.58.2.60:8000/products?order=${order}`, {
@@ -56,20 +57,11 @@ class ProductMain extends Component {
   };
 
   componentDidMount() {
-    fetch("data/ProductMenu.json", {
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({
-          productCategory: data,
-        });
-      });
-    // this.onCategoryDataRequest();
-    this.onDataRequest();
+    this.onCategoryDataRequest();
   }
 
   render() {
+    console.log(this.state.productCategory.categories);
     const { productCategory, productList } = this.state;
     return (
       <div className="productMain">

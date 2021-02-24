@@ -19,7 +19,7 @@ class ProductCategory extends Component {
   };
 
   onhandleListOnOff = (id) => {
-    const selectCategory = this.props.category.filter((product) => {
+    const selectCategory = this.props.category.categories?.filter((product) => {
       return product.id === id;
     });
     this.setState({
@@ -51,15 +51,15 @@ class ProductCategory extends Component {
         </div>
         <ul className="otherCategoryList">
           <h1>
-            {category.length > 0 &&
-              category.map((product, index) => {
+            {category.categories &&
+              category.categories.map((product, index) => {
                 return (
                   <div
                     className="otherCategory"
                     key={index}
                     onClick={() => this.onhandleListOnOff(index + 1)}
                   >
-                    {product.title}
+                    {product.name}
                   </div>
                 );
               })}

@@ -12,33 +12,38 @@ class MainCategory extends Component {
     return (
       <div className="mainCategoryItem">
         <div>
-          {selectedCategory.map((category) => {
-            return (
-              <h2 className="mainCategoryItemName" onClick={categoryListOnOff}>
-                {category.title}
-              </h2>
-            );
-          })}
+          {selectedCategory &&
+            selectedCategory.map((category) => {
+              return (
+                <h2
+                  className="mainCategoryItemName"
+                  onClick={categoryListOnOff}
+                >
+                  {category.name}
+                </h2>
+              );
+            })}
         </div>
         <ul className="productList">
-          {selectedCategory.map((product) => {
-            return (
-              <div>
-                {isListOnOff && (
-                  <ul className="subProductCategory">
-                    {product.subtitle.map((subProduct) => {
-                      return (
-                        <li onClick={onSelectCategory}>
-                          {subProduct.subtitlename}
-                          <button>∨</button>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                )}
-              </div>
-            );
-          })}
+          {selectedCategory &&
+            selectedCategory.map((product) => {
+              return (
+                <div>
+                  {isListOnOff && (
+                    <ul className="subProductCategory">
+                      {product.sub_category.map((subProduct) => {
+                        return (
+                          <li onClick={onSelectCategory}>
+                            {subProduct.name}
+                            <button>∨</button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                </div>
+              );
+            })}
         </ul>
       </div>
     );

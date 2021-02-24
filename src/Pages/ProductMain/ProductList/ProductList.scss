@@ -4,6 +4,7 @@
   width: 847px;
   ul {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
   .categoryFilter {
@@ -61,7 +62,7 @@
   .itemFilterd {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin: 20px 0 10px 0;
     .itemCountedNum {
       width: 150px;
       padding-top: 10px;
@@ -106,7 +107,6 @@
   .item {
     width: 278px;
     height: 391px;
-    padding: 0 10px;
     .itemImg {
       width: 258px;
       height: 257px;
