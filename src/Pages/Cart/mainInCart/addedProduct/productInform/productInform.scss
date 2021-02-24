@@ -49,7 +49,9 @@
         .productImage {
           width: 70px;
           height: 70px;
+          border: none;
           border-radius: 5px;
+          outline: none;
         }
 
         .imageInform {
@@ -76,6 +78,7 @@
           display: flex;
           justify-content: center;
           background-color: #ffffff;
+          color: #c3c3c3;
 
           width: 25px;
           height: 25px;
@@ -83,6 +86,8 @@
           outline: none;
 
           .fa-times {
+            margin: 0;
+            padding: 0;
             font-size: 20px;
           }
 
@@ -96,18 +101,20 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        margin-top: 10px;
+        margin: 20px 0;
         width: 100%;
-        height: 74px;
+        height: auto;
         border-radius: 5px;
         background-color: #f5f5f5;
 
         .productColorAndSizeContainer {
           display: flex;
           justify-content: space-between;
-          padding: 0 5px 0 5px;
+          margin-top: 20px;
+          padding: 0 0px 0 10px;
           width: 100%;
           border-radius: 5px;
+          background-color: #f5f5f5;
 
           .colorAndSize {
             font-size: 18px;
@@ -122,6 +129,7 @@
             border: none;
             outline: none;
             background-color: #f9f9f9;
+            color: #c3c3c3;
 
             .fa-times {
               font-size: 20px;
@@ -138,8 +146,31 @@
           padding: 0 5px;
 
           .quentity {
+            padding-left: 5px;
             width: 80px;
             height: 24px;
+            border: 1px solid #e9e9e9;
+            border-radius: 5px;
+          }
+        }
+        .wanted {
+          margin: 10px 0;
+          padding: 0 5px;
+          display: flex;
+          width: 100%;
+
+          .wantedInput {
+            margin-bottom: 10px;
+            width: 100%;
+          }
+
+          .wantedText {
+            margin-top: 5px;
+            width: 100%;
+            height: 40px;
+            border: 1px solid #e9e9e9;
+            border-radius: 5px;
+            outline: none;
           }
         }
       }

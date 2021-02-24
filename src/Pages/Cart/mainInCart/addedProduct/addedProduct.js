@@ -8,16 +8,19 @@ class AddedProduct extends Component {
       <section className="addedProduct">
         <div className="allCheckContainer">
           <div className="onlyCheckBox">
-            <input type="checkbox"></input>
+            <input
+              onChange={(e) => this.props.handleChangeCalculator(e)}
+              type="checkbox"
+            ></input>
             <span>모두선택</span>
           </div>
           <span>선택삭제</span>
         </div>
 
-        {this.props.mockData.map((product) => {
+        {this.props.mockData.results.map((product) => {
           return (
             <ProductInform
-              key={product.product_id}
+              key={product.product_option_id}
               productOption={product.product_option_id}
               productName={product.product_name}
               productColor={product.product_color}
@@ -27,6 +30,12 @@ class AddedProduct extends Component {
               productCompany={product.product_company}
               productDelivery={product.product_delivery_type}
               productDeliveryFee={product.product_delivery_fee}
+              productImage={product.product_image}
+              handlePriceChangeByComboBox={
+                this.props.handlePriceChangeByComboBox
+              }
+              quentityValue={this.props.quentityValue}
+              handleIdChangeByComboBox={this.props.handleIdChangeByComboBox}
             />
           );
         })}
