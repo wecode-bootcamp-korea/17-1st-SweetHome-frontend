@@ -58,7 +58,9 @@ class NavBar extends Component {
                   <i class="far fa-bell" />
                 </span>
                 <span>
-                  <i class="fas fa-cart-plus" />
+                  <a href="/cart">
+                    <i class="fas fa-cart-plus" />
+                  </a>
                 </span>
                 <span>
                   <i class="far fa-user-circle" />
