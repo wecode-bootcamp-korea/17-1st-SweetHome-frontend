@@ -6,7 +6,6 @@ import "./CardList.scss";
 class CommunityMain extends Component {
   render() {
     const { cards } = this.props;
-    console.log({ cards });
     return (
       <div className="CardList">
         {cards?.map(card => {
