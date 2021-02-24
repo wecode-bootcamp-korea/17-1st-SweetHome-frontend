@@ -11,9 +11,7 @@ class CardList extends Component {
   }
 
   downloadReview = () => {
-    fetch("http://10.58.2.37:8000/products/4/review", {
-      method: "GET",
-    })
+    fetch("/data/ReviewData.json")
       .then(res => res.json())
       .then(data => {
         this.setState({

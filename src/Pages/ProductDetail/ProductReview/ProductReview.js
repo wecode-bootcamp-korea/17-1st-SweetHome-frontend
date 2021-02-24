@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from "react";
-// import CardList from "./CardList";
+import { withRouter } from "react-router-dom";
+
 import StarReadOnly from "./StarReadOnly";
 import ReviewModal from "./ReviewModal";
 import "./ProductReview.scss";
@@ -14,23 +15,22 @@ class ProductReview extends Component {
     };
   }
 
+  arrangeBest = () => {
+    this.props.history.push(`order=best`);
+    // ({
+    //   pathname: this.props.history.location.pathname,
+    // });
+    // console.log(this.props.history.location.pathname);
+  };
+  arrangeRecent = () => {
+    this.props.history.push(`order=recent`);
+  };
+
   handleModal = () => {
     this.setState({
       isModalOn: !this.state.isModalOn,
     });
   };
-
-  // componentDidMount() {
-  //   fetch("/data/ReviewData.json", {
-  //     method: "GET",
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         reviewData: data,
-  //       });
-  //     });
-  // } 데이터 구성중에 있습니다.
 
   render() {
     const { reviewData } = this.state;
@@ -66,8 +66,8 @@ class ProductReview extends Component {
           </div>
           <div className="reviewFilter">
             <div className="filterByDate">
-              <button>베스트순</button>
-              <button>최신순</button>
+              <button onClick={this.arrangeBest}>베스트순</button>
+              <button onClick={this.arrangeRecent}>최신순</button>
               <button>사진리뷰</button>
             </div>
             <div>드롭다운필터</div>
@@ -79,4 +79,4 @@ class ProductReview extends Component {
   }
 }
 
-export default ProductReview;
+export default withRouter(ProductReview);

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import cancel from "../../../Images/minjoo/letterX.svg";
+import StarRated from "./StarRated";
 import "./ReviewModal.scss";
 
 class ReviewModal extends Component {
@@ -35,7 +36,9 @@ class ReviewModal extends Component {
               <p>별점 평가</p>
               <div className="starScoreSectionSatisFaction">
                 <span>만족도</span>
-                <span>별 별 별 별 별</span>
+                <span>
+                  <StarRated size={36} />
+                </span>
               </div>
               <div className="photo">
                 <p>사진 첨부 (선택)</p>
