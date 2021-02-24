@@ -37,7 +37,6 @@ class ProductMain extends Component {
           productCategory: data,
         });
       });
-    console.log("dd");
   };
 
   onDateOrderdRequest = (order) => {

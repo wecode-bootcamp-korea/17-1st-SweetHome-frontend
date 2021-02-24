@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import mockdata from "./mockdata";
 import categoryFilter from "./categoryFilter/categoryFilter";
 import "./ProductList.scss";
 
