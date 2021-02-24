@@ -2,9 +2,21 @@ import React, { Component } from "react";
 import Heart from "../../Images/minjoo/heart.svg";
 import Chat from "../../Images/minjoo/chat.svg";
 import Bookmark from "../../Images/minjoo/bookmark.svg";
+import BlueHeart from "../../Images/minjoo/blue-heart.svg";
 import "./Card.scss";
 
 class Card extends Component {
+  state = {
+    likes: this.props.likeNum,
+  };
+
+  handleIncrease = () => {
+    console.log("클릭");
+    this.setState({
+      likes: this.props.likeNum + 1,
+    });
+  };
+
   render() {
     const {
       cardUserName,
@@ -15,6 +27,10 @@ class Card extends Component {
       commentUserImage,
       commentUserName,
       commentContent,
+      likeNum,
+      scrapNum,
+      commentNum,
+      likeStatus,
     } = this.props;
 
     return (
@@ -38,22 +54,26 @@ class Card extends Component {
         </div>
         <ul className="cardIconBox">
           <li>
-            <button type="button" className="cardIcons">
-              <img src={Heart} alt="heart" />
+            <button
+              type="button"
+              className="cardIcons"
+              onClick={this.handleIncrease}
+            >
+              <img src={likeStatus ? BlueHeart : Heart} alt="heart" />
             </button>
-            <span>10</span>
+            <span>{likeNum}</span>
           </li>
           <li>
             <button type="button" className="cardIcons">
               <img src={Bookmark} alt="heart" />
             </button>
-            <span>10</span>
+            <span>{scrapNum}</span>
           </li>
           <li>
             <button type="button" className="cardIcons">
               <img src={Chat} alt="chat" />
             </button>
-            <span>10</span>
+            <span>{commentNum}</span>
           </li>
         </ul>
         <span className="usercontents">{cardContent}</span>

@@ -15,6 +15,7 @@ class CommunityMain extends Component {
   }
 
   testingCard = () => {
+    // fetch("http://10.153.7.50:8000/posting")
     fetch(`http://10.58.2.21:8000/posting${this.props.location.search}`)
       .then(res => res.json())
       .then(data => {

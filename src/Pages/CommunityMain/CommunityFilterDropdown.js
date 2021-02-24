@@ -27,7 +27,7 @@ class CommunityFilterDropdown extends Component {
 
   render() {
     const { categorylist } = this.props;
-    console.log("history::", this.props.location.search);
+    // console.log("history::", this.props.location.search);
     return (
       <div className="CommunityFilterDropdown">
         {categorylist.map((list, idx) => {

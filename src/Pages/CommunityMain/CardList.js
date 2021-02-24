@@ -20,6 +20,10 @@ class CommunityMain extends Component {
               commentUserImage={card.comment_user_image}
               commentUserName={card.comment_user_name}
               commentContent={card.comment_content}
+              likeNum={card.like_num}
+              scrapNum={card.scrap_num}
+              commentNum={card.comment_num}
+              likeStatus={card.like_status}
             />
           );
         })}
