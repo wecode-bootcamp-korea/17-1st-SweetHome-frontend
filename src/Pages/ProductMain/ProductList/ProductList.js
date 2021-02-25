@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import mockdata from "./mockdata";
 import categoryFilter from "./categoryFilter/categoryFilter";
 import "./ProductList.scss";
 
@@ -7,71 +6,140 @@ class ProductList extends Component {
   constructor() {
     super();
     this.state = {
-      showDropMenu: false,
+      isfitlerDropMenu: false,
+      isOrderDropMenu: false,
       filteredList: [],
-      target: "",
+      btnIdx: 99,
+      order: "인기순",
     };
   }
 
-  activeDropMenu = (e) => {
-    this.setState(
-      {
-        target: e.target.innerText,
-      },
-      () => this.dropMenuValueChange()
-    );
-  };
-
-  dropMenuValueChange = () => {
-    const { target, showDropMenu } = this.state;
+  filterDropMenuOnOff = (idx) => {
     this.setState({
-      filteredList: mockdata[target],
-      showDropMenu: showDropMenu ? false : true,
+      isfitlerDropMenu: !this.state.isfitlerDropMenu,
+      btnIdx: idx,
     });
   };
 
+  productOrderOnOff = () => {
+    this.setState({
+      isOrderDropMenu: !this.state.isOrderDropMenu,
+    });
+  };
+
+  orderFilter = (e) => {
+    const order = e.target.value;
+    this.props.onDateOrderdRequest(order);
+    this.setState({
+      order: e.target.innerText,
+      isOrderDropMenu: false,
+    });
+  };
+
+  categoryFilter = (e) => {
+    const filter = Number(e.target.value) + 1;
+    const filterName = e.target.name;
+    this.props.onDateFilterRequest(filter, filterName);
+  };
+
+  componentDidMount() {
+    fetch("data/FilterBar.json", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          filteredList: data,
+        });
+      });
+  }
+
   render() {
     const { productList, gotoDetail } = this.props;
-    const { filteredList } = this.state;
+    const {
+      filteredList,
+      isOrderDropMenu,
+      isfitlerDropMenu,
+      btnIdx,
+      order,
+    } = this.state;
     return (
       <div className="itemList">
         <div className="categoryFilter">
-          <div className="filterBar">
-            <button onClick={this.onDataRequest}>인기 BEST</button>
-            <button onClick={(e) => this.activeDropMenu(e)}>사용인원</button>
-            <button onClick={(e) => this.activeDropMenu(e)}>사이즈</button>
-            <button onClick={(e) => this.activeDropMenu(e)}>색상</button>
-            <button onClick={(e) => this.activeDropMenu(e)}>형태</button>
-          </div>
-          {this.state.showDropMenu ? (
-            <div className="filterPanel">
-              {filteredList &&
-                filteredList.map((list, index) => {
-                  return (
-                    <div key={index} className="filterItem">
-                      <div className="filterSelector">
-                        <button>
-                          <div className="filterSelectorItem">
-                            <input type="checkbox"></input>
-                            <span className="selectorItemName">{list}</span>
-                          </div>
-                        </button>
+          {filteredList.categories?.map((category, idx) => {
+            return (
+              <div className="filterBar">
+                <button key={idx} value={idx}>
+                  <span onClick={() => this.filterDropMenuOnOff(idx)}>
+                    {category.categoryName}
+                  </span>
+                  <span className="btnArrow"> ∨ </span>
+                  <div className="subfilterBar">
+                    {isfitlerDropMenu && idx === btnIdx && (
+                      <div className="subfilterList">
+                        {category.category.map((subFilter, idx) => {
+                          return (
+                            <div key={idx}>
+                              <button
+                                className="subfilterName"
+                                onClick={(e) => this.categoryFilter(e)}
+                                value={idx}
+                                name="size"
+                              >
+                                {subFilter}
+                              </button>
+                            </div>
+                          );
+                        })}
                       </div>
-                    </div>
-                  );
-                })}
-            </div>
-          ) : null}
-          <div className="itemFilterd">
-            <span>전체 100,000개</span>
-            <button className="orderFilter">
-              인기순 <span>▼</span>
+                    )}
+                  </div>
+                </button>
+              </div>
+            );
+          })}
+        </div>
+        <div className="itemFilterd">
+          <div className="itemCountedNum">
+            <span>전체 {productList.count}개</span>
+          </div>
+          <div className="orderFilter">
+            <button onClick={(e) => this.productOrderOnOff(e)}>
+              {order}
+              <div>▼</div>
             </button>
+            <div>
+              {isOrderDropMenu && (
+                <div className="orderPanel">
+                  <button value="recent" onClick={(e) => this.orderFilter(e)}>
+                    최신순
+                  </button>
+                  <button value="old" onClick={(e) => this.orderFilter(e)}>
+                    오래된순
+                  </button>
+                  <button
+                    value="max_price"
+                    onClick={(e) => this.orderFilter(e)}
+                  >
+                    높은가격순
+                  </button>
+                  <button
+                    value="min_price"
+                    onClick={(e) => this.orderFilter(e)}
+                  >
+                    낮은가격순
+                  </button>
+                  <button value="review" onClick={(e) => this.orderFilter(e)}>
+                    많은리뷰순
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
         <ul>
-          {productList.message &&
-            productList.message.map((product) => {
+          {productList.products &&
+            productList.products.map((product) => {
               return (
                 <div className="item" key={product.id}>
                   <div className="itemImg">
@@ -88,7 +156,9 @@ class ProductList extends Component {
                         {product.discount_percentage}
                         <span>%</span>
                       </span>
-                      <span className="price">{product.discount_price}</span>
+                      <span className="price">
+                        {(product.discount_price - "").toLocaleString()}
+                      </span>
                     </div>
                     <div className="itemEvaluation">
                       <span className="avg">
