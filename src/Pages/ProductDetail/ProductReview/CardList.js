@@ -1,24 +1,22 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import Card from "./Card.js";
 
 class CardList extends Component {
-  constructor() {
-    super();
-    this.state = {
-      ReviewData: [],
-    };
-  }
-
-  downloadReview = () => {
-    fetch("/data/ReviewData.json")
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          ReviewData: data,
-        });
-      });
+  state = {
+    ReviewData: [],
   };
+
+  // downloadReview = () => {
+  //   // fetch(`http://10.58.2.21:8000/products${this.props.location.search}`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState({
+  //         ReviewData: data,
+  //       });
+  //     });
+  // };
 
   componentDidMount() {
     this.downloadReview();
@@ -51,4 +49,4 @@ class CardList extends Component {
   }
 }
 
-export default CardList;
+export default withRouter(CardList);

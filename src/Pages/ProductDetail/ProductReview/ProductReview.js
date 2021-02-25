@@ -17,10 +17,7 @@ class ProductReview extends Component {
 
   arrangeBest = () => {
     this.props.history.push(`order=best`);
-    // ({
-    //   pathname: this.props.history.location.pathname,
-    // });
-    // console.log(this.props.history.location.pathname);
+    console.log(this.props.history.push(this.props.location.pathname));
   };
   arrangeRecent = () => {
     this.props.history.push(`order=recent`);

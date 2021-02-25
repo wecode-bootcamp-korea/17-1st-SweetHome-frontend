@@ -1,9 +1,23 @@
+/* eslint-disable prettier/prettier */
 import React, { Component } from "react";
 import cancel from "../../../Images/minjoo/letterX.svg";
 import StarRated from "./StarRated";
 import "./ReviewModal.scss";
 
 class ReviewModal extends Component {
+  state = {
+    name: "",
+  };
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+    console.log(this.state.name);
+  };
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.onSave(this.state);
+  };
   render() {
     return (
       <div className="ReviewModal">
@@ -32,7 +46,7 @@ class ReviewModal extends Component {
                 <span>모던 라운드 리빙박스 시리즈</span>
               </div>
             </div>
-            <div className="starScoreSection">
+            <form className="starScoreSection" onSubmit={this.handleSubmit}>
               <p>별점 평가</p>
               <div className="starScoreSectionSatisFaction">
                 <span>만족도</span>
@@ -54,6 +68,9 @@ class ReviewModal extends Component {
               <textarea
                 className="reviewInput"
                 placeholder="자세하고 솔직한 리뷰는 다른 고객에게 큰 도움이 됩니다. (최소 20자 이상)"
+                value={this.state.name}
+                onChange={this.handleChange}
+                name={"name"}
               />
               <p>상품을 직접 사용하고 작성한 리뷰인가요?</p>
               <div className="reviewCheck">
@@ -64,7 +81,7 @@ class ReviewModal extends Component {
                 </span>
               </div>
               <button className="complete">완료</button>
-            </div>
+            </form>
           </div>
         </div>
         <div className="reviewPolicy">
