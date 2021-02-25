@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import CategoryInNav from "./CategoryInNav/CategoryInNav";
 import CATEGORYDATA from "./navCategories";
 import "./NavBar.scss";
@@ -28,6 +29,12 @@ class NavBar extends Component {
     }
   };
 
+  goToCommunity = (e) => {
+    e.target.innerText === "커뮤니티"
+      ? this.props.history.push("/community/posting")
+      : this.props.history.push("./productmain");
+  };
+
   render() {
     return (
       <nav className="navBar">
@@ -35,10 +42,16 @@ class NavBar extends Component {
           <div className="topOfNav">
             <div className="sweetHomeInNav">스위트홈</div>
             <div className="centerInNav">
-              <span onMouseOver={(e) => this.handleSelectedCategory(e)}>
+              <span
+                onClick={this.goToCommunity}
+                onMouseOver={(e) => this.handleSelectedCategory(e)}
+              >
                 커뮤니티
               </span>
-              <span onMouseOver={(e) => this.handleSelectedCategory(e)}>
+              <span
+                onClick={this.goToCommunity}
+                onMouseOver={(e) => this.handleSelectedCategory(e)}
+              >
                 스토어
               </span>
             </div>
@@ -82,4 +95,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

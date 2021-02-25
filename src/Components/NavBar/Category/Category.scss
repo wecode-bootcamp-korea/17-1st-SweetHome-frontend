@@ -1,9 +1,11 @@
 @import "../../../styles/common.scss";
 
 .category {
+  color: #424242;
   span {
     margin: 15px 20px 0 0;
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
   }
 
