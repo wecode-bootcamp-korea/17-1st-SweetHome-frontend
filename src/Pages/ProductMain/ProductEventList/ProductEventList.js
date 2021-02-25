@@ -10,9 +10,7 @@ class ProductEventList extends Component {
   }
 
   componentDidMount() {
-    fetch("data/ProductList.json", {
-      method: "GET",
-    })
+    fetch("http://10.58.2.60:8000/products?top=discount")
       .then((res) => res.json())
       .then((data) => {
         this.setState({
@@ -22,13 +20,14 @@ class ProductEventList extends Component {
   }
 
   render() {
+    console.log(this.state.productList);
     const { productList } = this.state;
     return (
       <div className="productEventList">
         <p className="eventName"># 지금은 할인중</p>
         <ul>
-          {productList &&
-            productList.map((product) => {
+          {productList.products &&
+            productList.products.map((product) => {
               return (
                 <div className="item" key={product.id}>
                   <div className="itemImg">

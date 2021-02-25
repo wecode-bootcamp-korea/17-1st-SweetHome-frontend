@@ -143,7 +143,9 @@ class ProductList extends Component {
                         {product.discount_percentage}
                         <span>%</span>
                       </span>
-                      <span className="price">{product.discount_price}</span>
+                      <span className="price">
+                        {(product.discount_price - "").toLocaleString()}
+                      </span>
                     </div>
                     <div className="itemEvaluation">
                       <span className="avg">
