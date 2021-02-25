@@ -50,9 +50,7 @@ class ProductDetail extends Component {
   };
 
   onRequestProductDetail = () => {
-    fetch(`http://10.58.2.60:8000/products/${this.props.root}`, {
-      method: "GET",
-    })
+    fetch(`http://10.58.2.60:8000/products/${this.props.root}`)
       .then((response) => response.json())
       .then((data) => {
         this.setState({
