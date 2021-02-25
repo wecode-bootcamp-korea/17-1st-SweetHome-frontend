@@ -32,7 +32,8 @@ class ProductCategory extends Component {
   };
 
   componentDidMount() {
-    this.onhandleListOnOff();
+    this.onhandleListOnOff(1);
+    console.log("1번 카테고리");
   }
 
   render() {

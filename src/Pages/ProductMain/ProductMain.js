@@ -57,10 +57,11 @@ class ProductMain extends Component {
 
   componentDidMount() {
     this.onCategoryDataRequest();
+    this.onDataRequest();
   }
 
   render() {
-    console.log(this.state.productCategory.categories);
+    console.log(this.state.productCategory);
     const { productCategory, productList } = this.state;
     return (
       <div className="productMain">
