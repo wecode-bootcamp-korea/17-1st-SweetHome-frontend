@@ -10,8 +10,12 @@ class ProductDetail extends Component {
       selectdItem: [],
       size: "",
       color: "",
-      quantity: 1,
+      quantity: "1",
     };
+  }
+
+  componentDidMount() {
+    this.onRequestProductDetail();
   }
 
   handleImgChange = (id) => {
@@ -24,6 +28,24 @@ class ProductDetail extends Component {
     const { name, value } = e.target;
     this.setState({
       [name]: value,
+    });
+  };
+
+  onhandleSizeChange = (e) => {
+    this.setState({
+      size: e.target.value,
+    });
+  };
+
+  onhandleColorChange = (e) => {
+    this.setState({
+      color: e.target.value,
+    });
+  };
+
+  onhandleQuantityChange = (e) => {
+    this.setState({
+      quantity: e.target.value,
     });
   };
 
@@ -41,7 +63,7 @@ class ProductDetail extends Component {
 
   onSendOrderInfo = () => {
     const { size, color, quantity } = this.state;
-    fetch(`http://10.58.2.37:8000/products/${this.props.root}`, {
+    fetch(`http://10.58.5.215:8000/products/${this.props.root}`, {
       method: "POST",
       body: JSON.stringify({
         size: size,
@@ -53,15 +75,17 @@ class ProductDetail extends Component {
       .then((result) => console.log("결과: ", result));
   };
 
-  componentDidMount() {
-    this.onRequestProductDetail();
-  }
+  onBuyProduct = () => {
+    alert("주문이 완료 되었습니다! 감사합니다 ^ㅁ^");
+    this.setState({
+      size: "",
+      color: "",
+      quantity: 1,
+    });
+  };
 
   render() {
     const { selectdItem, imgNo, size, color, quantity } = this.state;
-    console.log(color);
-    console.log(size);
-    console.log(quantity);
     return (
       <div className="productDetail">
         <div className="itmeImgOverview">
@@ -108,10 +132,16 @@ class ProductDetail extends Component {
                   </span>
                   <div>
                     <div className="itemOriginPrice">
-                      {selectdItem.product.original_price} 원
+                      {(
+                        selectdItem.product.original_price - ""
+                      ).toLocaleString()}
+                      원
                     </div>
                     <span className="itemDiscountPrice">
-                      {selectdItem.product.discount_price} 원
+                      {(
+                        selectdItem.product.discount_price - ""
+                      ).toLocaleString()}
+                      원
                     </span>
                   </div>
                   <div>
@@ -133,6 +163,17 @@ class ProductDetail extends Component {
                       <div className="itemContentDelivery"> 무료배송 </div>
                     )}
                   </div>
+                  <div>
+                    {!selectdItem.product.is_free_delivery && (
+                      <div className="itemContentDeliveryFee">
+                        <span> 배송료 </span>
+                        {(
+                          selectdItem.product.delivery_fee - ""
+                        ).toLocaleString()}
+                        원
+                      </div>
+                    )}
+                  </div>
                   <p>• 조건에 따라 추가비용 발생 가능 (상품 상세 정보 참고)</p>
                   <p>• 제주도/도서산간 지역 배송 불가</p>
                 </div>
@@ -146,7 +187,7 @@ class ProductDetail extends Component {
                     <select
                       type="select option"
                       className="formControl"
-                      onChange={this.onhandleChange}
+                      onChange={this.onhandleSizeChange}
                     >
                       <option disabled>사이즈</option>
                       {selectdItem.product.size.map((size, idx) => {
@@ -162,7 +203,7 @@ class ProductDetail extends Component {
                     <select
                       type="select option"
                       className="formControl"
-                      onChange={this.onhandleChange}
+                      onChange={this.onhandleColorChange}
                     >
                       <option disabled>색상</option>
                       {selectdItem.product.color.map((color, idx) => {
@@ -174,25 +215,38 @@ class ProductDetail extends Component {
                       })}
                     </select>
                   )}
-                  <div className="orderInfoBox">
-                    <div>{selectdItem.product.name}</div>
-                    <div>{size}</div>
-                    <div>{color}</div>
-                    <select type="select option">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                  </div>
+                  {size && color && (
+                    <div className="orderInfoBox">
+                      <div className="orderdItemName">
+                        {selectdItem.product.name}
+                      </div>
+                      <div className="orderdOption">
+                        <span className="orderdItemSize">{size}</span>
+                        <span className="orderdItemColor">{color}</span>
+                      </div>
+                      <select
+                        type="select option"
+                        className="formNumControl"
+                        onChange={this.onhandleQuantityChange}
+                      >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  )}
                   <div className="optionPriceBox">
                     <div className="priceBoxLeft">
                       <span>주문금액</span>
                     </div>
                     <div className="priceBoxRight">
                       <span>
-                        {selectdItem.product.discount_price * quantity}
+                        {(
+                          selectdItem.product.discount_price * quantity -
+                          ""
+                        ).toLocaleString()}
                       </span>
                       원
                     </div>
@@ -201,7 +255,9 @@ class ProductDetail extends Component {
                     <button className="cart" onClick={this.onSendOrderInfo}>
                       장바구니
                     </button>
-                    <button className="buy">바로구매</button>
+                    <button className="buy" onClick={this.onBuyProduct}>
+                      바로구매
+                    </button>
                   </div>
                 </div>
               </div>

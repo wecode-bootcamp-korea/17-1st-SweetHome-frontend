@@ -114,6 +114,10 @@
           color: $fontBlack;
           border-radius: 5px;
         }
+        .itemContentDeliveryFee {
+          margin-bottom: 10px;
+          font-size: 15px;
+        }
         p {
           margin: 5px 0;
           font-size: 14px;
@@ -151,10 +155,33 @@
           }
         }
 
+        .orderInfoBox {
+          margin-bottom: 8px;
+          padding: 10px;
+          background-color: #f5f5f5;
+          .orderdItemName {
+            margin-bottom: 10px;
+          }
+          .formNumControl {
+            width: 80px;
+            height: 24px;
+          }
+          .orderdOption {
+            font-size: 14px;
+            margin-bottom: 10px;
+            .orderdItemSize {
+              margin-right: 5px;
+            }
+          }
+        }
+
         .optionPriceBox {
           display: flex;
           justify-content: space-between;
           margin-top: 10px;
+        }
+        .priceBoxRight {
+          font-size: 20px;
         }
         .itemBuyOption {
           display: flex;
