@@ -16,7 +16,7 @@ export default class Routes extends Component {
       <Router>
         <Switch>
           <Route exact path="/cart" component={Cart} />
-          <Route exact path="/communitymain" component={CommunityMain} />
+          <Route path="/communitymain/:id" component={CommunityMain} />
           <Route exact path="/mypage" component={Mypage} />
           <Route exact path="/payment" component={Payment} />
           <Route exact path="/productdetail" component={ProductDetail} />

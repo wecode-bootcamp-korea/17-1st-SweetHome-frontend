@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-
 import StarReadOnly from "./StarReadOnly";
 import ReviewModal from "./ReviewModal";
 import "./ProductReview.scss";
