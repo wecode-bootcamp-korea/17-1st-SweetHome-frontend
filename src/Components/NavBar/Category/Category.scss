@@ -1,0 +1,19 @@
+@import "../../../styles/common.scss";
+
+.category {
+  span {
+    margin: 15px 20px 0 0;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  span:hover {
+    padding-bottom: 8px;
+    color: $themeColor;
+    border-bottom: 3px solid $themeColor;
+  }
+}
+.category:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}

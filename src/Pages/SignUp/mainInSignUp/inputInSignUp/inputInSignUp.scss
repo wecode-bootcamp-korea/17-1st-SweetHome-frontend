@@ -1,0 +1,156 @@
+@import "../../../../styles/common.scss";
+
+.inputInSignUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 500px;
+
+  .colorOfAllWarning {
+    color: #ff9b9b;
+  }
+
+  .emailInput {
+    width: 100%;
+    height: 80px;
+
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    span {
+      color: #e3e3e3;
+      font-size: 16px;
+      margin: 0 1.95px;
+    }
+
+    input {
+      width: 170px;
+      height: 40px;
+      border: 2px solid #e3e3e3;
+      border-radius: 5px;
+    }
+
+    .redColorInput {
+      width: 170px;
+      height: 40px;
+      border: 2px solid #ff9b9b;
+      border-radius: 5px;
+    }
+
+    select {
+      width: 170px;
+      height: 40px;
+      border: 2px solid #e3e3e3;
+      border-radius: 5px;
+    }
+  }
+
+  .warningEmail {
+    margin-top: -14px;
+    color: #ff9b9b;
+    font-size: 16px;
+  }
+
+  .passwordInput {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 80px;
+
+    h1 {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    div {
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      border: 2px solid #e3e3e3;
+      border-radius: 5px;
+    }
+
+    .warningColor {
+      width: 100%;
+      height: 40px;
+      border: 2px solid #ff9b9b;
+      border-radius: 5px;
+    }
+  }
+
+  .warningPassWord {
+    margin-top: -4px;
+    color: #ff9b9b;
+    font-size: 16px;
+  }
+
+  .checkPasswordInput {
+    width: 100%;
+    height: 80px;
+
+    h1 {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      border: 2px solid #e3e3e3;
+      border-radius: 5px;
+    }
+
+    .colorChange {
+      width: 100%;
+      height: 40px;
+      border: 2px solid #ff9b9b;
+      border-radius: 5px;
+    }
+  }
+
+  .warningCheckPassWord {
+    margin-top: -12px;
+    color: #ff9b9b;
+    font-size: 16px;
+  }
+
+  .nickNameInput {
+    width: 100%;
+    height: 80px;
+
+    h1 {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    div {
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      border: 2px solid #e3e3e3;
+      border-radius: 5px;
+    }
+
+    .nameColor {
+      width: 100%;
+      height: 40px;
+      border: 2px solid #ff9b9b;
+      border-radius: 5px;
+    }
+  }
+
+  .warningName {
+    margin-top: 6px;
+    color: #ff9b9b;
+    font-size: 16px;
+  }
+}
