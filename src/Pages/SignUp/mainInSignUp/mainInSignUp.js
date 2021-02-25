@@ -63,6 +63,10 @@ class MainInSignUp extends Component {
     }
   };
 
+  goToSignIn = () => {
+    this.props.history.push("/signin");
+  };
+
   handleSignUp = () => {
     const { targetValue, emailValue, nameValue, idValue } = this.state;
 
@@ -77,8 +81,8 @@ class MainInSignUp extends Component {
       .then((response) => response.json())
       .then((result) => {
         result.message === "SUCCESS"
-          ? alert("회원가입 완료")
-          : alert("입력을 확인해주세요.");
+          ? this.goToSignIn()
+          : console.log("입력을 확인해주세요.");
       });
   };
 
