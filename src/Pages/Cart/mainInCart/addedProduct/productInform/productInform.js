@@ -16,15 +16,36 @@ class ProductInform extends Component {
       handlePriceChangeByComboBox,
       quentityValue,
       productImage,
-      handleIdChangeByComboBox,
+      isChecked,
+      handleAddMoneyOnCalculator,
+      index,
+      handleRemoveChart,
     } = this.props;
+
+    const PriceWon = (comboboxquantity * productPrice).toLocaleString("ko-KR", {
+      style: "currency",
+      currency: "KRW",
+    });
 
     return (
       <div className="productInform">
         <div className="companyName">{productCompany}</div>
         <p className="productContent">
           <div className="checkboxInContent">
-            <input type="checkbox"></input>
+            {isChecked ? (
+              <input
+                onChange={handleAddMoneyOnCalculator}
+                name={productOption}
+                type="checkbox"
+              ></input>
+            ) : (
+              <input
+                onChange={handleAddMoneyOnCalculator}
+                name={productOption}
+                type="checkbox"
+                checked
+              ></input>
+            )}
           </div>
           <div className="mainInContent">
             <div className="productImageWithInform">
@@ -34,12 +55,17 @@ class ProductInform extends Component {
                 {productDeliveryFee === 0 ? (
                   <div className="deliveryFree">무료배송</div>
                 ) : (
-                  <div className="deliveryFree">{productDeliveryFee}</div>
+                  <div className="deliveryFree">{productDeliveryFee} 원</div>
                 )}
+
                 <span className="deliveryType"> | {productDelivery}</span>
               </div>
-              <button className="buttonRemove">
-                <i className="fas fa-times" />
+              <button
+                onClick={handleRemoveChart}
+                id={`results${index}`}
+                className={`buttonRemove ${index}`}
+              >
+                X{/* <i className="fas fa-times" /> */}
               </button>
             </div>
             <p className="productColorAndSizeInform">
@@ -47,14 +73,11 @@ class ProductInform extends Component {
                 <span className="colorAndSize">
                   {productColor}, {productSize}
                 </span>
-                <button className="buttonRemove">
-                  <i className="fas fa-times" />
-                </button>
+                <button className="buttonRemove">X</button>
               </div>
               <div className="quentityBox">
                 <select
                   onChange={(e) => handlePriceChangeByComboBox(e)}
-                  // onClick={(e) => handleIdChangeByComboBox(e)}
                   className="quentity"
                   id={productOption}
                 >
@@ -70,7 +93,7 @@ class ProductInform extends Component {
                   <option>9</option>
                   <option>10+</option>
                 </select>
-                <span> {comboboxquantity * productPrice}</span>
+                <span> {PriceWon} 원</span>
               </div>
               <div className="wanted">
                 <div className="wantedInput">
@@ -85,7 +108,7 @@ class ProductInform extends Component {
                 <a href="">옵션변경 | </a>
                 <a href="">바로구매</a>
               </span>
-              <span> {comboboxquantity * productPrice}</span>
+              <span> {PriceWon} 원</span>
             </div>
           </div>
         </p>
@@ -93,7 +116,7 @@ class ProductInform extends Component {
           {productDeliveryFee === 0 ? (
             <span>무료배송</span>
           ) : (
-            <span>{productDeliveryFee}</span>
+            <span>{productDeliveryFee} 원</span>
           )}
         </div>
       </div>

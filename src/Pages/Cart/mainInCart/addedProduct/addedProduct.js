@@ -4,6 +4,7 @@ import "./addedProduct.scss";
 
 class AddedProduct extends Component {
   render() {
+    console.log(this.props.mockData);
     return (
       <section className="addedProduct">
         <div className="allCheckContainer">
@@ -17,7 +18,7 @@ class AddedProduct extends Component {
           <span>선택삭제</span>
         </div>
 
-        {this.props.mockData.results.map((product) => {
+        {this.props.mockData.results.map((product, index) => {
           return (
             <ProductInform
               key={product.product_option_id}
@@ -31,11 +32,15 @@ class AddedProduct extends Component {
               productDelivery={product.product_delivery_type}
               productDeliveryFee={product.product_delivery_fee}
               productImage={product.product_image}
+              index={index}
+              handleRemoveChart={this.props.handleRemoveChart}
               handlePriceChangeByComboBox={
                 this.props.handlePriceChangeByComboBox
               }
               quentityValue={this.props.quentityValue}
               handleIdChangeByComboBox={this.props.handleIdChangeByComboBox}
+              isChecked={this.props.isChecked}
+              handleAddMoneyOnCalculator={this.props.handleAddMoneyOnCalculator}
             />
           );
         })}

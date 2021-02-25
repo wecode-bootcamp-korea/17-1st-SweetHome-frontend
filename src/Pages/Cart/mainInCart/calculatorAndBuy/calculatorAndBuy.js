@@ -13,19 +13,29 @@ class CalculatorAndBuy extends Component {
           <ol className="paymentOfProduct">
             <div>
               <li className="totlaProductMoney">총 상품금액</li>
-              <span>바꿔야하는부분</span>
+              {!this.props.isChecked ? (
+                <span>{this.props.allProductPrice} 원</span>
+              ) : (
+                <span> 0 원</span>
+              )}
             </div>
             <div>
               <li className="totalDelivery">총 배송비</li>
-              <span>바꿔야하는부분</span>
-            </div>
-            <div>
-              <li className="discount">총 할인금액</li>
-              <span>바꿔야하는부분</span>
+              {!this.props.isChecked ? (
+                <span> {this.props.onlyDelivery} 원</span>
+              ) : (
+                <span>0 원</span>
+              )}
             </div>
             <div>
               <li className="totalMoney">결제금액</li>
-              <span className="totalPay">바꿔야하는부분</span>
+              {!this.props.isChecked ? (
+                <span className="totalPay">
+                  {this.props.productTotalPrice} 원
+                </span>
+              ) : (
+                <span className="totalPay"> 0 원</span>
+              )}
             </div>
           </ol>
           <div className="buttonBox">
