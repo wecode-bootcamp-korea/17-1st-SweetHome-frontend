@@ -1,6 +1,6 @@
 @import "../../styles/common.scss";
 
-.CommunityFilterDropdown {
+.CommunityFilterDropList {
   position: fixed;
   width: 200px;
   margin-top: 16px;
@@ -24,4 +24,13 @@
       border-radius: 16px;
     }
   }
+}
+.filterSelected {
+  margin: 4px;
+  padding: 4px;
+  height: 24px;
+  border-radius: 17px;
+  background-color: #35c5f0;
+  font-weight: 700;
+  color: white;
 }

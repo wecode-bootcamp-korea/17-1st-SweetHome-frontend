@@ -11,7 +11,7 @@ class CommunityMain extends Component {
         {cards?.map(card => {
           return (
             <Card
-              key={card.id}
+              id={card.id}
               cardUserName={card.card_user_name}
               cardUserIntro={card.card_user_introduction}
               cardUserImage={card.card_user_image}

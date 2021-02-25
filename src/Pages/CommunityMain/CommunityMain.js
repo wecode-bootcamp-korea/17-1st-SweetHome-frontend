@@ -14,9 +14,14 @@ class CommunityMain extends Component {
     };
   }
 
-  testingCard = () => {
+  fetchCard = () => {
     // fetch("http://10.153.7.50:8000/posting")
-    fetch(`http://10.58.2.21:8000/posting${this.props.location.search}`)
+    fetch(
+      `http://10.58.6.175:8000/posting${this.props.location.search}`
+      // , {headers: {
+      //     Authorization: localStorage.getItem("token"),
+      //   },}
+    )
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -26,8 +31,8 @@ class CommunityMain extends Component {
       });
   };
 
-  testingFilter = () => {
-    fetch("http://10.58.2.21:8000/posting/category")
+  fetchFilter = () => {
+    fetch("http://10.58.6.175:8000/posting/category")
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -38,14 +43,14 @@ class CommunityMain extends Component {
   };
 
   componentDidMount() {
-    this.testingFilter();
-    this.testingCard();
+    this.fetchFilter();
+    this.fetchCard();
   }
 
   componentDidUpdate(prev) {
     console.log(prev.location.search);
     if (prev.location.search !== this.props.location.search) {
-      this.testingCard();
+      this.fetchCard();
     }
   }
   // componentDidUpdate() {

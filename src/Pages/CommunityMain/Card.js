@@ -8,17 +8,30 @@ import "./Card.scss";
 class Card extends Component {
   state = {
     likes: this.props.likeNum,
+    likestatus: this.props.likeStatus,
   };
 
   handleIncrease = () => {
-    console.log("클릭");
     this.setState({
-      likes: this.props.likeNum + 1,
+      likes: this.state.likestatus
+        ? +this.state.likes + 1
+        : +this.state.likes - 1,
+      likestatus: !this.state.likestatus,
     });
+
+    fetch(`http://10.58.6.175:8000/posting/like`, {
+      method: "POST",
+      body: JSON.stringify({
+        posting_id: this.props.id,
+        user_id: 27,
+      }),
+    });
+    console.log(this.props.id);
   };
 
   render() {
     const {
+      key,
       cardUserName,
       cardUserImage,
       cardImage,
@@ -27,10 +40,10 @@ class Card extends Component {
       commentUserImage,
       commentUserName,
       commentContent,
-      likeNum,
+      // likeNum,
       scrapNum,
       commentNum,
-      likeStatus,
+      // likeStatus,
     } = this.props;
 
     return (
@@ -59,9 +72,12 @@ class Card extends Component {
               className="cardIcons"
               onClick={this.handleIncrease}
             >
-              <img src={likeStatus ? BlueHeart : Heart} alt="heart" />
+              <img
+                src={this.state.likestatus ? Heart : BlueHeart}
+                alt="heart"
+              />
             </button>
-            <span>{likeNum}</span>
+            <span>{this.state.likes}</span>
           </li>
           <li>
             <button type="button" className="cardIcons">
