@@ -1,4 +1,14 @@
 {
+<<<<<<< HEAD
+  "reviews": [
+    {
+      "key1": "name",
+      "key2": "name"
+    },
+    {
+      "key1": "name",
+      "key2": "name"
+=======
   "results": [
     {
       "review_id": "product_review.id",
@@ -43,6 +53,7 @@
       "day": "str(product_review.created_at).split('')[0]",
       "review_user_name": "product_review.user.name",
       "review_like": "ReviewLike.objects.filter(review=product_review).count()"
+>>>>>>> master
     }
   ]
 }

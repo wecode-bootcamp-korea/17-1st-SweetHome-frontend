@@ -1,0 +1,70 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "card_user_name": "Rain of Grace",
+      "card_user_introduction": "아늑한 공간 :)",
+      "card_user_image": "https://www.solidbackgrounds.com/images/2048x2048/2048x2048-celeste-solid-color-background.jpg",
+      "card_image": "https://i.pinimg.com/originals/ec/c5/d0/ecc5d06cc5df850302f496a34e8b5f88.jpg",
+      "card_content": "좋아하는 물건들로 선반을 새로 꾸며봤어요",
+      "comment_user_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LFOkJifadhOYKH3mKQ8HfUKm7iwDjGnM1Q&usqp=CAU",
+      "comment_user_name": "헤드제이",
+      "comment_content": "유튜브 시청하기 딱 좋은 인테리어다..! 저도 스위트홈 자주 이용하고 있어요!"
+    },
+    {
+      "id": 2,
+      "card_user_name": "스위트홈",
+      "card_user_introduction": "@insta. sweethome",
+      "card_user_image": "https://www.solidbackgrounds.com/images/2048x2048/2048x2048-celeste-solid-color-background.jpg",
+      "card_image": "https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161336955205573354.jpg?gif=1&w=1536&webp=1",
+      "card_content": "집순이는 술도 집에서😌 요즘 집밖에 나가지도 못하고 원래 평소에도 술을 좋아해서 집에서 한잔씩 하는날이 많아지더라구요",
+      "comment_user_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LFOkJifadhOYKH3mKQ8HfUKm7iwDjGnM1Q&usqp=CAU",
+      "comment_user_name": "채cute현",
+      "comment_content": "크리스마스 분위기가 나는거 같아요~ 침대진짜 푹신푹신해보인다..(눕고싶다..)"
+    },
+    {
+      "id": 3,
+      "card_user_name": "wecode",
+      "card_user_introduction": "",
+      "card_user_image": "https://static.bhphoto.com/images/images500x500/1391171441_1026417.jpg",
+      "card_image": "https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/161336849062807698.jpg?gif=1&w=1536&webp=1",
+      "card_content": "혼자만의 시간, 너무 좋아해요 집안에 조명, 캔들 죄다켜놓고 한잔하면 하루의 스트레스가 싹!",
+      "comment_user_image": "https://www.solidbackgrounds.com/images/2048x2048/2048x2048-celeste-solid-color-background.jpg",
+      "comment_user_name": "kwak",
+      "comment_content": "이쁘긴한데 뭐가 많네요. 저는 직관적인게 좋아요."
+    },
+    {
+      "id": 4,
+      "card_user_name": "죠르디",
+      "card_user_introduction": "아늑한 공간 :)",
+      "card_user_image": "https://static.bhphoto.com/images/images500x500/1391171441_1026417.jpg",
+      "card_image": "https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/156275538137632047.jpg?gif=1&w=1536&webp=1",
+      "card_content": "",
+      "comment_user_image": "https://www.solidbackgrounds.com/images/2048x2048/2048x2048-celeste-solid-color-background.jpg",
+      "comment_user_name": "샤이현",
+      "comment_content": "평화로워요~"
+    },
+    {
+      "id": 5,
+      "card_user_name": "canonmj",
+      "card_user_introduction": "@insta. sweethome",
+      "card_user_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LFOkJifadhOYKH3mKQ8HfUKm7iwDjGnM1Q&usqp=CAU",
+      "card_image": "https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/1547704779760_E.jpg?gif=1&w=1536&webp=1",
+      "card_content": "집순이는 술도 집에서😌 요즘 집밖에 나가지도 못하고 원래 평소에도 술을 좋아해서 집에서 한잔씩 하는날이 많아지더라구요",
+      "comment_user_image": "https://static.bhphoto.com/images/images500x500/1391171441_1026417.jpg",
+      "comment_user_name": "주나♡",
+      "comment_content": "너~~무 귀엽다아 >_<"
+    },
+    {
+      "id": 6,
+      "card_user_name": "tamssa",
+      "card_user_introduction": "",
+      "card_user_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LFOkJifadhOYKH3mKQ8HfUKm7iwDjGnM1Q&usqp=CAU",
+      "card_image": "https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/1598143154_bE.jpeg?gif=1&w=1536&webp=1",
+      "card_content": "혼자만의 시간, 너무 좋아해요 집안에 조명, 캔들 죄다켜놓고 한잔하면 하루의 스트레스가 싹!",
+      "comment_user_image": "https://static.bhphoto.com/images/images500x500/1391171441_1026417.jpg",
+      "comment_user_name": "joshua",
+      "comment_content": "조명이 제취향이네요. 커피타임 좋죠 :)"
+    }
+  ]
+}

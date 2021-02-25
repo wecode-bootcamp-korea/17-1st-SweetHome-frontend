@@ -1,0 +1,36 @@
+@import "../../styles/common.scss";
+
+.CommunityFilterDropList {
+  position: fixed;
+  width: 200px;
+  margin-top: 16px;
+  border-radius: 16px;
+  box-shadow: -4px -4px 20px rgb(155, 155, 155);
+  background-color: white;
+
+  .dropdownlist {
+    li {
+      height: 50px;
+      padding: 16px;
+      font-size: 14px;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+    li:hover {
+      background-color: #effbff;
+      border-radius: 16px;
+    }
+  }
+}
+.filterSelected {
+  margin: 4px;
+  padding: 4px;
+  height: 24px;
+  border-radius: 17px;
+  background-color: #35c5f0;
+  font-weight: 700;
+  color: white;
+}
