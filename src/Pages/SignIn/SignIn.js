@@ -18,7 +18,7 @@ class SignIn extends Component {
   handleLogin = () => {
     const { emailValue, passwordValue } = this.state;
 
-    fetch("http://192.168.43.45:8000/user/signin", {
+    fetch("http://10.58.1.199:8000/user/signin", {
       method: "POST",
       body: JSON.stringify({
         email: emailValue,
@@ -27,10 +27,10 @@ class SignIn extends Component {
     })
       .then((response) => response.json())
       .then((result) => {
-        if (result.TOKEN) {
-          localStorage.setItem("token", result.TOKEN);
-          alert("축하합니다");
-          this.props.history.push("/communitymain");
+        if (result.access_token) {
+          localStorage.setItem("token", result.access_token);
+          alert("회원가입 성공");
+          this.props.history.push("/communitymain/posting");
         } else {
           alert("아이디나 비밀번호를 확인해주세요.");
         }
