@@ -1,0 +1,39 @@
+.mainCategoryItem {
+  width: 160px;
+  margin-bottom: 30px;
+  list-style: none;
+  cursor: pointer;
+
+  .mainCategoryItemName {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .productList {
+    padding: 0;
+
+    .subProductCategory {
+      width: 160px;
+      li {
+        width: 140px;
+        height: 23px;
+        margin-top: 10px;
+        line-height: 23px;
+        font-size: 13px;
+        color: gray;
+        z-index: 1000;
+        cursor: pointer;
+        &:first-child {
+          margin-top: 27px;
+        }
+        button {
+          float: right;
+          padding-top: 2px;
+          background-color: transparent;
+          border: 0;
+          font-size: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

@@ -8,6 +8,7 @@ import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import ProductMain from "./Pages/ProductMain/ProductMain";
 import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SignUp/SignUp";
+import Footer from "./Components/Footer/Footer";
 
 export default class Routes extends Component {
   render() {
@@ -19,10 +20,12 @@ export default class Routes extends Component {
           <Route exact path="/mypage" component={Mypage} />
           <Route exact path="/payment" component={Payment} />
           <Route exact path="/productdetail" component={ProductDetail} />
+          <Route exact path="/productdetail:id" component={ProductDetail} />
           <Route exact path="/productmain" component={ProductMain} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
         </Switch>
+        {/* <Footer /> */}
       </Router>
     );
   }
