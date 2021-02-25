@@ -9,6 +9,7 @@ class ProductCategory extends Component {
       isListOnOff: true,
       product: [],
       selectedCategory: [],
+      productCategory: [],
     };
   }
 
@@ -19,7 +20,7 @@ class ProductCategory extends Component {
   };
 
   onhandleListOnOff = (id) => {
-    const selectCategory = this.props.category.filter((product) => {
+    const selectCategory = this.props.category.categories?.filter((product) => {
       return product.id === id;
     });
     this.setState({
@@ -32,7 +33,8 @@ class ProductCategory extends Component {
   };
 
   componentDidMount() {
-    this.onhandleListOnOff();
+    // this.onhandleListOnOff(1);
+    console.log("1번 카테고리");
   }
 
   render() {
@@ -51,17 +53,18 @@ class ProductCategory extends Component {
         </div>
         <ul className="otherCategoryList">
           <h1>
-            {category.map((product, index) => {
-              return (
-                <div
-                  className="otherCategory"
-                  key={index}
-                  onClick={() => this.onhandleListOnOff(index + 1)}
-                >
-                  {product.title}
-                </div>
-              );
-            })}
+            {category.categories &&
+              category.categories.map((product, index) => {
+                return (
+                  <div
+                    className="otherCategory"
+                    key={index}
+                    onClick={() => this.onhandleListOnOff(index + 1)}
+                  >
+                    {product.name}
+                  </div>
+                );
+              })}
           </h1>
         </ul>
       </div>

@@ -4,34 +4,18 @@
   width: 847px;
   ul {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
-
   .categoryFilter {
-    margin-top: 30px;
-    .itemFilterd {
-      height: 17px;
-      margin: 10px;
-      font-size: 14px;
-      font-weight: 400;
-      button {
-        float: right;
-        padding-right: 15px;
-        border: transparent;
-        background-color: #ffffff;
-        color: $fontBlack;
-        cursor: pointer;
-        span {
-          font-size: 10px;
-          color: lightgray;
-        }
-      }
-    }
+    display: flex;
+    position: relative;
+    margin-top: 10px;
     .filterBar {
       padding: 8px 0 12px;
       button {
         height: 34px;
-        margin-left: 5px;
+        margin-right: 10px;
         padding: 8px 10px;
         background-color: #ffffff;
         color: $fontBlack;
@@ -39,69 +23,110 @@
         border-radius: 4px;
         cursor: pointer;
         &:hover {
-          background-color: rgb(240, 240, 240);
+          background-color: #effbff;
+        }
+        span {
+          span {
+            margin-left: 15px;
+            font-size: 20px;
+          }
+        }
+        .btnArrow {
+          margin-bottom: 3px;
+          padding-left: 5px;
+          line-height: 20px;
+          font-size: 1px;
+          color: lightgray;
         }
       }
+      .subfilterBar {
+        position: relative;
+        .subfilterList {
+          position: absolute;
+          top: 10px;
+          left: -10px;
+          z-index: 100;
+          width: 200px;
+          padding: 10px;
+          border-radius: 10px;
+          background-color: #fff;
+          box-shadow: 2px -1px 16px rgb(200, 200, 200);
 
-      span {
-        margin-left: 15px;
-        font-size: 20px;
-      }
-    }
-    .filterPanel {
-      position: absolute;
-      display: flex;
-      flex-wrap: wrap;
-      width: 460px;
-      height: 180px;
-      padding: 16px 18px 16px 22px;
-      border-radius: 10px;
-      background-color: #fff;
-      box-shadow: 2px -1px 16px rgb(200, 200, 200);
-      .filterItem {
-        display: flex;
-        width: 200px;
-        .filterSelector {
-          display: flex;
-          margin-right: 10px;
-          button {
-            width: 190px;
-            height: 30px;
-            background-color: transparent;
-            border: transparent;
-            .filterSelectorItem {
-              display: flex;
-              align-items: center;
-              input {
-                width: 22px;
-                height: 22px;
-                margin-right: 10px;
-              }
-              .selectorItemName {
-                display: inline-block;
-                height: 22px;
-                line-height: 25px;
-                font-size: 15px;
-              }
+          .subfilterName {
+            width: 180px;
+            border: none;
+            z-index: 100;
+            &:hover {
+              background-color: #effbff;
             }
           }
         }
       }
     }
   }
-
+  .itemFilterd {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 10px 0;
+    .itemCountedNum {
+      width: 150px;
+      padding-top: 9px;
+    }
+    button {
+      width: 95px;
+      height: 30px;
+      background-color: transparent;
+      border: transparent;
+    }
+  }
+  .orderFilter {
+    position: relative;
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    div {
+      margin: 0 4px;
+      font-size: 5px;
+    }
+    .orderPanel {
+      position: absolute;
+      right: 0;
+      width: 200px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 2px -1px 16px rgb(200, 200, 200);
+      button {
+        width: 180px;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+          background-color: #effbff;
+        }
+      }
+    }
+  }
   .item {
     width: 278px;
     height: 391px;
-    padding: 0 10px;
     .itemImg {
       width: 258px;
       height: 257px;
       margin-bottom: 8px;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
       img {
         width: 100%;
         height: 100%;
-        border-radius: 5px;
       }
     }
     .itemContent {

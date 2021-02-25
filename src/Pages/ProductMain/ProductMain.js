@@ -3,6 +3,8 @@ import "./ProductMain.scss";
 import { withRouter } from "react-router-dom";
 import ProductCategory from "./ProductCategory/ProductCategory";
 import ProductList from "./ProductList/ProductList";
+import BannderSlide from "./Slide/BannerSlide";
+import ProductEventList from "./ProductEventList/ProductEventList";
 
 class ProductMain extends Component {
   constructor() {
@@ -25,25 +27,52 @@ class ProductMain extends Component {
       });
   };
 
-  gotoDetail = (id) => {
-    this.props.history.push(`/productDetail/${id}`);
-  };
-
-  componentDidMount() {
-    fetch("data/ProductMenu.json", {
+  onCategoryDataRequest = () => {
+    fetch("http://10.58.2.60:8000/products/category", {
       method: "GET",
     })
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((data) => {
         this.setState({
           productCategory: data,
         });
       });
+  };
+
+  onDateOrderdRequest = (order) => {
+    fetch(`http://10.58.2.60:8000/products?order=${order}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          productList: data,
+        });
+      });
+  };
+
+  onDateFilterRequest = (filter, filterName) => {
+    fetch(`http://10.58.2.60:8000/products?${filterName}=${filter}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          productList: data,
+        });
+      });
+  };
+
+  gotoDetail = (id) => {
+    this.props.history.push(`/productDetail/${id}`);
+  };
+
+  componentDidMount() {
+    this.onCategoryDataRequest();
     this.onDataRequest();
   }
 
   render() {
-    console.log(this.state.productCategory);
     const { productCategory, productList } = this.state;
     return (
       <div className="productMain">
@@ -52,8 +81,13 @@ class ProductMain extends Component {
           onDataRequest={this.onDataRequest}
         />
         <div className="mainRight">
-          <div className="slide">{/* <Slide /> */}</div>
-          <ProductList productList={productList} gotoDetail={this.gotoDetail} />
+          <ProductEventList />
+          <ProductList
+            productList={productList}
+            gotoDetail={this.gotoDetail}
+            onDateOrderdRequest={this.onDateOrderdRequest}
+            onDateFilterRequest={this.onDateFilterRequest}
+          />
         </div>
       </div>
     );
