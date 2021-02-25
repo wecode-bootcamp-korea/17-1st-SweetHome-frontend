@@ -21,13 +21,12 @@ export default class Routes extends Component {
           <Route path="/communitymain/:id" component={CommunityMain} />
           <Route exact path="/mypage" component={Mypage} />
           <Route exact path="/payment" component={Payment} />
-          <Route exact path="/productdetail" component={ProductDetail} />
-          <Route exact path="/productdetail:id" component={ProductDetail} />
+          <Route exact path="/productdetail/:id" component={ProductDetail} />
           <Route exact path="/productmain" component={ProductMain} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     );
   }
