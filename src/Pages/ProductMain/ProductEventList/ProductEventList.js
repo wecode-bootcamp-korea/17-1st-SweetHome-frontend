@@ -20,7 +20,6 @@ class ProductEventList extends Component {
   }
 
   render() {
-    console.log(this.state.productList);
     const { productList } = this.state;
     return (
       <div className="productEventList">

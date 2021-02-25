@@ -23,7 +23,7 @@
         border-radius: 4px;
         cursor: pointer;
         &:hover {
-          background-color: rgb(240, 240, 240);
+          background-color: #effbff;
         }
         span {
           span {
@@ -45,16 +45,19 @@
           position: absolute;
           top: 10px;
           left: -10px;
+          z-index: 100;
           width: 200px;
           padding: 10px;
           border-radius: 10px;
           background-color: #fff;
           box-shadow: 2px -1px 16px rgb(200, 200, 200);
+
           .subfilterName {
             width: 180px;
             border: none;
+            z-index: 100;
             &:hover {
-              background-color: rgb(240, 240, 240);
+              background-color: #effbff;
             }
           }
         }
@@ -67,7 +70,7 @@
     margin: 20px 0 10px 0;
     .itemCountedNum {
       width: 150px;
-      padding-top: 10px;
+      padding-top: 9px;
     }
     button {
       width: 95px;
@@ -101,7 +104,7 @@
         text-align: center;
         cursor: pointer;
         &:hover {
-          background-color: rgb(240, 240, 240);
+          background-color: #effbff;
         }
       }
     }
@@ -113,10 +116,17 @@
       width: 258px;
       height: 257px;
       margin-bottom: 8px;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
       img {
         width: 100%;
         height: 100%;
-        border-radius: 5px;
       }
     }
     .itemContent {

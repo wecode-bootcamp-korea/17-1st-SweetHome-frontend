@@ -9,6 +9,7 @@ class ProductCategory extends Component {
       isListOnOff: true,
       product: [],
       selectedCategory: [],
+      productCategory: [],
     };
   }
 
@@ -32,7 +33,7 @@ class ProductCategory extends Component {
   };
 
   componentDidMount() {
-    this.onhandleListOnOff(1);
+    // this.onhandleListOnOff(1);
     console.log("1번 카테고리");
   }
 

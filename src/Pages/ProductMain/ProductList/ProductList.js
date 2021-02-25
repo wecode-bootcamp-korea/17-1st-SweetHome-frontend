@@ -36,6 +36,12 @@ class ProductList extends Component {
     });
   };
 
+  categoryFilter = (e) => {
+    const filter = Number(e.target.value) + 1;
+    const filterName = e.target.name;
+    this.props.onDateFilterRequest(filter, filterName);
+  };
+
   componentDidMount() {
     fetch("data/FilterBar.json", {
       method: "GET",
@@ -73,9 +79,16 @@ class ProductList extends Component {
                       <div className="subfilterList">
                         {category.category.map((subFilter, idx) => {
                           return (
-                            <button className="subfilterName" key={idx}>
-                              <div>{subFilter}</div>
-                            </button>
+                            <div key={idx}>
+                              <button
+                                className="subfilterName"
+                                onClick={(e) => this.categoryFilter(e)}
+                                value={idx}
+                                name="size"
+                              >
+                                {subFilter}
+                              </button>
+                            </div>
                           );
                         })}
                       </div>
@@ -88,7 +101,7 @@ class ProductList extends Component {
         </div>
         <div className="itemFilterd">
           <div className="itemCountedNum">
-            <span>전체 100,000개</span>
+            <span>전체 {productList.count}개</span>
           </div>
           <div className="orderFilter">
             <button onClick={(e) => this.productOrderOnOff(e)}>

@@ -51,6 +51,18 @@ class ProductMain extends Component {
       });
   };
 
+  onDateFilterRequest = (filter, filterName) => {
+    fetch(`http://10.58.2.60:8000/products?${filterName}=${filter}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          productList: data,
+        });
+      });
+  };
+
   gotoDetail = (id) => {
     this.props.history.push(`/productDetail/${id}`);
   };
@@ -61,7 +73,6 @@ class ProductMain extends Component {
   }
 
   render() {
-    console.log(this.state.productCategory);
     const { productCategory, productList } = this.state;
     return (
       <div className="productMain">
@@ -70,12 +81,12 @@ class ProductMain extends Component {
           onDataRequest={this.onDataRequest}
         />
         <div className="mainRight">
-          {/* <BannderSlide /> */}
           <ProductEventList />
           <ProductList
             productList={productList}
             gotoDetail={this.gotoDetail}
             onDateOrderdRequest={this.onDateOrderdRequest}
+            onDateFilterRequest={this.onDateFilterRequest}
           />
         </div>
       </div>
