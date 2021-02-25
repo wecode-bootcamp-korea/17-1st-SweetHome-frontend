@@ -63,10 +63,14 @@ class MainInSignUp extends Component {
     }
   };
 
+  goToSignIn = () => {
+    this.props.history.push("/signin");
+  };
+
   handleSignUp = () => {
     const { targetValue, emailValue, nameValue, idValue } = this.state;
 
-    fetch("http://10.58.2.32:8000/user/signup", {
+    fetch("http://10.58.1.199:8000/user/signup", {
       method: "POST",
       body: JSON.stringify({
         email: idValue + "@" + emailValue,
@@ -77,8 +81,8 @@ class MainInSignUp extends Component {
       .then((response) => response.json())
       .then((result) => {
         result.message === "SUCCESS"
-          ? alert("회원가입 완료")
-          : alert("입력을 확인해주세요.");
+          ? this.goToSignIn()
+          : console.log("입력을 확인해주세요.");
       });
   };
 
