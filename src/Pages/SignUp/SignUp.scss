@@ -1,0 +1,28 @@
+@import "../../styles/common.scss";
+
+.signUp {
+  display: flex;
+  height: auto;
+  font-family: "Noto Sans KR", sans-serif;
+
+  .divForArrayCenter {
+    margin: 0 auto;
+    padding-top: 40px;
+    width: auto;
+
+    .logo {
+      display: inline-block;
+      width: auto;
+      height: auto;
+      font-size: 23px;
+      font-weight: bold;
+
+      .fas {
+        margin-right: 3px;
+        color: white;
+        background-color: $themeColor;
+        border-radius: 2px;
+      }
+    }
+  }
+}
