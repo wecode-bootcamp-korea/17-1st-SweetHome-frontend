@@ -1,80 +1,80 @@
 [
   {
     "id": 1,
-    "title": "가구",
-    "subtitle": [
+    "name": "가구",
+    "sub_category": [
       {
         "id": 1,
-        "subtitlename": "소파/거실 가구",
-        "subMinititle": [
+        "name": "소파/거실 가구",
+        "detail_category": [
           {
             "id": 1,
-            "subMinititleName": "소파"
+            "naem": "소파"
           },
           {
             "id": 2,
-            "subMinititleName": "리클라이너 소파"
+            "name": "리클라이너 소파"
           },
           {
             "id": 3,
-            "subMinititleName": "거실수납장/TV장"
+            "naem": "거실수납장/TV장"
           },
           {
             "id": 4,
-            "subMinititleName": "거실/소파테이블"
+            "name": "거실/소파테이블"
           }
         ]
       },
       {
         "id": 2,
-        "subtitlename": "침실 가구"
+        "name": "침실 가구"
       },
       {
         "id": 3,
-        "subtitlename": "드레스룸"
+        "name": "드레스룸"
       },
       {
         "id": 4,
-        "subtitlename": "주방가구"
+        "name": "주방가구"
       },
       {
         "id": 5,
-        "subtitlename": "수납 기구"
+        "name": "수납 기구"
       },
       {
         "id": 6,
-        "subtitlename": "테이블"
+        "name": "테이블"
       }
     ]
   },
   {
     "id": 2,
-    "title": "패브릭",
-    "subtitle": []
+    "name": "패브릭",
+    "sub_category": []
   },
   {
     "id": 3,
-    "title": "홈데코/조명",
-    "subtitle": []
+    "name": "홈데코/조명",
+    "sub_category": []
   },
   {
     "id": 4,
-    "title": "가전",
-    "subtitle": []
+    "name": "가전",
+    "sub_category": []
   },
   {
     "id": 5,
-    "title": "수납/정리",
-    "subtitle": []
+    "name": "수납/정리",
+    "sub_category": []
   },
   {
     "id": 6,
-    "title": "주방",
-    "subtitle": []
+    "name": "주방",
+    "sub_category": []
   },
   {
     "id": 7,
-    "title": "가전",
-    "subtitle": []
+    "name": "가전",
+    "sub_category": []
   }
 ]

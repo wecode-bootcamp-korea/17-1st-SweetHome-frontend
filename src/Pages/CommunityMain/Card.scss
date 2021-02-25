@@ -1,0 +1,140 @@
+@import "../../styles/common.scss";
+
+.cardContainer {
+  width: 290px;
+  height: 560px;
+  padding: 0 10px;
+  background-color: transparent;
+  font-family: "Noto Sans KR", sans-serif;
+
+  .userContainer {
+    display: flex;
+    margin-bottom: 16px;
+
+    .imageBox {
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+      background-color: rgb(233, 233, 233);
+      overflow: hidden;
+
+      .cardItemWriter {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+
+      .user,
+      .follow {
+        font-size: 16px;
+      }
+    }
+
+    .follow {
+      font-weight: 700;
+      color: $themeColor;
+    }
+
+    p {
+      padding: 4px 0 0 6px;
+      color: #757575;
+      font-size: 12px;
+    }
+  }
+  .imgBox {
+    width: 270px;
+    height: 270px;
+    overflow: hidden;
+    border-radius: 6px;
+
+    .cardImage {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+
+    .cardImage:hover {
+      transform: scale(1.1);
+      transition: 0.2s;
+
+      cursor: pointer;
+    }
+  }
+
+  .cardIconBox {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0 16px 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      color: #424242;
+      font-size: 12px;
+
+      button {
+        width: 36px;
+        border: none;
+        outline: none;
+      }
+    }
+
+    .cardIcons {
+      width: 36px;
+      height: 36px;
+      background-color: transparent;
+      border: none;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .usercontents {
+    color: #424242;
+    font-size: 15px;
+    padding-left: 0px;
+  }
+
+  .cardComment {
+    display: flex;
+    align-items: flex-start;
+    font-size: 15px;
+    margin-top: 12px;
+
+    .commentImage {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+      border-radius: 17px;
+      border: none;
+      background-color: none;
+
+      img {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+    }
+
+    .commentWrite {
+      padding-top: 4px;
+    }
+
+    .userName {
+      font-weight: 700;
+      margin-right: 4px;
+      color: #424242;
+    }
+
+    .userWrite {
+      font-weight: 100px;
+    }
+  }
+}
