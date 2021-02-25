@@ -1,9 +1,19 @@
 import React, { Component } from "react";
-import "./ProductDetail";
+import ProductReview from "./ProductReview/ProductReview";
+
+// import StarRating from "react-svg-star-rating";
+
+import "./ProductDetail.scss";
+import CardList from "./ProductReview/CardList";
 
 class ProductDetail extends Component {
   render() {
-    return <div></div>;
+    return (
+      <div className="ProductDetail">
+        <ProductReview />
+        <CardList />
+      </div>
+    );
   }
 }
 
