@@ -12,6 +12,9 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
+    "react-svg-star-rating": "^1.1.5",
+    "react-slick": "^0.28.0",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

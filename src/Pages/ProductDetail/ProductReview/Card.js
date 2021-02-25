@@ -6,7 +6,7 @@ import StarReadOnly from "./StarReadOnly";
 class Card extends Component {
   render() {
     const {
-      // review_id,
+      review_id,
       review_content,
       review_image,
       review_rate,

@@ -1,0 +1,29 @@
+.productCategory {
+  width: 279px;
+  margin-top: 50px;
+
+  .mainCategory {
+    width: 160px;
+    border-bottom: 1px solid lightgrey;
+    list-style: none;
+  }
+  .otherCategoryList {
+    width: 300px;
+    margin-top: 40px;
+    .otherCategory {
+      padding-bottom: 20px;
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+  .product {
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    .subProductCategory {
+      transition: all 1s ease;
+    }
+  }
+}

@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from "react";
-import CardList from "./CardList";
+import { withRouter } from "react-router-dom";
+import StarReadOnly from "./StarReadOnly";
+import ReviewModal from "./ReviewModal";
 import "./ProductReview.scss";
 
 class ProductReview extends Component {
@@ -8,37 +10,44 @@ class ProductReview extends Component {
     super();
     this.state = {
       reviewData: [],
+      isModalOn: false,
     };
   }
 
-  componentDidMount() {
-    fetch("/data/ReviewData.json", {
-      method: "GET",
-    })
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          reviewData: data,
-        });
-      });
-  }
+  arrangeBest = () => {
+    this.props.history.push(`order=best`);
+    console.log(this.props.history.push(this.props.location.pathname));
+  };
+  arrangeRecent = () => {
+    this.props.history.push(`order=recent`);
+  };
+
+  handleModal = () => {
+    this.setState({
+      isModalOn: !this.state.isModalOn,
+    });
+  };
 
   render() {
     const { reviewData } = this.state;
     const { reviews } = reviewData;
-    console.log({ reviews });
     return (
       <div className="ProductReview">
+        {this.state.isModalOn && <ReviewModal handleModal={this.handleModal} />}
         <section>
           <header>
             <h1>
               리뷰<span>count</span>
             </h1>
-            <button type="button">리뷰쓰기</button>
+            <button type="button" onClick={this.handleModal}>
+              리뷰쓰기
+            </button>
           </header>
           <div className="reviewAverage">
             <div className="starScore">
-              <span>별그래프</span>
+              <span>
+                <StarReadOnly size={24} rate={4.5} />
+              </span>
               <h1>4.5</h1>
             </div>
             <div className="scoreGraph">
@@ -53,19 +62,17 @@ class ProductReview extends Component {
           </div>
           <div className="reviewFilter">
             <div className="filterByDate">
-              <button>베스트순</button>
-              <button>최신순</button>
+              <button onClick={this.arrangeBest}>베스트순</button>
+              <button onClick={this.arrangeRecent}>최신순</button>
               <button>사진리뷰</button>
             </div>
             <div>드롭다운필터</div>
           </div>
-          <div className="reviewComponent">
-            <CardList />
-          </div>
+          <div className="reviewComponent"></div>
         </section>
       </div>
     );
   }
 }
 
-export default ProductReview;
+export default withRouter(ProductReview);

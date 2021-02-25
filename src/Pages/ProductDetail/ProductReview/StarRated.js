@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StarRating from "react-svg-star-rating";
 
 function StarRated({ size, rate }) {

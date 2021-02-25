@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "reviews": [
     {
       "key1": "name",
@@ -7,6 +8,52 @@
     {
       "key1": "name",
       "key2": "name"
+=======
+  "results": [
+    {
+      "review_id": "product_review.id",
+      "review_content": "product_review.content",
+      "review_image": "product_review.image_url",
+      "review_rate": "product_review.rate",
+      "product_name": "product.name",
+      "created_at": "product_review.created_at",
+      "day": "str(product_review.created_at).split('')[0]",
+      "review_user_name": "product_review.user.name",
+      "review_like": "ReviewLike.objects.filter(review=product_review).count()"
+    },
+    {
+      "review_id": "product_review.id",
+      "review_content": "product_review.content",
+      "review_image": "product_review.image_url",
+      "review_rate": "product_review.rate",
+      "product_name": "product.name",
+      "created_at": "product_review.created_at",
+      "day": "str(product_review.created_at).split('')[0]",
+      "review_user_name": "product_review.user.name",
+      "review_like": "ReviewLike.objects.filter(review=product_review).count()"
+    },
+    {
+      "review_id": "product_review.id",
+      "review_content": "product_review.content",
+      "review_image": "product_review.image_url",
+      "review_rate": "product_review.rate",
+      "product_name": "product.name",
+      "created_at": "product_review.created_at",
+      "day": "str(product_review.created_at).split('')[0]",
+      "review_user_name": "product_review.user.name",
+      "review_like": "ReviewLike.objects.filter(review=product_review).count()"
+    },
+    {
+      "review_id": "product_review.id",
+      "review_content": "product_review.content",
+      "review_image": "product_review.image_url",
+      "review_rate": "product_review.rate",
+      "product_name": "product.name",
+      "created_at": "product_review.created_at",
+      "day": "str(product_review.created_at).split('')[0]",
+      "review_user_name": "product_review.user.name",
+      "review_like": "ReviewLike.objects.filter(review=product_review).count()"
+>>>>>>> master
     }
   ]
 }

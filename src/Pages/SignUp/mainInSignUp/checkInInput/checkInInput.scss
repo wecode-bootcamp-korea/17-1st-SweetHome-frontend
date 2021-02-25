@@ -1,0 +1,36 @@
+@import "../../../../styles/common.scss";
+
+.checkInInput {
+  h1 {
+    margin-bottom: 12px;
+  }
+
+  .containerForCheck {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 240px;
+    border: 1px solid #e3e3e3;
+
+    .전체동의 {
+      display: flex;
+      align-items: center;
+      padding: 32px 0;
+      width: 340px;
+      height: 42px;
+      border-bottom: 1px solid #e3e3e3;
+      cursor: pointer;
+
+      input {
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+      }
+
+      span {
+        margin: 3px 0 0 6px;
+      }
+    }
+  }
+}
