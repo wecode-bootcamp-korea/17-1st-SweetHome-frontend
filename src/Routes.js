@@ -25,7 +25,7 @@ export default class Routes extends Component {
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     );
   }

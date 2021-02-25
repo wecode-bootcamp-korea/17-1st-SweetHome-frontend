@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./ProductMain.scss";
 import { withRouter } from "react-router-dom";
-import Slide from "./Slide/Slide";
 import ProductCategory from "./ProductCategory/ProductCategory";
 import ProductList from "./ProductList/ProductList";
 
