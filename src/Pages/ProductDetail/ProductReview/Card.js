@@ -17,9 +17,9 @@ class Card extends Component {
       review_like,
     } = this.props;
     return (
-      <div className="CardList">
+      <div className="ReviewCardList">
         <div className="reviewUser">
-          <div className="imgBox">
+          <div className="ReviewimgBox">
             <img
               src={review_user_profile}
               alt="user_p
@@ -70,9 +70,16 @@ class Card extends Component {
         <div className="reviewProductName">
           <span>선택: {product_name}</span>
         </div>
-        <div className="imgBox">
-          <img className="reviewImage" src={review_image} alt="review-image" />
-        </div>
+        {review_image && (
+          <div className="ReviewimgBox">
+            <img
+              className="reviewImage"
+              src={review_image}
+              alt="review-image"
+            />
+          </div>
+        )}
+
         <div className="reviewContent">
           <span>{review_content}</span>
         </div>

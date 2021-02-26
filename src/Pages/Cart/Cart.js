@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MainInCart from "./mainInCart/mainInCart";
 // import PRODUCTMOCKDATA from "./mainInCart/addedProduct/productInform/PRODUCTMOCKDATA";
 import NoProduct from "./noProduct/noProduct";
+import { SERVER } from "../../config";
 import "./Cart.scss";
 
 class Cart extends Component {
@@ -21,8 +22,11 @@ class Cart extends Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.5.215:8000/orders/products", {
+    fetch(`${SERVER}/orders/products`, {
       method: "GET",
+      headers: {
+        Authorization: token,
+      },
     })
       .then((res) => res.json())
       .then((data) => {
@@ -36,16 +40,22 @@ class Cart extends Component {
     const idValue = e.target.id;
     const quantityValue = e.target.value;
 
-    await fetch("http://10.58.5.215:8000/orders/products", {
+    await fetch(`${SERVER}/orders/products`, {
       method: "POST",
+      headers: {
+        Authorization: token,
+      },
       body: JSON.stringify({
         id: idValue,
         quantity: quantityValue,
       }),
     });
 
-    await fetch("http://10.58.5.215:8000/orders/products", {
+    await fetch(`${SERVER}/orders/products`, {
       method: "GET",
+      headers: {
+        Authorization: token,
+      },
     })
       .then((res) => res.json())
       .then((data) => {
@@ -98,11 +108,7 @@ class Cart extends Component {
   //   let value = this.state.mockData.results.map((data, index) => {
   //     return index;
   //   });
-  //   // console.log(e.target.classList[1]);
-
-  //   value = Number(e.target.classList[1]);
-
-  //   this.setState = {
+  //   // console.log(e.target.classList[10.58.1.231  //   value = Number(e.target.classList[10.58.1.231  //   this.setState = {
   //     removedData: this.state.mockData.results.filter((idx) => idx !== value),
   //   };
   //   console.log(this.state.mockData);
@@ -134,3 +140,4 @@ class Cart extends Component {
 }
 
 export default Cart;
+let token = localStorage.getItem("token");

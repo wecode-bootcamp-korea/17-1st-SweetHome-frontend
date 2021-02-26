@@ -1,8 +1,9 @@
-.CardList {
+.ReviewCardList {
   width: 692px;
   margin: 0px auto;
   padding: 40px 0px;
   border-bottom: 1px solid rgb(232, 232, 232);
+
   .reviewUser {
     display: flex;
     align-items: center;
@@ -10,12 +11,13 @@
     font-size: 13px;
     align-items: center;
 
-    .imgBox {
+    .ReviewimgBox {
       width: 24px;
       height: 24px;
       margin-right: 8px;
       border-radius: 50%;
       overflow: hidden;
+      background-color: gray;
 
       img {
         max-width: 100%;
@@ -52,7 +54,7 @@
     font-size: 14px;
     color: #757575;
   }
-  .imgBox {
+  .ReviewimgBox {
     width: 112px;
     height: 112px;
     border-radius: 4px;

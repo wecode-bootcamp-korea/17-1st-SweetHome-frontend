@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import CardList from "./CardList";
 import CommunityFilterList from "./CommunityFilterList";
+import { SERVER } from "../../config";
 
 class CommunityMain extends Component {
   constructor() {
@@ -15,15 +16,9 @@ class CommunityMain extends Component {
   }
 
   fetchCard = () => {
-    // fetch("http://10.153.7.50:8000/posting")
-    fetch(
-      `http://10.58.6.175:8000/posting${this.props.location.search}`
-      // , {headers: {
-      //     Authorization: localStorage.getItem("token"),
-      //   },}
-    )
-      .then(res => res.json())
-      .then(data => {
+    fetch(`${SERVER}/posting${this.props.location.search}`)
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
         this.setState({
           cardsData: data,
@@ -32,9 +27,9 @@ class CommunityMain extends Component {
   };
 
   fetchFilter = () => {
-    fetch("http://10.58.6.175:8000/posting/category")
-      .then(res => res.json())
-      .then(data => {
+    fetch(`${SERVER}/posting/category`)
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
         this.setState({
           filterMenuData: data,

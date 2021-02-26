@@ -12,8 +12,7 @@
     margin: 0 auto;
 
     h1 {
-      font-size: 20px;
-      font-weight: bold;
+      font-size: 15px;
     }
 
     .userSignUp {
@@ -26,6 +25,7 @@
       border-bottom: 1px solid #e3e3e3;
 
       p {
+        margin: 15px 0;
         font-size: 13px;
       }
 
@@ -33,6 +33,7 @@
         display: inline-flex;
         justify-content: space-evenly;
         align-items: center;
+        margin-bottom: 20px;
         width: 100%;
         height: 50px;
         font-size: 40px;

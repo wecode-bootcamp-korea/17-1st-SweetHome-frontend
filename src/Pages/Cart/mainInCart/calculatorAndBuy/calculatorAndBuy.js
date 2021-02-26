@@ -6,6 +6,11 @@ class CalculatorAndBuy extends Component {
     super();
     this.state = {};
   }
+
+  onBuyProduct = () => {
+    alert("상품 주문이 완료되었습니다! ㅎㅅㅎ");
+  };
+
   render() {
     return (
       <section className="calculatorAndBuy">
@@ -40,7 +45,9 @@ class CalculatorAndBuy extends Component {
           </ol>
           <div className="buttonBox">
             <a className="buyButton" href="/payment">
-              <button className="buy">상품 구매하기</button>
+              <button className="buy" onClick={this.onBuyProduct}>
+                상품 구매하기
+              </button>
             </a>
           </div>
         </div>

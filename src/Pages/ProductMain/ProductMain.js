@@ -5,6 +5,7 @@ import ProductCategory from "./ProductCategory/ProductCategory";
 import ProductList from "./ProductList/ProductList";
 import BannderSlide from "./Slide/BannerSlide";
 import ProductEventList from "./ProductEventList/ProductEventList";
+import { SERVER } from "../../config";
 
 class ProductMain extends Component {
   constructor() {
@@ -16,7 +17,7 @@ class ProductMain extends Component {
   }
 
   onDataRequest = () => {
-    fetch("http://10.58.2.60:8000/products", {
+    fetch(`${SERVER}/products`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -28,7 +29,7 @@ class ProductMain extends Component {
   };
 
   onCategoryDataRequest = () => {
-    fetch("http://10.58.2.60:8000/products/category", {
+    fetch(`${SERVER}/products/category`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -40,7 +41,7 @@ class ProductMain extends Component {
   };
 
   onDateOrderdRequest = (order) => {
-    fetch(`http://10.58.2.60:8000/products?order=${order}`, {
+    fetch(`${SERVER}/products?order=${order}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -52,7 +53,7 @@ class ProductMain extends Component {
   };
 
   onDateFilterRequest = (filter, filterName) => {
-    fetch(`http://10.58.2.60:8000/products?${filterName}=${filter}`, {
+    fetch(`${SERVER}/products?${filterName}=${filter}`, {
       method: "GET",
     })
       .then((response) => response.json())

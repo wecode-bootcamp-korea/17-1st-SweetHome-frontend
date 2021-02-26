@@ -14,8 +14,8 @@ class Card extends Component {
   handleIncrease = () => {
     this.setState({
       likes: this.state.likestatus
-        ? +this.state.likes + 1
-        : +this.state.likes - 1,
+        ? +this.state.likes - 1
+        : +this.state.likes + 1,
       likestatus: !this.state.likestatus,
     });
 
@@ -73,7 +73,7 @@ class Card extends Component {
               onClick={this.handleIncrease}
             >
               <img
-                src={this.state.likestatus ? Heart : BlueHeart}
+                src={this.state.likestatus ? BlueHeart : Heart}
                 alt="heart"
               />
             </button>
@@ -95,7 +95,9 @@ class Card extends Component {
         <span className="usercontents">{cardContent}</span>
         <div className="cardComment">
           <button className="commentImage">
-            <img src={commentUserImage} alt="" />
+            {commentUserImage && (
+              <img className="commentUserImg" src={commentUserImage} alt="" />
+            )}
           </button>
           <div className="commentWrite">
             <span className="userName">{commentUserName}</span>
