@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { SERVER } from "../../../config";
+
 import "./ProductEventList.scss";
 
 class ProductEventList extends Component {
@@ -10,7 +12,7 @@ class ProductEventList extends Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.2.60:8000/products?top=discount")
+    fetch(`${SERVER}/products?top=discount`)
       .then((res) => res.json())
       .then((data) => {
         this.setState({

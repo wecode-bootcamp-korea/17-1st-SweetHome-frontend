@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import InputInSignUp from "./inputInSignUp/inputInSignUp";
 import CheckInInput from "./checkInInput/checkInInput";
+import { SERVER } from "../../../config";
 import "./mainInSignUp.scss";
+import { withRouter } from "react-router";
 
 class MainInSignUp extends Component {
   constructor() {
@@ -63,14 +65,14 @@ class MainInSignUp extends Component {
     }
   };
 
-  goToSignIn = () => {
-    this.props.history.push("/signin");
-  };
+  // goToSignIn = () => {
+  //   this.props.history.push("/signin");
+  // };
 
   handleSignUp = () => {
     const { targetValue, emailValue, nameValue, idValue } = this.state;
 
-    fetch("http://10.58.1.199:8000/user/signup", {
+    fetch(`${SERVER}/user/signup`, {
       method: "POST",
       body: JSON.stringify({
         email: idValue + "@" + emailValue,
@@ -81,8 +83,8 @@ class MainInSignUp extends Component {
       .then((response) => response.json())
       .then((result) => {
         result.message === "SUCCESS"
-          ? this.goToSignIn()
-          : console.log("입력을 확인해주세요.");
+          ? this.props.history.push("/signin")
+          : alert("입력을 확인해주세요.");
       });
   };
 
@@ -157,4 +159,4 @@ class MainInSignUp extends Component {
   }
 }
 
-export default MainInSignUp;
+export default withRouter(MainInSignUp);

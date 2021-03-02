@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { SERVER } from "../../../config";
 import "./ProductInfo.scss";
 
 class ProductDetail extends Component {
@@ -10,7 +11,7 @@ class ProductDetail extends Component {
       selectdItem: [],
       size: "",
       color: "",
-      quantity: "1",
+      quantity: 1,
     };
   }
 
@@ -50,7 +51,7 @@ class ProductDetail extends Component {
   };
 
   onRequestProductDetail = () => {
-    fetch(`http://10.58.2.60:8000/products/${this.props.root}`)
+    fetch(`${SERVER}/products/${this.props.root}`)
       .then((response) => response.json())
       .then((data) => {
         this.setState({
@@ -61,9 +62,13 @@ class ProductDetail extends Component {
 
   onSendOrderInfo = () => {
     const { size, color, quantity } = this.state;
-    fetch(`http://10.58.5.215:8000/products/${this.props.root}`, {
+    fetch(`${SERVER}/products/cart`, {
       method: "POST",
+      headers: {
+        Authorization: token,
+      },
       body: JSON.stringify({
+        id: this.props.root,
         size: size,
         color: color,
         quantity: quantity,
@@ -71,6 +76,12 @@ class ProductDetail extends Component {
     })
       .then((response) => response.json())
       .then((result) => console.log("결과: ", result));
+    alert("장바구니에 상품이 담겼습니다!");
+    this.setState({
+      size: "",
+      color: "",
+      quantity: 1,
+    });
   };
 
   onBuyProduct = () => {
@@ -268,3 +279,5 @@ class ProductDetail extends Component {
 }
 
 export default ProductDetail;
+
+let token = localStorage.getItem("token");

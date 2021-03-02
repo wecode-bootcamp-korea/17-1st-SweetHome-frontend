@@ -31,8 +31,8 @@ class NavBar extends Component {
 
   goToCommunity = (e) => {
     e.target.innerText === "커뮤니티"
-      ? this.props.history.push("/community/posting")
-      : this.props.history.push("./productmain");
+      ? this.props.history.push("/communitymain/posting")
+      : this.props.history.push("/productmain");
   };
 
   render() {

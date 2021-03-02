@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import { SERVER } from "../../../config";
 import Card from "./Card.js";
 
 class CardList extends Component {
@@ -8,12 +9,25 @@ class CardList extends Component {
     ReviewData: [],
   };
 
-  // downloadReview = () => {
-  //   // fetch(`http://10.58.2.21:8000/products${this.props.location.search}`)
-  //     .then(res => res.json())
-  //     .then(data => {
+  downloadReview = () => {
+    fetch(`${SERVER}/products/${this.props.root}/review`)
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          ReviewData: data,
+        });
+      });
+  };
+
+  // onReviewOrderdRequest = (e) => {
+  //   const target = e.target.value;
+  //   fetch(`${SERVER}/products?order=${target}`, {
+  //     method: "GET",
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
   //       this.setState({
-  //         ReviewData: data,
+  //         reviewData: data,
   //       });
   //     });
   // };
@@ -23,12 +37,13 @@ class CardList extends Component {
   }
 
   render() {
+    console.log(this.state.ReviewData);
+
     const { ReviewData } = this.state;
     const { results } = ReviewData;
-    console.log(results);
     return (
       <div>
-        {results?.map(card => {
+        {results?.map((card) => {
           return (
             <Card
               key={card.review_id}

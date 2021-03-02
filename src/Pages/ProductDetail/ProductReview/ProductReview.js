@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import StarReadOnly from "./StarReadOnly";
 import ReviewModal from "./ReviewModal";
+import { SERVER } from "../../../config";
+
 import "./ProductReview.scss";
 
 class ProductReview extends Component {
@@ -18,9 +20,10 @@ class ProductReview extends Component {
     this.props.history.push(`order=best`);
     console.log(this.props.history.push(this.props.location.pathname));
   };
-  arrangeRecent = () => {
-    this.props.history.push(`order=recent`);
-  };
+
+  // arrangeRecent = () => {
+  //   this.props.history.push(`order=recent`);
+  // };
 
   handleModal = () => {
     this.setState({
@@ -28,7 +31,12 @@ class ProductReview extends Component {
     });
   };
 
+  onRequest = (e) => {
+    this.props.onReviewOrderdRequest(e.target.value);
+  };
+
   render() {
+    console.log(this.state.reviewData);
     const { reviewData } = this.state;
     const { reviews } = reviewData;
     return (
@@ -53,17 +61,21 @@ class ProductReview extends Component {
             <div className="scoreGraph">
               <ul>
                 <li>
-                  <span>5점</span>
-                  <span>-</span>
-                  <span>500</span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </li>
               </ul>
             </div>
           </div>
           <div className="reviewFilter">
             <div className="filterByDate">
-              <button onClick={this.arrangeBest}>베스트순</button>
-              <button onClick={this.arrangeRecent}>최신순</button>
+              <button value="like" onClick={(e) => this.onRequest(e)}>
+                베스트순
+              </button>
+              <button value="recent" onClick={(e) => this.onRequest(e)}>
+                최신순
+              </button>
               <button>사진리뷰</button>
             </div>
             <div>드롭다운필터</div>

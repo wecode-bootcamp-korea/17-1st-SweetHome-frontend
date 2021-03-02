@@ -20,6 +20,10 @@
       border: none;
       background-color: transparent;
       padding: 20px 20px 0 0;
+      &:focus {
+        border: none;
+        outline: none;
+      }
       img {
         width: 100%;
       }
@@ -163,5 +167,12 @@
     li {
       margin: 4px 0px;
     }
+  }
+}
+
+button {
+  &:focus {
+    border: none;
+    outline: none;
   }
 }
