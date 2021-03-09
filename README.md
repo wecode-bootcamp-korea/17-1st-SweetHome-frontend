@@ -41,7 +41,7 @@ Git & GitHub
 AWS EC2, RDS
 
 
-##🌈 구현 기능
+## 🌈 구현 기능
 
 FrontEnd
 access token를 활용한 회원가입, 로그인 기능
