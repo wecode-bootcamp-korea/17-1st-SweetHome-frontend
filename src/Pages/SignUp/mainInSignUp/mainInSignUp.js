@@ -65,10 +65,6 @@ class MainInSignUp extends Component {
     }
   };
 
-  // goToSignIn = () => {
-  //   this.props.history.push("/signin");
-  // };
-
   handleSignUp = () => {
     const { targetValue, emailValue, nameValue, idValue } = this.state;
 
