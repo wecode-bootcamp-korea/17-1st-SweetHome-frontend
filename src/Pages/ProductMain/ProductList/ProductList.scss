@@ -32,11 +32,10 @@
           }
         }
         .btnArrow {
-          margin-bottom: 3px;
           padding-left: 5px;
           line-height: 20px;
-          font-size: 1px;
-          color: lightgray;
+          font-size: 12px;
+          color: #dadce0;
         }
       }
       .subfilterBar {
@@ -62,6 +61,16 @@
           }
         }
       }
+    }
+    .filterResetBtn {
+      width: 100px;
+      height: 30px;
+      margin-top: 10px;
+      margin-left: 160px;
+      border: none;
+      border-radius: 5px;
+      background-color: transparent;
+      cursor: pointer;
     }
   }
   .itemFilterd {
@@ -121,6 +130,7 @@
       cursor: pointer;
       &:hover {
         img {
+          transition: 0.2s;
           transform: scale(1.1);
         }
       }

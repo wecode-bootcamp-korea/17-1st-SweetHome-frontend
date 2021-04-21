@@ -3,20 +3,68 @@
     {
       "id": 1,
       "categoryName": "사이즈",
-      "category": ["대형", "중형", "소형"]
+      "category": [
+        {
+          "name": "size",
+          "value": "대형"
+        },
+        {
+          "name": "size",
+          "value": "중형"
+        },
+        {
+          "name": "size",
+          "value": "소형"
+        }
+      ]
     },
     {
       "id": 2,
       "categoryName": "색상",
-      "category": ["빨강", "노랑", "초록"]
+      "category": [
+        {
+          "name": "color",
+          "value": "빨강"
+        },
+        {
+          "name": "color",
+          "value": "노랑"
+        },
+        {
+          "name": "color",
+          "value": "초록"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "categoryName": "소재",
+      "category": [
+        {
+          "value": "천연"
+        },
+        {
+          "value": "가죽"
+        },
+        {
+          "value": "인조"
+        }
+      ]
     },
     {
       "id": 4,
-      "categoryName": "소재"
-    },
-    {
-      "id": 5,
-      "categoryName": "형태"
+      "categoryName": "상세 소재",
+      "category": [
+        {
+          "value": "통가죽"
+        },
+        {
+          "value": "면피가죽"
+        },
+        {
+          "value": "내피가죽"
+        }
+      ]
     },
     {
       "id": 6,

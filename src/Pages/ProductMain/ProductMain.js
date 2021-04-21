@@ -3,7 +3,6 @@ import "./ProductMain.scss";
 import { withRouter } from "react-router-dom";
 import ProductCategory from "./ProductCategory/ProductCategory";
 import ProductList from "./ProductList/ProductList";
-import BannderSlide from "./Slide/BannerSlide";
 import ProductEventList from "./ProductEventList/ProductEventList";
 import { SERVER } from "../../config";
 
