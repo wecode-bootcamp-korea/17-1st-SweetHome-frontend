@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory, useLocation } from "react-router-dom";
 import { getProductListData } from "../../../store/modules/productList";
 import "./ProductList.scss";
 
@@ -12,6 +13,8 @@ const ProductList = () => {
   const [btnIdx, setBtnIdx] = useState(0);
 
   const dispatch = useDispatch();
+  const history = useHistory();
+  const location = useLocation();
 
   useEffect(() => {
     dispatch(getProductListData(""));
@@ -35,6 +38,34 @@ const ProductList = () => {
     this.props.history.push(`/productDetail/${id}`);
   };
 
+  const onDataFilterRequest = (e) => {
+    const queryString = location.search;
+    const stringValue = e.target.name;
+    const searchParams = new URLSearchParams(queryString);
+    const isString = searchParams.has(stringValue);
+    let string = "";
+
+    if (isString) {
+      searchParams.delete(stringValue);
+    }
+    if (stringValue === "order") {
+      searchParams.append(stringValue, e.target.value);
+      string += searchParams.toString();
+      setOrder(e.target.innerText);
+    } else {
+      searchParams.append(stringValue, Number(e.target.value) + 1);
+      string += searchParams.toString();
+    }
+
+    history.push(`productmain?${string}`);
+    dispatch(getProductListData(`?${string}`));
+  };
+
+  const onFilterReset = () => {
+    history.push(`productmain`);
+    dispatch(getProductListData(""));
+  };
+
   return (
     <div className="itemList">
       <div className="categoryFilter">
@@ -56,6 +87,7 @@ const ProductList = () => {
                               className="subfilterName"
                               value={idx}
                               name={subFilter.name}
+                              onClick={(e) => onDataFilterRequest(e)}
                             >
                               {subFilter.value}
                             </button>
@@ -69,7 +101,9 @@ const ProductList = () => {
             </div>
           );
         })}
-        <button className="filterResetBtn">⟳ 필터초기화</button>
+        <button className="filterResetBtn" onClick={() => onFilterReset()}>
+          ⟳ 필터초기화
+        </button>
       </div>
       <div className="itemFilterd">
         <div className="itemCountedNum">
@@ -89,6 +123,7 @@ const ProductList = () => {
                       key={order.id}
                       value={order.value}
                       name={order.name}
+                      onClick={(e) => onDataFilterRequest(e)}
                     >
                       {order.text}
                     </button>
