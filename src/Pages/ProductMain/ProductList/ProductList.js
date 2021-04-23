@@ -35,7 +35,7 @@ const ProductList = () => {
   };
 
   const gotoDetail = (id) => {
-    this.props.history.push(`/productDetail/${id}`);
+    history.push(`/productDetail/${id}`);
   };
 
   const onDataFilterRequest = (e) => {
