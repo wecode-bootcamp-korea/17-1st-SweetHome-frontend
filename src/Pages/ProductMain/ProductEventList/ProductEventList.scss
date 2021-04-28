@@ -93,3 +93,22 @@
     }
   }
 }
+
+@media screen and (max-width: 968px) {
+  .productEventList {
+    width: 100vw;
+    overflow: scroll;
+
+    .eventName {
+      margin-left: 30px;
+    }
+
+    ul {
+      margin-left: 30px;
+
+      .item {
+        margin-right: 20px;
+      }
+    }
+  }
+}

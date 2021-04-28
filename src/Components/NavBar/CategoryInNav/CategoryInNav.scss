@@ -6,3 +6,11 @@
     width: 1136px;
   }
 }
+
+@media screen and (max-width: 968px) {
+  .categoryInNav {
+    .divForBorder {
+      justify-content: center;
+    }
+  }
+}

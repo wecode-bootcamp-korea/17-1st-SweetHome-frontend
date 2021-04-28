@@ -16,6 +16,7 @@
     height: 80px;
     border-bottom: 1px solid #e3e3e3;
     background-color: #ffffff;
+    z-index: 1000;
 
     .topOfNav {
       display: flex;
@@ -179,5 +180,21 @@
     margin-top: 80px;
     height: 50px;
     border-bottom: 1px solid #e3e3e3;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .navBar {
+    width: 100%;
+    .navBarForFixed {
+      .topOfNav {
+        width: 100%;
+        justify-content: center;
+
+        .rightSideOfNav {
+          display: none;
+        }
+      }
+    }
   }
 }

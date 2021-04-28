@@ -21,7 +21,7 @@
         line-height: 23px;
         font-size: 13px;
         color: gray;
-        z-index: 1000;
+        z-index: 1;
         cursor: pointer;
         &:first-child {
           margin-top: 27px;
@@ -41,17 +41,24 @@
 
 @media screen and (max-width: 968px) {
   .mainCategoryItem {
+    width: 100vw;
+
     .mainCategoryItemName {
-      margin-left: 10px;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0 10px;
+      font-size: 26px;
     }
+
     .productList {
       .subProductCategory {
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
-        width: 968px;
+        width: 100vw;
 
         li {
-          width: 300px;
+          width: 290px;
           height: 35px;
           margin: 10px 10px 0;
           padding-top: 6px;
