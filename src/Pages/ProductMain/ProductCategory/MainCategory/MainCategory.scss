@@ -21,7 +21,7 @@
         line-height: 23px;
         font-size: 13px;
         color: gray;
-        z-index: 1000;
+        z-index: 1;
         cursor: pointer;
         &:first-child {
           margin-top: 27px;
@@ -33,6 +33,50 @@
           border: 0;
           font-size: 5px;
           cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .mainCategoryItem {
+    width: 100vw;
+
+    .mainCategoryItemName {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0 10px;
+      font-size: 26px;
+    }
+
+    .productList {
+      .subProductCategory {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100vw;
+
+        li {
+          width: 290px;
+          height: 35px;
+          margin: 10px 10px 0;
+          padding-top: 6px;
+          border: 1px solid black;
+          border-radius: 25px;
+          text-align: center;
+          color: black;
+          font-size: 15px;
+          &:first-child {
+            margin-top: 10px;
+          }
+          &:hover {
+            background-color: rgb(238, 238, 238);
+          }
+
+          button {
+            display: none;
+          }
         }
       }
     }
